@@ -1,3 +1,10 @@
+<?php 
+// start session        
+$userName = $this->session->userdata('userName'); //----session variable
+// if ($userName == '') {
+//     redirect('admin_login');
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +38,7 @@
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
                         <a href="<?php echo base_url(); ?>admin/dashboard" class="site_title" style="padding-left: 15px">
-                            PARINAAY MATRIMONY
+                            Company Logo
                         </a>
                     </div>
 
@@ -43,9 +50,10 @@
                             <!-- <h3>General</h3> -->
                             <ul class="nav side-menu">
                                 <li><a href="<?php echo base_url(); ?>admin/admin_dashboard"><i class="fa fa-dashboard"></i> Dashboard </a></li>
-                                <li><a href="<?php echo base_url(); ?>admin/all_users"><i class="fa fa-users"></i> All Members </a></li>
-                                <li><a href="<?php echo base_url(); ?>admin/admin_profile"><i class="fa fa-user-circle"></i> Admin Profile </a></li>
-                                <li><a href="<?php echo base_url(); ?>admin/Register_user"><i class="fa fa-user"></i> Register User </a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/all_users"><i class="fa fa-product-hunt"></i> Manage Portfolio </a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/admin_profile"><i class="fa fa-server"></i> Manage Services </a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/Register_user"><i class="fa fa-briefcase"></i> Manage Careers </a></li>
+                                <li><a href="<?php echo base_url(); ?>admin/Register_user"><i class="fa fa-cogs"></i> General Settings </a></li>
                             </ul>
                         </div>
                         <div class="menu_section">
@@ -54,8 +62,8 @@
                     <!-- /sidebar menu -->
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small w3-center">
-                        <a href="<?php echo base_url(); ?>admin/admin_profile" data-toggle="tooltip" data-placement="top" title="Settings" style="width: 50%;" title="Admin Profile">
-                            <span class="fa fa-user-circle" aria-hidden="true"></span>
+                        <a href="<?php echo base_url(); ?>admin/admin_profile" data-toggle="tooltip" data-placement="top" title="Settings" style="width: 50%;" title="General Settings">
+                            <span class="fa fa-cogs" aria-hidden="true"></span>
                         </a>
                         <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url(); ?>admin/admin_login/logoutAdmin" style="width: 50%;" title="Admin Logout">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
@@ -74,11 +82,11 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    Welcome <b>samrat </b>
+                                    Welcome <b><?php echo $userName; ?></b>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                    <li><a href="<?php echo base_url(); ?>admin/admin_profile"><i class="fa fa-user-circle"></i> Admin Profile</a></li>
+                                    <li><a href="<?php echo base_url(); ?>admin/admin_profile"><i class="fa fa-cogs"></i> Settings</a></li>
                                     <li><a href="<?php echo base_url(); ?>admin/admin_login/logoutAdmin"><i class="fa fa-sign-out"></i> Log Out</a></li>
                                 </ul>
                             </li>

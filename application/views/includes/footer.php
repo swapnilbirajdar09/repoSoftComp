@@ -1,7 +1,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Parinaay Matrimonial | Powered by <a href="https://bizmo-tech.com" target="_blank">Bizmo Technologies</a>
+            Company Name | Powered by <a href="https://bizmo-tech.com" target="_blank">Bizmo Technologies</a>
           </div>
           <div class="clearfix"></div>
         </footer>
