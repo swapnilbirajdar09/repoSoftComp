@@ -34,7 +34,7 @@
         </style>
     </head>
 
-    <body class="login" style="background-position: center;">
+    <body class="login" style="background-image: url(<?php echo base_url(); ?>assets/images/login-bg1.jpg); background-position: center;">
         <div>
             <a class="hiddenanchor" id="signup"></a>
             <a class="hiddenanchor" id="signin"></a>
@@ -83,7 +83,7 @@
                                 <input type="email" ng-model="email_id" class="form-control" placeholder="Enter email-ID here..." required>
                             </div>              
                             <div>
-                                <button class="btn btn-primary btn-block" ng-click="forgetPassword()">Submit</button>
+                                <button id="subBtn" class="btn btn-primary btn-block" ng-click="forgetPassword()">Get Password</button>
                             </div>
                             <div class="clearfix"></div>
                             <div class="separator">
@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <?php// echo base64_encode('admin1234'); ?>
+        <?php // echo base64_encode('admin1234'); ?>
         <!-- Authenticate user script  -->
         <script>
             var loginApp = angular.module('loginApp', ['ngSanitize']);
@@ -135,15 +135,16 @@
 
                 $scope.forgetPassword = function () {
                     //$.alert();
+                    $('#subBtn').html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-spinner fa-spin w3-large"></i> <b>Getting Password. Hang on...</b></span>');
                     $http({
                         method: 'POST',
                         url: '<?php echo base_url(); ?>admin_login/forgetPassword',
                         headers: {'Content-Type': 'application/json'},
                         data: JSON.stringify({email_id: $scope.email_id})
                     }).then(function (data) {
-                        alert(data.data);
-                        console.log(data.data);
-                        $scope.messageinfo = '<p class="w3-green w3-padding-small">' + data.data + '</p>';
+                        //alert(data.data);
+                        $('#subBtn').html('<span>Get Password</span>');
+                        $scope.messageinfo = data.data;
                     });
                 };
             });
