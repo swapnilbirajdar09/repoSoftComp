@@ -46,7 +46,6 @@
             <div class="login_wrapper" ng-app="loginApp" ng-controller="loginController">
 
                 <div class="animate form login_form w3-padding">
-
                     <section class="login_content w3-padding w3-white w3-text-grey w3-card-2">
                         <form ng-submit="submit()" method="POST">
                             <h1>Login Form</h1>
