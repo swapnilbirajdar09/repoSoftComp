@@ -36,7 +36,6 @@
 
     <body class="login" style="background-position: center;">
         <div>
-
             <a class="hiddenanchor" id="signup"></a>
             <a class="hiddenanchor" id="signin"></a>
             <section id="logo" class="w3-center" style="margin-top: 26px">
@@ -49,9 +48,7 @@
                     <section class="login_content w3-padding w3-white w3-text-grey w3-card-2">
                         <form ng-submit="submit()" method="POST">
                             <h1>Login Form</h1>
-
                             <div ng-bind-html="message"></div>
-
                             <div>
                                 <input type="text" ng-model="username" class="form-control w3-small" placeholder="Enter username here..." required>
                             </div>
@@ -101,59 +98,54 @@
                 </div>
             </div>
         </div>
-
+        <?php// echo base64_encode('admin1234'); ?>
         <!-- Authenticate user script  -->
         <script>
             var loginApp = angular.module('loginApp', ['ngSanitize']);
             loginApp.controller('loginController', function ($scope, $http, $timeout, $window) {
                 $scope.loginButtonText = "Log in as Administrator";
                 $scope.test = "false";
-
                 $scope.submit = function ()
                 {
                     $scope.message = '';
                     // spinner on button
                     $scope.test = "true";
                     $scope.loginButtonText = "Authenticating user. Please wait...";
-
                     // Do login here        
                     $timeout(function () {
                         // POST form data to controller
                         $http({
                             method: 'POST',
-                            url: '<?php echo base_url(); ?>admin/admin_login/adminlogin',
+                            url: '<?php echo base_url(); ?>admin_login/adminlogin',
                             headers: {'Content-Type': 'application/json'},
                             data: JSON.stringify({username: $scope.username, password: $scope.password})
                         }).then(function (data) {
+                            //$scope.message = data.data;
                             if (data.data == '200') {
                                 //alert('got');
                                 $scope.message = '<p class="w3-green w3-padding-small">Login Successfull! Welcome Admin.</p>';
-                                $window.location.href = BASE_URL + 'admin/dashboard';
+                                $window.location.href = BASE_URL + 'admin/admin_dashboard';
                             } else {
                                 $scope.message = data.data;
                             }
-
                         });
                         $scope.loginButtonText = "Log in as Administrator";
                     }, 2000);
-
                 };
 
                 $scope.forgetPassword = function () {
                     //$.alert();
                     $http({
                         method: 'POST',
-                        url: '<?php echo base_url(); ?>admin/admin_login/forgetPassword',
+                        url: '<?php echo base_url(); ?>admin_login/forgetPassword',
                         headers: {'Content-Type': 'application/json'},
                         data: JSON.stringify({email_id: $scope.email_id})
                     }).then(function (data) {
-                        //alert(data.data);
+                        alert(data.data);
                         console.log(data.data);
                         $scope.messageinfo = '<p class="w3-green w3-padding-small">' + data.data + '</p>';
                     });
                 };
-
-
             });
         </script>
     </body>
