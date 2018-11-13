@@ -133,7 +133,8 @@ class Adminlogin_model extends CI_Model {
             //echo $password . '' . $forget_email;
             // die();
             $emailSend = Adminlogin_model::sendPasswordByMail($forget_email, $password);
-            
+            print_r($emailSend);
+            die();
             if ($emailSend['status'] == 200) {
                 $response = array(
                     'status' => 200,

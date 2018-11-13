@@ -40,7 +40,7 @@
             <a class="hiddenanchor" id="signin"></a>
             <section id="logo" class="w3-center" style="margin-top: 26px">
                      <!-- <a href="#"><img src="<?php echo base_url(); ?>assets/client/uploads/header_logo/logo.jpeg" class="center" alt=""  /></a> -->
-                <h1 class=""><b><i>Software Company</i></b></h1>
+                <h1 class=""><b><i></i></b></h1>
             </section>
             <div class="login_wrapper" ng-app="loginApp" ng-controller="loginController">
 
@@ -75,7 +75,7 @@
 
                 <div id="forgotpassword" class="animate form registration_form w3-padding">
                     <section class="login_content w3-padding w3-white w3-text-grey w3-card-2">
-                        <div ng-bind-html="messageinfo"></div>
+                        <div class="w3-padding" ng-bind-html="messageinfo"></div>
                         <form >
                             <h1>Get Password</h1>
                             <h6>Don't remember your password? Please enter valid email-id to get your password!</h6>
@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <?php // echo base64_encode('admin1234'); ?>
+        <?php// echo base64_encode('admin1234'); ?>
         <!-- Authenticate user script  -->
         <script>
             var loginApp = angular.module('loginApp', ['ngSanitize']);
@@ -141,9 +141,9 @@
                         headers: {'Content-Type': 'application/json'},
                         data: JSON.stringify({email_id: $scope.email_id})
                     }).then(function (data) {
-                        //alert(data.data);
+                        alert(data.data);
                         console.log(data.data);
-                        $scope.messageinfo = data.data;
+                        $scope.messageinfo = '<p class="w3-green w3-padding-small">' + data.data + '</p>';
                     });
                 };
             });
