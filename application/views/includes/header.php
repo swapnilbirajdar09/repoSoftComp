@@ -70,7 +70,12 @@ $userName = $this->session->userdata('userName'); //----session variable
                                             <li><a href="<?php echo base_url(); ?>admin/view_services">View All Services</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="<?php echo base_url(); ?>admin/Register_user"><i class="fa fa-briefcase"></i> Manage Careers </a></li>
+                                    <li><a><i class="fa fa-briefcase"></i> Manage Careers <span class=" fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="<?php echo base_url(); ?>admin/post_job">Add Job</a></li>
+                                            <li><a href="<?php echo base_url(); ?>admin/all_jobs">View All Jobs</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="<?php echo base_url(); ?>admin/Register_user"><i class="fa fa-cogs"></i> General Settings </a></li>
                                 </ul>
                             </div>
