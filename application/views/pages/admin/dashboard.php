@@ -83,7 +83,9 @@
           <div ng-html-bind=""></div>
           <div class="w3-col l12" style="height: 360px;overflow-y: auto;" id="brand_listDiv">
    
-      <?php foreach ($tech as $key) {
+      <?php  if($tech !='')
+          {
+           foreach ($tech as $key) {
       
         ?>
      
@@ -94,7 +96,12 @@
     
          
             </div>
-          <?php   }
+          <?php 
+          }  }
+          else
+          {
+            echo' <span> No Technology Found </span>';
+          }
       ?>
             
           </div>
