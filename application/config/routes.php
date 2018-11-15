@@ -54,6 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 // $route['admin/dashboard/delPackage/(:any)'] = "admin/dashboard/delPackage/$1";
 // $route['user/user_profile/verifyEmail/(:any)'] = "user/user_profile/verifyEmail/$1";
-// $route['admin/verify_document/profile/(:any)'] = "admin/verify_document/index/$1";
+$route['admin/manage_portfolio/portfolio/(:any)'] = "admin/manage_portfolio/portfolio/$1";
 // $route['user/full_profile/(:any)'] = "user/full_profile/index/$1";
 // $route['user/full_profile/download(:any)'] = "user/full_profile/save_download/$1";
