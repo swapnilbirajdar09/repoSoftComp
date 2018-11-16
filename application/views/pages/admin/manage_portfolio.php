@@ -165,7 +165,7 @@
       </div>
       <div class="container">
         
-        <div class="w3-col l12 w3-padding w3-small" id="allProductDiv">
+        <div class="w3-col l12 w3-padding w3-small" id="allPortfolioDiv">
           <table id="datatable" class="table table-striped table-bordered">
             <thead>
               <tr >

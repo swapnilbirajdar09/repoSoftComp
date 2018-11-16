@@ -28,6 +28,17 @@ class Portfolio_model extends CI_Model {
         }
     }
 
+    //----------------function to get selected portfolio details
+    public function getPortfolioDetail($portfolio_id) {
+        $sql = "SELECT * FROM portfolio_tab WHERE portfolio_id='$portfolio_id'";
+        $result = $this->db->query($sql);
+        if ($result->num_rows() <= 0) {
+            return false;
+        } else {
+            return $result->result_array();
+        }
+    }
+
     // add new portfolio function
     public function addPortfolio($data){
         extract($data);

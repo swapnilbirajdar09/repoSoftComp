@@ -54,6 +54,3 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['admin/view_applied_candidate_list/(:any)'] = "admin/view_applied_candidate_list/index/$1";
 $route['admin/view_applied_candidate_list/download(:any)'] = 'admin/view_applied_candidate_list/download/$1';
-// $route['admin/verify_document/profile/(:any)'] = "admin/verify_document/index/$1";
-// $route['user/full_profile/(:any)'] = "user/full_profile/index/$1";
-// $route['user/full_profile/download(:any)'] = "user/full_profile/save_download/$1";
