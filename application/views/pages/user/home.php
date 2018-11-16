@@ -46,6 +46,25 @@
   </div>
 </section>
 <section class="wow fadeIn" id="about">
+        <div class="container">
+          <div class="row equalize sm-equalize-auto">
+            <div class="col-md-5 col-sm-12 sm-text-center col-md-offset-1 sm-padding-50px-all xs-padding-15px-lr pull-right">
+              <div class="display-table width-100 height-100">
+                <div class="display-table-cell vertical-align-middle"><i class="fa fa-quote-left text-secondary icon-medium offset-15px-bottom"></i>
+                  <h5 class="text-extra-dark-gray text-font-sec text-uppercase text-semi-bold">OUR TEAM IS DEDICATED TO THE FINAL RESULT AND SUCCESS OF OUR CLIENTS.</h5>
+                  <p class="width-90 sm-width-100">The approach of MService assumes that a perfect design can only be delivered by people with a deep social and cultural understanding of the communities they designing for. As a Co-Founder, I make sure all our clients receive the designs their need for their corporate needs.</p><img class="offset-15px-top" src="images/signature-dark.png" alt=""><span class="text-extra-dark-gray text-large display-block offset-30px-top text-font-sec text-medium">Colin Smith</span><span class="display-block">Co-Founder, Lead Designer</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12 text-center">
+              <div class="display-table width-100 height-100">
+                <div class="display-table-cell vertical-align-bottom"><img src="<?php echo base_url(); ?>assets/user/images/about-us-classic-4-600x741.jpg" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<section class="wow fadeIn" id="about">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 text-center center-col offset-eight-bottom xs-offset-30px-bottom"><span class="text-font-sec text-secondary text-medium offset-5px-bottom display-block">Solutions your business needs</span>
@@ -53,53 +72,20 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 offset-six-bottom md-offset-six-bottom sm-offset-30px-bottom wow fadeInUp last-paragraph-no-margin">
-        <div class="feature-box-5 position-relative"><i class="linearicons-laptop text-medium-gray icon-medium"></i>
-          <div class="feature-content">
-            <div class="text-extra-dark-gray offset-5px-bottom text-font-sec text-medium">Web Design</div>
-            <p>MService provides top-notch web design and development services at affordable rates for all kinds of businesses locally and worldwide.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-sm-4 col-xs-12 xs-offset-30px-bottom wow fadeInUp last-paragraph-no-margin xs-text-center">
+        <div class="offset-ten-bottom overflow-hidden image-hover-style-1 sm-offset-20px-bottom"><a href="services-modern.html"><img src="<?php echo base_url(); ?>assets/user/images/service-simple-4-750x500.jpg" alt=""></a></div><a class="text-font-sec offset-5px-bottom display-block text-extra-dark-gray text-medium text-uppercase text-small" href="services-modern.html">WEB DESIGN</a>
+        <p class="width-95 sm-width-100">Our company provides a wide range of effective web design and development services to facilitate the quick and efficient growth of your business.</p>
+        <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb sm-offset-15px-tb"></div><a class="text-uppercase text-font-sec text-extra-dark-gray text-medium text-extra-small" href="services-modern.html">View More</a>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 offset-six-bottom md-offset-six-bottom sm-offset-30px-bottom wow fadeInUp last-paragraph-no-margin" data-wow-delay="0.2s">
-        <div class="feature-box-5 position-relative"><i class="linearicons-layers text-medium-gray icon-medium"></i>
-          <div class="feature-content">
-            <div class="text-extra-dark-gray offset-5px-bottom text-font-sec text-medium">Branding</div>
-            <p>Our team will gladly create a unique brand identity for your company to drive positive experiences and engagement.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-sm-4 col-xs-12 xs-offset-30px-bottom wow fadeInUp last-paragraph-no-margin xs-text-center">
+        <div class="offset-ten-bottom overflow-hidden image-hover-style-1 sm-offset-20px-bottom"><a href="services-modern.html"><img src="<?php echo base_url(); ?>assets/user/images/service-simple-4-750x500.jpg" alt=""></a></div><a class="text-font-sec offset-5px-bottom display-block text-extra-dark-gray text-medium text-uppercase text-small" href="services-modern.html">WEB DESIGN</a>
+        <p class="width-95 sm-width-100">Our company provides a wide range of effective web design and development services to facilitate the quick and efficient growth of your business.</p>
+        <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb sm-offset-15px-tb"></div><a class="text-uppercase text-font-sec text-extra-dark-gray text-medium text-extra-small" href="services-modern.html">View More</a>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 offset-six-bottom md-offset-six-bottom sm-offset-30px-bottom wow fadeInUp last-paragraph-no-margin" data-wow-delay="0.4s">
-        <div class="feature-box-5 position-relative"><i class="linearicons-laptop-phone text-medium-gray icon-medium"></i>
-          <div class="feature-content">
-            <div class="text-extra-dark-gray offset-5px-bottom text-font-sec text-medium">Graphic Design</div>
-            <p>Graphic designers of MService offer professional graphic design services including print design, logo design etc.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sm-offset-six-bottom md-offset-six-bottom sm-offset-30px-bottom wow fadeInUp last-paragraph-no-margin" data-wow-delay="0.6s">
-        <div class="feature-box-5 position-relative"><i class="linearicons-smartphone-embed text-medium-gray icon-medium"></i>
-          <div class="feature-content">
-            <div class="text-extra-dark-gray offset-5px-bottom text-font-sec text-medium">App Development</div>
-            <p>With us, you can count on having an elegant web app for any platform that fits your brand the best possible way.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 xs-offset-30px-bottom wow fadeInUp last-paragraph-no-margin" data-wow-delay="0.8s">
-        <div class="feature-box-5 position-relative"><i class="linearicons-tablet text-medium-gray icon-medium"></i>
-          <div class="feature-content">
-            <div class="text-extra-dark-gray offset-5px-bottom text-font-sec text-medium">Social Marketing</div>
-            <p>We offer social marketing solutions aimed at putting your company in a better position on the Web using popular social networks.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 wow fadeInUp last-paragraph-no-margin" data-wow-delay="1s">
-        <div class="feature-box-5 position-relative"><i class="linearicons-chart-settings text-medium-gray icon-medium"></i>
-          <div class="feature-content">
-            <div class="text-extra-dark-gray offset-5px-bottom text-font-sec text-medium">Content Creation</div>
-            <p>We can create all kinds of content for your website or marketing campaign to present your company to your customers.</p>
-          </div>
-        </div>
+      <div class="col-md-4 col-sm-4 col-xs-12 xs-offset-30px-bottom wow fadeInUp last-paragraph-no-margin xs-text-center">
+        <div class="offset-ten-bottom overflow-hidden image-hover-style-1 sm-offset-20px-bottom"><a href="services-modern.html"><img src="<?php echo base_url(); ?>assets/user/images/service-simple-4-750x500.jpg" alt=""></a></div><a class="text-font-sec offset-5px-bottom display-block text-extra-dark-gray text-medium text-uppercase text-small" href="services-modern.html">WEB DESIGN</a>
+        <p class="width-95 sm-width-100">Our company provides a wide range of effective web design and development services to facilitate the quick and efficient growth of your business.</p>
+        <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb sm-offset-15px-tb"></div><a class="text-uppercase text-font-sec text-extra-dark-gray text-medium text-extra-small" href="services-modern.html">View More</a>
       </div>
     </div>
   </div>

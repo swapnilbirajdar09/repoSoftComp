@@ -12,6 +12,8 @@
   <!-- <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user/css/fonts.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/user/css/style.css">
+  <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/const.js"></script>
 </head>
 <body> 
   <div class="preloader"> 
