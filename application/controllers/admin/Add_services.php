@@ -23,7 +23,7 @@ class Add_services extends CI_Controller {
         $this->load->view('pages/admin/addService'); //------loading the admin Add Service view
         $this->load->view('includes/footer');
     }
-
+//--------------fun for add services
     public function addServices() {
         extract($_POST);
         extract($_FILES);

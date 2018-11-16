@@ -23,7 +23,7 @@ class Post_job extends CI_Controller {
         $this->load->view('pages/admin/postJob'); //------loading the admin Add Service view
         $this->load->view('includes/footer');
     }
-
+//--------------------------fun for save job------------------------------//
     public function saveJob() {
         //print_r($_POST);
         $data = $_POST;

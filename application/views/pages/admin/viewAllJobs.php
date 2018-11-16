@@ -18,7 +18,7 @@
                         <th class="w3-center"><span>Job Name</span></th>
                         <th class="w3-center"><span>Job Description</span></th>                        
                         <th class="w3-center"><span>Requirements</span></th>                        
-                        <th class="w3-center"><span>No Of Vacancies</span></th>
+                        <th class="w3-center"><span>Vacancies</span></th>
                         <th class="w3-center"><span>Req.Experience</span></th>
                         <th class="w3-center"><span>Added Date</span></th>
                         <th class="w3-center"><span>Action</span></th>
@@ -58,7 +58,7 @@
                                 <td class="w3-center w3-text-black"><b><?php echo $key['vacancies'] ?></b></td>
                                 <td class="w3-center w3-text-black"><b><?php echo $key['req_exp']; ?></b></td>
                                 <td class="w3-center w3-text-black"><b><?php echo $key['added_date']; ?></b></td>
-                                <td class="w3-center" style="vertical-align: middle;">
+                                <td class="w3-center" >
                                     <div class="btn-group">
                                         <a class="btn btn-sm btn-default" href="<?php echo base_url().'admin/all_jobs/view_applied_candidate_list/'. base64_encode($key['job_id']);?>" title="View Applied Candidates" style=" margin-bottom: 5px; padding: 2px 8px;">
                                             <i class="w3-text-green w3-large fa fa-user"></i> Applied Candidates

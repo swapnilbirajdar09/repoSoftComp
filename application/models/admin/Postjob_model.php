@@ -5,7 +5,7 @@ class Postjob_model extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-
+//--------------fun for save job details to db -------------------------------//
     public function saveJob($data) {
         extract($data);
         //print_r($data);die();
@@ -21,7 +21,7 @@ class Postjob_model extends CI_Model {
             return 500;
         }
     }
-
+//---------------fun for get all jobs details ---------------------//
     public function getAllJobs() {
         $sql = "SELECT * FROM job_tab";
         $result = $this->db->query($sql);
@@ -31,7 +31,7 @@ class Postjob_model extends CI_Model {
             return $result->result_array();
         }
     }
-
+//--------------fun for delete job details--------------------//
     public function deleteJobDetails($job_id) {
         $sql = "DELETE FROM job_tab WHERE job_id = '$job_id'";
         // echo $sql; die();
@@ -42,7 +42,7 @@ class Postjob_model extends CI_Model {
             return 500;
         }
     }
-
+//--------------fun for get applied candidate details--------------------//
     public function getAppliedCandidates($job_id) {
         $sql = "SELECT * FROM candidate_tab WHERE applied_job = '$job_id'";
         $result = $this->db->query($sql);
@@ -52,7 +52,7 @@ class Postjob_model extends CI_Model {
             return $result->result_array();
         }
     }
-
+//----------------------fun for get candidate resume --------------------------------//
     public function getCandidateResume($candidate_id) {
         $sql = "SELECT * FROM candidate_tab WHERE candidate_id = '$candidate_id'";
         $result = $this->db->query($sql);
@@ -66,7 +66,7 @@ class Postjob_model extends CI_Model {
             return $resume;
         }
     }
-
+//---------------------- delete candidate data ---------------------------//
     public function deleteCandidateData($candidate_id){
         //print_r($candidate_id);die();
         $sql = "DELETE FROM candidate_tab WHERE candidate_id = '$candidate_id'";

@@ -24,6 +24,7 @@ class View_services extends CI_Controller {
         $this->load->view('includes/footer');
     }
 
+//------------------fun for update service details--------------//
     public function updateServiceDetails() {
         extract($_POST);
         extract($_FILES);
@@ -110,6 +111,7 @@ class View_services extends CI_Controller {
         }
     }
 
+//----------------fun for delete service details----------------------//
     public function deleteServiceDetails() {
         extract($_GET);
         $result = $this->Manageservice_model->deleteServiceDetails($service_id);
@@ -141,6 +143,7 @@ class View_services extends CI_Controller {
         }
     }
 
+//----------------------fun for featured services---------------------------------//
     public function featuredService() {
         extract($_GET);
         $result = $this->Manageservice_model->featuredService($service_id);
@@ -171,6 +174,9 @@ class View_services extends CI_Controller {
                         </script>';
         }
     }
+
+//----------------------fun for featured services---------------------------------//
+//----------------------fun for unfeatured services---------------------------------//
 
     public function unFeaturedService() {
         extract($_GET);
@@ -203,4 +209,5 @@ class View_services extends CI_Controller {
         }
     }
 
+    //----------------------fun for unfeatured services---------------------------------//
 }

@@ -5,10 +5,14 @@
     <div class="container page_title" style="margin-top: 0px;margin-bottom: 0px;" >
         <div id="err_message"></div>
         <div class="row x_title">
-            <div class="w3-padding">
-                <h3><i class="fa fa-users"></i> Applied Candidate List</h3>
+            <div class="col-md-6">
+                <h3><i class="fa fa-users"></i> Applied Candidate List </h3>
             </div>
+            <a class="btn btn-sm btn-default pull-right w3-margin-top" href="<?php echo base_url(); ?>admin/all_jobs" title="Back To All Job" style="padding: 2px 8px; vertical-align: middle;">
+                <i class="w3-text-black w3-large fa fa-backward"> </i> Back To All Jobs
+            </a>
         </div>
+
         <div class="container x_title" style=" margin-top: 5px;">
 
             <table id="datatable" class="table">

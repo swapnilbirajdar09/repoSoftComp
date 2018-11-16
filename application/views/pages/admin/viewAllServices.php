@@ -1,7 +1,6 @@
 <!-- page content -->
 <div class="right_col" role="main">
     <!-- top tiles -->
-
     <div class="container page_title" style="margin-top: 0px;margin-bottom: 0px;" >
         <div id="err_message"></div>
         <div class="row x_title">
@@ -10,7 +9,6 @@
             </div>
         </div>
         <div class="container x_title" style=" margin-top: 5px;">
-
             <table id="datatable" class="table">
                 <thead>
                     <tr class="theme_bg">
@@ -176,7 +174,7 @@
                                     }
                                 });
                             }
-                            
+
 
                             function featuredService(service_id) {
                                 $.confirm({
@@ -202,7 +200,7 @@
                                     }
                                 });
                             }
-                            
+
                             function unFeaturedService(service_id) {
                                 $.confirm({
                                     title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Do you really want to UnFeatured This Service?</span>',

@@ -6,6 +6,7 @@ class Manageservice_model extends CI_Model {
         parent::__construct();
     }
 
+//--------fun for add service details to db----------------//
     public function addServices($data) {
         extract($data);
 
@@ -21,6 +22,7 @@ class Manageservice_model extends CI_Model {
         }
     }
 
+//------------------fun for get all services---------------------------//
     public function getAllServices() {
         $sql = "SELECT * FROM service_tab";
         $result = $this->db->query($sql);
@@ -31,6 +33,7 @@ class Manageservice_model extends CI_Model {
         }
     }
 
+//------------------fun for update service details--------------------------//
     public function updateServiceDetails($data) {
         extract($data);
         //print_r($data);die();
@@ -44,9 +47,9 @@ class Manageservice_model extends CI_Model {
         }
     }
 
+//---------------fun for delete service details-------------------------------//
     public function deleteServiceDetails($service_id) {
-        //extract($data);
-        //print_r($data);die();
+
         $sql = "DELETE FROM service_tab WHERE service_id = '$service_id'";
         // echo $sql; die();
         $this->db->query($sql);
@@ -57,9 +60,9 @@ class Manageservice_model extends CI_Model {
         }
     }
 
+//--------------fun for featured service -----------------------------------//
     public function featuredService($service_id) {
-        //extract($data);
-        //print_r($data);die();
+
         $sql = "UPDATE service_tab SET is_featured = '1' WHERE service_id = '$service_id'";
         // echo $sql; die();
         $this->db->query($sql);
@@ -70,6 +73,7 @@ class Manageservice_model extends CI_Model {
         }
     }
 
+//------------fun for unfeatured service --------------------------------------//
     public function unFeaturedService($service_id) {
         $sql = "UPDATE service_tab SET is_featured = '0' WHERE service_id = '$service_id'";
         // echo $sql; die();

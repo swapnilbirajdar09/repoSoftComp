@@ -26,7 +26,7 @@ class All_jobs extends CI_Controller {
         $this->load->view('pages/admin/viewAllJobs', $data); //------loading the admin Add Service view
         $this->load->view('includes/footer');
     }
-
+//-----------fun for delete job details------------//
     public function deleteJobDetails() {
         extract($_GET);
         $result = $this->Postjob_model->deleteJobDetails($job_id);
@@ -57,7 +57,7 @@ class All_jobs extends CI_Controller {
                         </script>';
         }
     }
-
+//--------------view applied candidate list---------------------//
     public function view_applied_candidate_list($param = '') {
         if ($param != '') {
             $job_id = base64_decode($param);
@@ -69,7 +69,7 @@ class All_jobs extends CI_Controller {
         $this->load->view('includes/footer');
     }
 
-    //---------------download user resume----------------------//
+    //---------------download candidate resume----------------------//
     public function download($candidate_id = '') {
         $arr = base64_decode($candidate_id);
         $data = explode('|', $arr);
@@ -83,7 +83,7 @@ class All_jobs extends CI_Controller {
     }
 
     // -----------------download function ends---------------//
-
+//--------------fun for delete applied candidate ------------//
     public function deleteCandidateData() {
         extract($_GET);
         $result = $this->Postjob_model->deleteCandidateData($candidate_id);
