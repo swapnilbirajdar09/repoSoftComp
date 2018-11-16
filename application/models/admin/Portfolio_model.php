@@ -61,6 +61,28 @@ class Portfolio_model extends CI_Model {
         }
     }
 
+    // update portfolio function
+    public function editPortfolio($data,$portfolio_id){
+        extract($data);
+        $result = array(
+            'portfolio_name' => $edit_portfolio_name,
+            'portfolio_category' => $edit_portfolio_category,
+            'client_name' => $edit_client_name,
+            'portfolio_description' => $edit_portfolio_description,
+            'portfolio_videos' => $port_videos,
+            'portfolio_link' => $port_links
+        );
+
+        $this->db->where('portfolio_id', $portfolio_id);
+        $this->db->update('portfolio_tab', $result);
+        if($this->db->affected_rows()==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     // delete the selected portfolio
     public function removePortfolio($portfolio_id){
         $sql = "DELETE FROM portfolio_tab WHERE portfolio_id='$portfolio_id'";

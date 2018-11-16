@@ -508,3 +508,42 @@ $.ajax({
  });
 return false;  //stop the actual form post !important!
 });
+
+
+// edit portfolio form submit
+$("#editPortfolio_form").on('submit', function(e) {
+ e.preventDefault(); 
+dataString = $("#editPortfolio_form").serialize();
+$.ajax({
+    url: BASE_URL+"admin/manage_portfolio/editPortfolio", // point to server-side PHP script
+    data: new FormData(this),
+    type: 'POST',
+    contentType: false, // The content type used when sending data to the server.
+    cache: false, // To unable request pages to be cached
+    processData: false,
+    beforeSend: function(){
+      $('#edit_btnsubmit').html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-circle-o-notch fa-spin w3-large"></i> <b>Updating Portfolio...</b></span>');
+    },
+    success: function(data){
+      $('#edit_formOutput').html(data);
+      $('#edit_btnsubmit').html('<button type="submit" title="Save and Add new Portfolio" id="edit_submitForm" class="btn theme_bg">Save Changes</button>');
+
+      window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+         $(this).remove(); 
+       });
+       window.location.reload();
+     }, 1000);
+   },
+   error:function(data){
+     $('#edit_formOutput').html('<div class="alert alert-warning alert-dismissible fade in alert-fixed w3-round"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Failure!</strong> Something went wrong. Please refresh the page and try once again.</div>');
+     $('#edit_btnsubmit').html('<button type="submit" title="Save and Add new Portfolio" id="edit_submitForm" class="btn theme_bg">Save Changes</button>');
+     window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+         $(this).remove(); 
+       });
+     }, 5000);
+   }
+ });
+return false;  //stop the actual form post !important!
+});

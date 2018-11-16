@@ -101,6 +101,45 @@ class Manage_portfolio extends CI_Controller {
         } 
     }
 
+    // edit portfolio function
+    public function editPortfolio(){
+        extract($_POST);
+        $data = $_POST;
+        // print_r($_POST);die();
+        $count=0;
+        $portVid_Arr = array();    
+        $portLink_Arr = array();    
+        
+        // videos json arr
+        if(!empty($edit_port_video)){
+            foreach ($edit_port_video as $key) {
+                $portVid_Arr[]=$key;
+            }
+            $data['port_videos']=json_encode($portVid_Arr);
+        }else{
+            $data['port_videos']='';
+        }
+
+        // links json array
+        if(!empty($edit_port_link) && sizeof($edit_port_link)>0){
+            foreach ($edit_port_link as $key) {
+                $portLink_Arr[]=$key;
+            }
+            $data['port_links']=json_encode($portLink_Arr);
+        }else{
+            $data['port_links']='';
+        }
+        // print_r($data);die();
+        $result = $this->portfolio_model->editPortfolio($data,$portfolio_id);
+
+        if($result){
+            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio was successfully updated.</div>';
+        }
+        else{
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Perhaps you have not changed anything. Portfolio was not updated. </div>';
+        } 
+    }
+
     // function to delete portfolio
     public function removePortfolio(){
         extract($_GET);
