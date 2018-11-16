@@ -14,6 +14,7 @@ class Admin_setting extends CI_Controller {
     // main index function
     public function index() {
         $data['admin_details'] = $this->Setting_model->getAlladmin_details();
+        $data['company_details'] = $this->Setting_model->getAllcompany_details();
         $this->load->view('includes/header');
         $this->load->view('pages/admin/admin_settings',$data); 
          $this->load->view('includes/footer');
@@ -126,4 +127,132 @@ class Admin_setting extends CI_Controller {
           }
 
    }
+
+     //----------this function to update Company Profile-----------------------------//
+     public function add_companyProfile() { 
+         extract($_POST);
+        //print_r($_POST); die();
+         extract($_FILES);
+         $data = $_POST;
+         // print_r($data);die();
+         $allowed_types = ['gif', 'jpg', 'png', 'jpeg', 'JPG', 'GIF', 'JPEG', 'PNG'];
+         $imagePath = '';
+
+          $image_name = $_FILES['company_logo']['name'];
+         
+
+          if (!empty(($_FILES['company_logo']['name']))) {
+              $extension = pathinfo($_FILES['company_logo']['name'], PATHINFO_EXTENSION);
+
+              $_FILES['userFile']['name'] = 'adminImage'.$company_name .'.'. $extension;
+              $_FILES['userFile']['type'] = $_FILES['company_logo']['type'];
+              $_FILES['userFile']['tmp_name'] = $_FILES['company_logo']['tmp_name'];
+              $_FILES['userFile']['error'] = $_FILES['company_logo']['error'];
+              $_FILES['userFile']['size'] = $_FILES['company_logo']['size'];
+
+              $uploadPath = 'assets/images/admin/';  //upload images in images/desktop/ folder
+              $config['upload_path'] = $uploadPath;
+              $config['allowed_types'] = 'gif|jpg|png|jpeg'; //allowed types of images           
+           
+              $this->load->library('upload', $config);  //load upload file config.
+              $this->upload->initialize($config);
+
+              if ($this->upload->do_upload('userFile')) {
+                  $fileData = $this->upload->data();
+                  $imagePath = $uploadPath . $fileData['file_name'];
+              }
+          }
+        //  $office_details = '';
+        //validating image ends---------------------------//
+     // for($i=0; $i< count($office_type); $i++){
+     //      $office_details[] = array(
+     //            'office_type'     => $office_type[$i],
+     //            'office_number'   => $office_number[$i],
+     //            'office_email'    => $office_email[$i],
+     //            'office_address'  => $office_address[$i],
+     //        );
+     //      }
+         // print_r(json_encode($office_details));die();
+          $c_profile['company_name'] = $company_name;
+          $c_profile['company_email'] = $company_email;        
+          $c_profile['company_logo'] = $imagePath;
+         // $c_profile['office_details'] = json_encode($office_details);
+
+          // print_r($office_details);die();
+       
+     $result = $this->Setting_model->add_companyProfile($c_profile);
+     
+    if ($result) {
+      echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong>Company Profile Updated SuccessFully.
+        </div>
+         <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+                });
+                window.location.reload();
+                }, 2000);                
+                </script>';
+          } else {
+
+              echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> Company Profile Updation failed.
+        </div>
+        <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+          }
+   }
+
+   // ---------function to update office address
+    public function add_officeaddress() { 
+      extract($_POST);
+      print_r($_POST);
+      $office_details = '';
+      for($i=0; $i< count($office_type); $i++){
+           $office_details[] = array(
+                'office_type'     => $office_type[$i],
+                'office_number'   => $office_number[$i],
+                'office_email'    => $office_email[$i],
+               'office_address'  => $office_address[$i],
+            );
+          }
+
+           $result = $this->Setting_model->add_officeaddress($office_details);
+     
+    if ($result) {
+      echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong>Company Address Updated SuccessFully.
+        </div>
+         <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+                });
+                window.location.reload();
+                }, 2000);                
+                </script>';
+          } else {
+
+              echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> Company Address Updation failed.
+        </div>
+        <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+          }
+    }
 }
