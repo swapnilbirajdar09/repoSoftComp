@@ -53,4 +53,5 @@ $route['default_controller'] = '';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['admin/all_jobs/view_applied_candidate_list/(:any)'] = "admin/all_jobs/view_applied_candidate_list/$1";
-$route['admin/all_jobs/download(:any)'] = 'admin/all_jobs/download/$1';
+$route['admin/all_jobs/download/(:any)'] = 'admin/all_jobs/download/$1';
+$route['admin/manage_portfolio/portfolio/(:any)'] = "admin/manage_portfolio/portfolio/$1";
