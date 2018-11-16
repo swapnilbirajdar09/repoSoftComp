@@ -38,7 +38,7 @@
                                     <span class=" w3-text-black"><b><?php echo $key['job_name']; ?></b></span>
                                 </td>
                                 <td class="w3-center">
-                                    <p class=" w3-text-black"><?php echo $key['job_description']; ?></p>
+                                    <p class=" w3-text-black"><b><?php echo $key['job_description']; ?></b></p>
                                 </td>
                                 <td class="w3-text-black" width="180px" style="vertical-align: middle;">
                                     <ul>
@@ -60,7 +60,7 @@
                                 <td class="w3-center w3-text-black"><b><?php echo $key['added_date']; ?></b></td>
                                 <td class="w3-center" style="vertical-align: middle;">
                                     <div class="btn-group">
-                                        <a class="btn btn-sm btn-default" href="<?php echo base_url().'admin/view_applied_candidate_list/'. base64_encode($key['job_id']);?>" title="View Applied Candidates" style=" margin-bottom: 5px; padding: 2px 8px;">
+                                        <a class="btn btn-sm btn-default" href="<?php echo base_url().'admin/all_jobs/view_applied_candidate_list/'. base64_encode($key['job_id']);?>" title="View Applied Candidates" style=" margin-bottom: 5px; padding: 2px 8px;">
                                             <i class="w3-text-green w3-large fa fa-user"></i> Applied Candidates
                                         </a><br>                   
                                         <a class="btn btn-sm btn-default" onclick="deleteJobDetails(<?php echo $key['job_id']; ?>)" title="Delete Job" style="padding: 2px 8px;">

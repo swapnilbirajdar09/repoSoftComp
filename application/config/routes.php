@@ -52,5 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = '';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['admin/view_applied_candidate_list/(:any)'] = "admin/view_applied_candidate_list/index/$1";
-$route['admin/view_applied_candidate_list/download(:any)'] = 'admin/view_applied_candidate_list/download/$1';
+$route['admin/all_jobs/view_applied_candidate_list/(:any)'] = "admin/all_jobs/view_applied_candidate_list/$1";
+$route['admin/all_jobs/download(:any)'] = 'admin/all_jobs/download/$1';
