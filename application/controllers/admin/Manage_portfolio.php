@@ -140,11 +140,63 @@ class Manage_portfolio extends CI_Controller {
         } 
     }
 
+    // upload image in gallery portfolio function
+    public function uploadImagePortfolio(){
+        extract($_POST);
+        $data = $_POST;        
+        $filepath = '';
+
+        $file_name = $_FILES['edit_port_image']['name'];
+        if (!empty(($_FILES['edit_port_image']['name']))) {
+        //file validating---------------------------//
+            if ($_FILES['edit_port_image']['size'] > 10485760) {  
+            //for portfolio image
+                echo '<div class="alert alert-warning alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Warning-</strong> Image size exceeds 10MB!</div>';
+                die();
+            }
+            $i=$img_portfolio_count+1;
+            $extension = pathinfo($_FILES['edit_port_image']['name'], PATHINFO_EXTENSION);
+            $_FILES['userFile']['name'] = $img_portfolio_name.'_0'.$img_portfolio_cat.'_'.time().'.'.$extension;
+            $_FILES['userFile']['type'] = $_FILES['edit_port_image']['type'];
+            $_FILES['userFile']['tmp_name'] = $_FILES['edit_port_image']['tmp_name'];
+            $_FILES['userFile']['error'] = $_FILES['edit_port_image']['error'];
+            $_FILES['userFile']['size'] = $_FILES['edit_port_image']['size'];
+
+        $uploadPath = 'assets/images/portfolio/';  //upload images in images/desktop/ folder
+
+        $config['upload_path'] = $uploadPath;
+        $config['overwrite'] = TRUE;
+        $config['allowed_types'] = 'gif|jpg|png'; //allowed types of files
+        $this->load->library('upload', $config);  //load upload file config.
+        $this->upload->initialize($config);
+        $image_path = '';
+
+        if ($this->upload->do_upload('userFile')) {
+            $fileData = $this->upload->data();
+            $filepath = 'assets/images/portfolio/'.$fileData['file_name'];
+        }
+        else{
+           echo  $this->upload->display_errors('<div class="alert alert-warning alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Warning-</strong>', '</div>');
+           die();
+       }
+   }
+
+   $data['filepath'] = $filepath;
+   $result = $this->portfolio_model->uploadImagePortfolio($data,$img_portfolio_id);
+
+   if($result){
+    echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Image uploaded successfully.</div>';
+}
+else{
+    echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Image was not uploaded. </div>';
+} 
+}
+
     // function to delete portfolio
-    public function removePortfolio(){
-        extract($_GET);
-        if(isset($portfolio_id) && $portfolio_id!=''){
-            $result = $this->portfolio_model->removePortfolio($portfolio_id);
+public function removePortfolio(){
+    extract($_GET);
+    if(isset($portfolio_id) && $portfolio_id!=''){
+        $result = $this->portfolio_model->removePortfolio($portfolio_id);
 
         if($result){
             echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio was successfully deleted.</div>';
@@ -152,17 +204,35 @@ class Manage_portfolio extends CI_Controller {
         else{
             echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio was not deleted.</div>';
         } 
+    }
+    else{
+        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio not found.</div>';
+    } 
+}
+
+    // function to delete portfolio image frim gallery
+public function removeImage(){
+    extract($_GET);
+    if(isset($portfolio_id) && $portfolio_id!=''){
+        $result = $this->portfolio_model->removeImage($key,$portfolio_id);
+
+        if($result){
+            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio Image was successfully deleted.</div>';
         }
         else{
-            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio not found.</div>';
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio Image was not deleted.</div>';
         } 
     }
+    else{
+        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio Image not found.</div>';
+    } 
+}
 
     // function to mark portfolios as featured
-    public function markPortfolio(){
-        extract($_GET);
-        if(isset($portfolio_id) && $portfolio_id!=''){
-            $result = $this->portfolio_model->markPortfolio($portfolio_id);
+public function markPortfolio(){
+    extract($_GET);
+    if(isset($portfolio_id) && $portfolio_id!=''){
+        $result = $this->portfolio_model->markPortfolio($portfolio_id);
 
         if($result){
             echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio marked as <b>Featured</b>.</div>';
@@ -170,17 +240,17 @@ class Manage_portfolio extends CI_Controller {
         else{
             echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio was not marked as <b>Featured</b>.</div>';
         } 
-        }
-        else{
-            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio not found.</div>';
-        } 
     }
+    else{
+        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio not found.</div>';
+    } 
+}
 
     // function to unmark portfolio as featured
-    public function unmarkPortfolio(){
-        extract($_GET);
-        if(isset($portfolio_id) && $portfolio_id!=''){
-            $result = $this->portfolio_model->unmarkPortfolio($portfolio_id);
+public function unmarkPortfolio(){
+    extract($_GET);
+    if(isset($portfolio_id) && $portfolio_id!=''){
+        $result = $this->portfolio_model->unmarkPortfolio($portfolio_id);
 
         if($result){
             echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio unmarked as <b>Featured</b>.</div>';
@@ -188,19 +258,19 @@ class Manage_portfolio extends CI_Controller {
         else{
             echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio was not unmarked as <b>Featured</b>.</div>';
         } 
-        }
-        else{
-            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio not found.</div>';
-        } 
     }
+    else{
+        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio not found.</div>';
+    } 
+}
 
     // function to redirect page to selected portfolio
-    public function portfolio($url=''){
-        $portfolio_id=base64_decode($url);
-        $data['categories']=$this->portfolio_model->getAllCategories();
-        $data['portfolioDetail']=$this->portfolio_model->getPortfolioDetail($portfolio_id);
-        $this->load->view('includes/header');
-        $this->load->view('pages/admin/portfolio',$data); 
-        $this->load->view('includes/footer');
-    }
+public function portfolio($url=''){
+    $portfolio_id=base64_decode($url);
+    $data['categories']=$this->portfolio_model->getAllCategories();
+    $data['portfolioDetail']=$this->portfolio_model->getPortfolioDetail($portfolio_id);
+    $this->load->view('includes/header');
+    $this->load->view('pages/admin/portfolio',$data); 
+    $this->load->view('includes/footer');
+}
 }

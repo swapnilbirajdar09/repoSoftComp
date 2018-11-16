@@ -111,20 +111,20 @@ function readURL(input,id) {
 
     var extension = $('#port_image_'+id).val().split('.').pop().toLowerCase();
     // image validation
-        if ($.inArray(extension, ['jpeg', 'png', 'jpg']) == -1) {
-          $('#ImagePreview_'+id).hide();
-          $('#ImagePreview_'+id).attr('src', '');
-          $('#image_error_'+id).html('<i class="fa fa-remove"></i> ERROR: Please Select Image File. (file should end with .jpg/ .png/ .jpeg extension!) ');
-        } else {
-          $('#ImagePreview_'+id).show();
-          $('#image_error_'+id).html('');
-          reader.onload = function (e) {
-            $('#ImagePreview_'+id).attr('src', e.target.result);
-          }
-          reader.readAsDataURL(input.files[0]);
-        }
+    if ($.inArray(extension, ['jpeg', 'png', 'jpg']) == -1) {
+      $('#ImagePreview_'+id).hide();
+      $('#ImagePreview_'+id).attr('src', '');
+      $('#image_error_'+id).html('<i class="fa fa-remove"></i> ERROR: Please Select Image File. (file should end with .jpg/ .png/ .jpeg extension!) ');
+    } else {
+      $('#ImagePreview_'+id).show();
+      $('#image_error_'+id).html('');
+      reader.onload = function (e) {
+        $('#ImagePreview_'+id).attr('src', e.target.result);
       }
+      reader.readAsDataURL(input.files[0]);
     }
+  }
+}
 
 // ----function to read video link and set to iframe for portfolio------//
 function readVideo(input,id) {
@@ -249,7 +249,6 @@ $(document).ready(function () {
   });
   $(wrapper).on("click", ".delete", function (e) {
     e.preventDefault();
-    alert('hii');
     $(this).parent('div').remove();
     x--;
   })
@@ -262,20 +261,20 @@ function edit_readURL(input,id) {
 
     var extension = $('#edit_port_image_'+id).val().split('.').pop().toLowerCase();
     // image validation
-        if ($.inArray(extension, ['jpeg', 'png', 'jpg']) == -1) {
-          $('#edit_ImagePreview_'+id).hide();
-          $('#edit_ImagePreview_'+id).attr('src', '');
-          $('#edit_image_error_'+id).html('<i class="fa fa-remove"></i> ERROR: Please Select Image File. (file should end with .jpg/ .png/ .jpeg extension!) ');
-        } else {
-          $('#edit_ImagePreview_'+id).show();
-          $('#edit_image_error_'+id).html('');
-          reader.onload = function (e) {
-            $('#edit_ImagePreview_'+id).attr('src', e.target.result);
-          }
-          reader.readAsDataURL(input.files[0]);
-        }
+    if ($.inArray(extension, ['jpeg', 'png', 'jpg']) == -1) {
+      $('#edit_ImagePreview_'+id).hide();
+      $('#edit_ImagePreview_'+id).attr('src', '');
+      $('#edit_image_error_'+id).html('<i class="fa fa-remove"></i> ERROR: Please Select Image File. (file should end with .jpg/ .png/ .jpeg extension!) ');
+    } else {
+      $('#edit_ImagePreview_'+id).show();
+      $('#edit_image_error_'+id).html('');
+      reader.onload = function (e) {
+        $('#edit_ImagePreview_'+id).attr('src', e.target.result);
       }
+      reader.readAsDataURL(input.files[0]);
     }
+  }
+}
 
 // ----function to read video link and set to iframe for portfolio------//
 function edit_readVideo(input,id) {
@@ -455,8 +454,8 @@ $.ajax({
        });
        window.location.reload();
      }, 1000);
-   },
-   error:function(data){
+    },
+    error:function(data){
      $('#formOutput').html('<div class="alert alert-warning alert-dismissible fade in alert-fixed w3-round"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Failure!</strong> Something went wrong. Please refresh the page and try once again.</div>');
      $('#btnsubmit').html('<button type="submit" title="Save and Add new Portfolio" id="submitForm" class="btn theme_bg">Save new Portfolio</button>');
      window.setTimeout(function() {
@@ -475,8 +474,8 @@ return false;  //stop the actual form post !important!
 // upload image script for edit portfolio
 $("#uploadImageForm").on('submit', function(e) {
  e.preventDefault(); 
-dataString = $("#uploadImageForm").serialize();
-$.ajax({
+ dataString = $("#uploadImageForm").serialize();
+ $.ajax({
     url: BASE_URL+"admin/manage_portfolio/uploadImagePortfolio", // point to server-side PHP script
     data: new FormData(this),
     type: 'POST',
@@ -496,8 +495,8 @@ $.ajax({
        });
        window.location.reload();
      }, 1000);
-   },
-   error:function(data){
+    },
+    error:function(data){
      $('#edit_formOutput').html('<div class="alert alert-warning alert-dismissible fade in alert-fixed w3-round"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Failure!</strong> Something went wrong. Please refresh the page and try once again.</div>');
      $('#uploadImage').html('Upload Image');
      window.setTimeout(function() {
@@ -514,8 +513,8 @@ return false;  //stop the actual form post !important!
 // edit portfolio form submit
 $("#editPortfolio_form").on('submit', function(e) {
  e.preventDefault(); 
-dataString = $("#editPortfolio_form").serialize();
-$.ajax({
+ dataString = $("#editPortfolio_form").serialize();
+ $.ajax({
     url: BASE_URL+"admin/manage_portfolio/editPortfolio", // point to server-side PHP script
     data: new FormData(this),
     type: 'POST',
@@ -535,8 +534,8 @@ $.ajax({
        });
        window.location.reload();
      }, 1000);
-   },
-   error:function(data){
+    },
+    error:function(data){
      $('#edit_formOutput').html('<div class="alert alert-warning alert-dismissible fade in alert-fixed w3-round"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Failure!</strong> Something went wrong. Please refresh the page and try once again.</div>');
      $('#edit_btnsubmit').html('<button type="submit" title="Save and Add new Portfolio" id="edit_submitForm" class="btn theme_bg">Save Changes</button>');
      window.setTimeout(function() {
@@ -548,3 +547,50 @@ $.ajax({
  });
 return false;  //stop the actual form post !important!
 });
+
+// reove image from portfolio gallery
+function removeImage(key,portfolio_id) {
+  $.confirm({
+    title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Do you really want to remove this Image?</span>',
+    content: '',
+    type: 'red',
+    buttons: {
+      confirm: function () {
+        $.ajax({
+          type: "GET",
+          url: BASE_URL + "admin/manage_portfolio/removeImage",
+          data: {
+            key: key,
+            portfolio_id: portfolio_id
+          },
+          cache: false,
+          beforeSend: function(){
+            $('#imgBtn_'+key).html('<i class="fa fa-circle-o-notch fa-spin w3-large"></i>');
+          },
+          success: function(data){
+            $('#edit_formOutput').html(data);
+            $('#imgBtn_'+key).html('<i class="fa fa-times"></i>');
+
+            window.setTimeout(function() {
+             $(".alert").fadeTo(500, 0).slideUp(500, function(){
+               $(this).remove(); 
+             });
+             window.location.reload();
+           }, 1000);
+          },
+          error:function(data){
+           $('#edit_formOutput').html('<div class="alert alert-warning alert-dismissible fade in alert-fixed w3-round"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Failure!</strong> Something went wrong. Please refresh the page and try once again.</div>');
+           $('#imgBtn_'+key).html('<i class="fa fa-times"></i>');
+           window.setTimeout(function() {
+             $(".alert").fadeTo(500, 0).slideUp(500, function(){
+               $(this).remove(); 
+             });
+           }, 5000);
+         }
+       });
+      },
+      cancel: function () {
+      }
+    }
+  });
+}

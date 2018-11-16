@@ -64,7 +64,7 @@
                     <span class="w3-text-red w3-small" id="edit_video_error_1"></span>
                   </div>
                   <div class="w3-col l12 w3-margin-top">
-                    <iframe src="<?php echo $vidArr[0]; ?>" class="w3-border" style="width: 100%;height: 120px;display:none" id="edit_portVideoPreview_1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe src="<?php echo $vidArr[0]; ?>" class="w3-border" style="width: 100%;height: 120px;" id="edit_portVideoPreview_1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                   </div>
                 </div>
                 <div class="w3-col l12" id="edit_addedmore_vidDiv">
@@ -75,6 +75,7 @@
                   ?>
                   <div>
                   <div class="col-md-12 col-xs-12 w3-padding-small" style="border:1px dotted">
+                    <a style="padding:1px" class="delete btn w3-text-red w3-right w3-small" title="remove link"><i class="fa fa-remove"></i></a>
                     <div class="w3-col l12 ">
                       <label>Embed Video (optional):</label>
                       <a data-toggle="modal" title="Help for video links" data-target="#edit_embedVidModal" onclick="openHelp('edit_embedVidModal')" style="padding: 0;margin: 0" class="btn w3-large w3-text-yellow fa fa-question-circle "></a>
@@ -82,7 +83,7 @@
                       <span class="w3-text-red w3-small" id="edit_video_error_<?php echo $vidCount; ?>"></span>
                     </div>
                     <div class="w3-col l12 w3-margin-top">
-                      <iframe src="<?php echo $vidArr[$i]; ?>" class="w3-border" style="width: 100%;height: 120px;display:none" id="edit_portVideoPreview_<?php echo $vidCount; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                      <iframe src="<?php echo $vidArr[$i]; ?>" class="w3-border" style="width: 100%;height: 120px;" id="edit_portVideoPreview_<?php echo $vidCount; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                   </div>
                 </div>
@@ -236,13 +237,13 @@
       <div class="container">        
         <div class="w3-col l12 w3-padding w3-small" id="portfolioGallery">
           <?php 
-          $imageArr=json_decode($portfolioDetail[0]['portfolio_images']);
+          $imageArr=json_decode($portfolioDetail[0]['portfolio_images'],TRUE);
           foreach ($imageArr as $key=>$value) {
             ?>
             <div class="col-md-3 col-xs-12 w3-margin-bottom">            
               <div class="w3-col l12 w3-card-2 w3-opacity w3-hover-opacity-off" style="height: 200px;background-image: url('<?php echo base_url(); ?><?php echo $value; ?>');background-repeat: no-repeat;background-position: center;background-size: contain;">
                 <div class="w3-col l2 s2 theme_bg" style="height: 40px;z-index: 1;position: absolute;border-bottom-right-radius:100%;">
-                  <a onclick="removeImage(<?php echo $key; ?>,<?php echo $portfolioDetail[0]['portfolio_id']; ?>)" class="w3-large w3-text-lightgrey btn" style="padding:0 0 0 8px" title="delete image"><i class="fa fa-times"></i></a>
+                  <a onclick="removeImage(<?php echo $key; ?>,<?php echo $portfolioDetail[0]['portfolio_id']; ?>)" class="w3-large w3-text-lightgrey btn" id="imgBtn_<?php echo $key; ?>" style="padding:0 0 0 8px" title="delete image"><i class="fa fa-times"></i></a>
                 </div>
               </div>            
             </div>
@@ -256,6 +257,10 @@
              <div class="col-md-12 col-xs-12 w3-padding-small" style="border:1px dotted">
               <div class="w3-col l6 w3-margin-bottom">
                 <form id="uploadImageForm" enctype="multipart/form-data">
+                  <input type="hidden" name="img_portfolio_name" value="<?php echo $portfolioDetail[0]['portfolio_name']; ?>">
+                  <input type="hidden" name="img_portfolio_id" value="<?php echo $portfolioDetail[0]['portfolio_id']; ?>">
+                  <input type="hidden" name="img_portfolio_cat" value="<?php echo $portfolioDetail[0]['portfolio_category']; ?>">
+                  <input type="hidden" name="img_portfolio_count" value="<?php echo count(json_decode($portfolioDetail[0]['portfolio_images'])); ?>">
                  <label>Portfolio Image: <font color ="red"><span id ="simage_star">*</span></font></label>
                  <input type="file" name="edit_port_image" id="edit_port_image_1" class="w3-input w3-border" onchange="edit_readURL(this,1);" style="padding:5px" required>
                  <span class="w3-text-red w3-small" id="edit_image_error_1"></span>

@@ -83,11 +83,64 @@ class Portfolio_model extends CI_Model {
         }
     }
 
+    // upload portfolio image
+    public function uploadImagePortfolio($data,$portfolio_id){
+        extract($data);
+        $currentImages='';
+        $sql = "SELECT portfolio_images FROM portfolio_tab WHERE portfolio_id='$portfolio_id'";
+        $result_arr = $this->db->query($sql);
+        foreach ($result_arr->result_array() as $key) {
+            $currentImages = $key['portfolio_images'];
+        }
+
+        $imgArr=json_decode($currentImages);
+        array_push($imgArr,$filepath);
+
+        $result = array(
+            'portfolio_images' => json_encode($imgArr)
+        );
+
+        $this->db->where('portfolio_id', $portfolio_id);
+        $this->db->update('portfolio_tab', $result);
+        if($this->db->affected_rows()==1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     // delete the selected portfolio
     public function removePortfolio($portfolio_id){
         $sql = "DELETE FROM portfolio_tab WHERE portfolio_id='$portfolio_id'";
         $result = $this->db->query($sql);
         if($this->db->affected_rows()>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    // delete the selected portfolio image from gallery
+    public function removeImage($key,$portfolio_id){
+        $sql = "SELECT portfolio_images FROM portfolio_tab WHERE portfolio_id='$portfolio_id'";
+        $result_arr = $this->db->query($sql);
+        foreach ($result_arr->result_array() as $row) {
+            $currentImages = $row['portfolio_images'];
+        }
+
+        $imgArr=json_decode($currentImages);
+        // unset key value
+        unset($imgArr[$key]);
+        $imgArr = array_values($imgArr);
+        $result = array(
+            'portfolio_images' => json_encode($imgArr)
+        );
+
+        $this->db->where('portfolio_id', $portfolio_id);
+        $this->db->update('portfolio_tab', $result);
+        if($this->db->affected_rows()==1){
             return true;
         }
         else{
