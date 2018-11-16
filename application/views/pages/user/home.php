@@ -64,6 +64,46 @@
           </div>
         </div>
       </section>
+      <!-- <section class="section parallax-container bg-light-gray prlx-overlay-1" data-parallax-img="<?php echo base_url(); ?>assets/user/images/home-classic-corp-bg-01.jpg">
+  <div class="parallax-content">
+    <div class="container">
+      <div class="row equalize sm-equalize-auto">
+        <div class="col-md-6 col-sm-12 wow fadeInLeft">
+          <div class="display-table width-100 heidth-100">
+            <div class="display-table-cell vertical-align-middle"><span class="text-medium text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block">Guarantee of a great business website</span>
+              <h5 class="text-font-sec text-extra-dark-gray">Unique websites and online apps for your business</h5>
+              <p class="text-extra-dark-gray">MService is always ready to help you create an attractive website that matches your business goals. We create a custom mockup of each design, for each page and then we make revisions to your design until it's exactly the way you want it. This is a true custom design, and unlike many others, our designs are an exact match for your brand.</p>
+              <div class="offset-30px-tb">
+                <ul class="no-inset list-style-4 text-extra-dark-gray">
+                  <li>Stunning and easy-to-understand UI with incredible animations</li>
+                  <li>Innovative design & clear code built in every website</li>
+                  <li>You can introduce your services with ready-made pages</li>
+                  <li>Discover lots of creative inspiration for your projects</li>
+                  <li>Improved performance and great customization</li>
+                </ul>
+              </div><a class="btn btn-dark-gray btn-small text-extra-small" href="services-modern.html">View more info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<section class="no-inset wow fadeIn bg-extra-dark-gray">
+  <div class="container-fluid no-inset">
+    <div class="row equalize no-margin">
+      <div class="col-md-6 col-sm-12 col-xs-12 display-table wow fadeInLeft last-paragraph-no-margin sm-text-center">
+        <div class="display-table-cell vertical-align-middle inset-fifteen-all md-padding-ten-all sm-padding-90px-all xs-text-center xs-no-padding-lr xs-padding-40px-tb"><span class="text-medium offset-10px-bottom display-block text-font-sec">Offering creative services of the highest quality</span>
+          <h4 class="text-font-sec text-light-gray">The leading provider of worthy digital experiences since 1999</h4>
+          <p class="text-extra-large width-85 md-width-100">Our team delivers top-notch digital solutions for our clients to maintain their competitive advantage online.</p>
+          <p class="width-85 md-width-100">
+          All kinds of companies worldwide have been gaining the advantage of collaborating with us since our establishment. We work with owners and entrepreneurs to help them build a sustainable business through data-driven creative marketing, branding, web design, and development that are all aimed at moving the revenue needle. We’re a true business partner and our dedicated industry practice can help you define and meet specific business goals.</p><a class="btn btn-small offset-35px-top btn-white" href="about-us-modern.html">Read more</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12 position-relative sm-height-500px xs-height-350px cover-background wow fadeInRight" style="background-image: url('<?php echo base_url(); ?>assets/user/images/home-classic-one-page-bg-03.jpg');"></div>
+    </div>
+  </div>
+</section>
 <section class="wow fadeIn" id="about">
   <div class="container">
     <div class="row">
@@ -90,196 +130,9 @@
     </div>
   </div>
 </section>
-<section class="section parallax-container bg-light-gray prlx-overlay-1" data-parallax-img="<?php echo base_url(); ?>assets/user/images/home-classic-corp-bg-01.jpg">
-  <div class="parallax-content">
-    <div class="container">
-      <div class="row equalize sm-equalize-auto">
-        <div class="col-md-6 col-sm-12 wow fadeInLeft">
-          <div class="display-table width-100 heidth-100">
-            <div class="display-table-cell vertical-align-middle"><span class="text-medium text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block">Guarantee of a great business website</span>
-              <h5 class="text-font-sec text-extra-dark-gray">Unique websites and online apps for your business</h5>
-              <p class="text-extra-dark-gray">MService is always ready to help you create an attractive website that matches your business goals. We create a custom mockup of each design, for each page and then we make revisions to your design until it's exactly the way you want it. This is a true custom design, and unlike many others, our designs are an exact match for your brand.</p>
-              <div class="offset-30px-tb">
-                <ul class="no-inset list-style-4 text-extra-dark-gray">
-                  <li>Stunning and easy-to-understand UI with incredible animations</li>
-                  <li>Innovative design & clear code built in every website</li>
-                  <li>You can introduce your services with ready-made pages</li>
-                  <li>Discover lots of creative inspiration for your projects</li>
-                  <li>Improved performance and great customization</li>
-                </ul>
-              </div><a class="btn btn-dark-gray btn-small text-extra-small" href="services-modern.html">View more info</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Fluid 2 blocks 1 image-->
-<section class="no-inset wow fadeIn">
-  <div class="container-fluid">
-    <div class="row equalize xs-equalize-auto">
-      <div class="col-md-4 col-sm-6 col-xs-12 display-table bg-black feature-box-1 xs-no-padding-lr xs-text-center">
-        <div class="display-table-cell vertical-align-middle inset-eighteen-all md-padding-ten-all xs-padding-30px-tb xs-padding-20px-lr"><span class="text-font-sec text-medium-gray offset-10px-bottom display-block">Designing powerful websites</span>
-          <h6 class="text-light-gray text-font-sec">Professional web design and development services</h6>
-          <p>Our company offers high-quality web design services as well as development assistance so there is no need to use several web design companies. We can build any type or size of website you require, from small custom designed websites to highly advanced online stores.</p><a class="btn btn-transparent-light-gray btn-small border-radius-4" href="services-modern.html">Read More</a>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12 display-table bg-extra-dark-gray feature-box-1 xs-no-padding-lr xs-text-center">
-        <div class="display-table-cell vertical-align-middle inset-eighteen-all md-padding-ten-all xs-padding-30px-tb xs-padding-20px-lr"><span class="text-font-sec text-medium-gray offset-10px-bottom display-block">First class branding solutions</span>
-          <h6 class="text-light-gray text-font-sec">Outstanding branding services for your success</h6>
-          <p>We are focused on assisting brands and companies simplify and clarify who they are and what they stand for. From strategy to activation, we collaborate with our partners to craft the content, moments, and messages that build modern brands, and express them clearly.</p><a class="btn btn-transparent-light-gray btn-small border-radius-4" href="services-modern.html">Read More</a>
-        </div>
-      </div>
-      <div class="col-md-4 c col-sm-12 col-xs-12 cover-background feature-box-1 xs-height-350px" style="background: url('<?php echo base_url(); ?>assets/user/images/service-simple-3-900x650.jpg')"></div>
-    </div>
-  </div>
-</section>
-<section class="wow fadeIn">
-  <div class="container">
-    <div class="row equalize sm-equalize-auto">
-      <div class="col-lg-6 col-md-6 col-sm-10 sm-center-col col-xs-12 display-table wow fadeIn last-paragraph-no-margin">
-        <div class="display-table-cell vertical-align-middle inset-seventeen-right sm-no-padding-lr sm-text-center sm-padding-30px-bottom">
-          <h6 class="text-extra-dark-gray text-medium width-90 text-font-sec sm-width-100">Offering top-notch and affordable services</h6>
-          <p class="width-90 offset-30px-bottom sm-width-100">MService is an award-winning creative agency, situated in Los Angeles, CA. We blend intelligent creativity with a sincere collaborative approach, consistently delivering powerful results for our clients based on the latest technologies. Our services include web design, branding, and marketing services provided on a regular basis.</p>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-10 sm-center-col col-xs-12 display-table sm-no-offset-bottom wow fadeIn">
-        <div class="display-table-cell vertical-align-middle">
-          <div class="skillbar-bar-main skillbar-bar-style1">
-            <div class="skillbar offset-45px-bottom" data-percent="25%"><span class="skill-bar-text text-extra-small text-uppercase text-dark-gray">MARKETING </span>
-              <p class="skillbar-bar"></p><span class="skill-bar-percent text-small"></span>
-            </div>
-            <div class="skillbar offset-45px-bottom" data-percent="50%"><span class="skill-bar-text text-extra-small text-uppercase text-dark-gray">Web Design</span>
-              <p class="skillbar-bar"></p><span class="skill-bar-percent text-small"></span>
-            </div>
-            <div class="skillbar offset-45px-bottom" data-percent="90%"><span class="skill-bar-text text-extra-small text-uppercase text-dark-gray">PHOTOGRAPHY</span>
-              <p class="skillbar-bar"></p><span class="skill-bar-percent text-small"></span>
-            </div>
-            <div class="skillbar" data-percent="25%"><span class="skill-bar-text text-extra-small text-uppercase text-dark-gray">COPYWRITING </span>
-              <p class="skillbar-bar"></p><span class="skill-bar-percent text-small"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="no-inset wow fadeIn bg-extra-dark-gray">
-  <div class="container-fluid no-inset">
-    <div class="row equalize no-margin">
-      <div class="col-md-6 col-sm-12 col-xs-12 display-table wow fadeInLeft last-paragraph-no-margin sm-text-center">
-        <div class="display-table-cell vertical-align-middle inset-fifteen-all md-padding-ten-all sm-padding-90px-all xs-text-center xs-no-padding-lr xs-padding-40px-tb"><span class="text-medium offset-10px-bottom display-block text-font-sec">Offering creative services of the highest quality</span>
-          <h4 class="text-font-sec text-light-gray">The leading provider of worthy digital experiences since 1999</h4>
-          <p class="text-extra-large width-85 md-width-100">Our team delivers top-notch digital solutions for our clients to maintain their competitive advantage online.</p>
-          <p class="width-85 md-width-100">
-          All kinds of companies worldwide have been gaining the advantage of collaborating with us since our establishment. We work with owners and entrepreneurs to help them build a sustainable business through data-driven creative marketing, branding, web design, and development that are all aimed at moving the revenue needle. We’re a true business partner and our dedicated industry practice can help you define and meet specific business goals.</p><a class="btn btn-small offset-35px-top btn-white" href="about-us-modern.html">Read more</a>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12 col-xs-12 position-relative sm-height-500px xs-height-350px cover-background wow fadeInRight" style="background-image: url('<?php echo base_url(); ?>assets/user/images/home-classic-one-page-bg-03.jpg');"></div>
-    </div>
-  </div>
-</section>
-<section class="wow fadeIn">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
-        <div class="text-font-sec text-medium-gray offset-10px-bottom text-uppercase text-small">How we work</div>
-        <h5 class="text-font-sec text-extra-dark-gray">We apply a detailed approach to every project to achieve the best result</h5>
-      </div>
-    </div>
-    <div class="row">
-      <!-- Tabs-->
-      <div class="col-md-12 col-sm-12 center-col text-center no-inset tab-style1" id="animated-tab2">
-        <ul class="nav nav-tabs offset-50px-bottom xs-no-offset-bottom">
-          <li class="nav active"><a class="xs-min-height-inherit xs-no-padding" href="#tab6_sec1" data-toggle="tab"><span><i class="linearicons-laptop-phone icon-medium text-medium-gray offset-10px-bottom display-block"></i></span><span class="text-font-sec text-medium-gray text-uppercase text-small">01. Consultation</span></a></li>
-          <li class="nav"><a class="xs-min-height-inherit xs-no-padding" href="#tab6_sec2" data-toggle="tab"><span><i class="linearicons-diamond4 icon-medium text-medium-gray offset-10px-bottom display-block"></i></span><span class="text-font-sec text-medium-gray text-uppercase text-small">02. Creating the design</span></a></li>
-          <li class="nav"><a class="xs-min-height-inherit xs-no-padding" href="#tab6_sec3" data-toggle="tab"><span><i class="linearicons-bag icon-medium text-medium-gray offset-10px-bottom display-block"></i></span><span class="text-font-sec text-medium-gray text-uppercase text-small">03. Developing the website</span></a></li>
-          <li class="nav"><a class="xs-min-height-inherit xs-no-padding" href="#tab6_sec4" data-toggle="tab"><span><i class="linearicons-smile icon-medium text-medium-gray offset-10px-bottom display-block"></i></span><span class="text-font-sec text-medium-gray text-uppercase text-small">04. Testing</span></a></li>
-        </ul>
-        <div class="tab-content">
-          <div class="center-col tab-pane fade in active" id="tab6_sec1">
-            <div class="tab-pane fade in">
-              <div class="equalize sm-equalize-auto">
-                <div class="col-md-4 text-left sm-offset-30px-bottom"><img src="<?php echo base_url(); ?>assets/user/images/service-classic-2-900x650.jpg" alt=""></div>
-                <div class="col-md-4 text-left sm-offset-30px-bottom">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">01. Consultation</span><span class="text-font-sec text-medium-gray text-medium">Each website we design starts with an initial discussion with our client to find out what he/she exactly wants for the website.</span></div>
-                  </div>
-                </div>
-                <div class="col-md-4 text-left">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">We deliver the best results</span>
-                      <p>When you work with us, you will surely have a meticulously crafted and visually attractive website.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read more</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="center-col tab-pane fade in" id="tab6_sec2">
-            <div class="tab-pane fade in">
-              <div class="equalize sm-equalize-auto">
-                <div class="col-md-4 text-left sm-offset-30px-bottom"><img src="<?php echo base_url(); ?>assets/user/images/service-classic-3-900x650.jpg" alt=""></div>
-                <div class="col-md-4 text-left sm-offset-30px-bottom">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">02. Creating the design</span><span class="text-font-sec text-medium-gray text-medium">After consulting with you, our designers create the concept of your future website, which can be changed and modified.</span></div>
-                  </div>
-                </div>
-                <div class="col-md-4 text-left">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">Providing the best services</span>
-                      <p>MService team offers our clients high-quality designs and creative branding and marketing campaigns since day one.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="center-col tab-pane fade in" id="tab6_sec3">
-            <div class="tab-pane fade in">
-              <div class="equalize sm-equalize-auto">
-                <div class="col-md-4 text-left sm-offset-30px-bottom"><img src="<?php echo base_url(); ?>assets/user/images/service-classic-4-900x650.jpg" alt=""></div>
-                <div class="col-md-4 text-left sm-offset-30px-bottom">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">03. Developing the website</span><span class="text-font-sec text-medium-gray text-medium">When the design concept is done, our developers begin to work on the development of the website's final look.</span></div>
-                  </div>
-                </div>
-                <div class="col-md-4 text-left">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">Outstanding creative solutions</span>
-                      <p>MService’s products and services can easily help you improve the web image of your company and lead you to success.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="center-col tab-pane fade in" id="tab6_sec4">
-            <div class="tab-pane fade in">
-              <div class="equalize sm-equalize-auto">
-                <div class="col-md-4 text-left sm-offset-30px-bottom"><img src="<?php echo base_url(); ?>assets/user/images/service-classic-5-900x650.jpg" alt=""></div>
-                <div class="col-md-4 text-left sm-offset-30px-bottom">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">04. Testing</span><span class="text-font-sec text-medium-gray text-medium">Finally, our QA experts test your website to ensure its correct work and prepare it for later installation and usage.</span></div>
-                  </div>
-                </div>
-                <div class="col-md-4 text-left">
-                  <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                    <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">Rapid growth</span>
-                      <p>Developing and growing is vital to success and we prove it with our 5 new offices opened worldwide during the last 3 years.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read More</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
 <section class="section parallax-container bg-extra-dark-gray text-center" data-parallax-img="<?php echo base_url(); ?>assets/user/images/home-corporate-bg-02.jpg">
   <div class="parallax-content">
     <div class="container-fluid position-relative">
@@ -297,51 +150,40 @@
   </div>
 </section>
 
-<section class="wow fadeIn">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-12 sm-padding-twelve-left sm-offset-ten-bottom xs-offset-50px-bottom xs-padding-15px-left wow fadeInRight">
-        <div class="feature-box-5 position-relative"><i class="linearicons-laptop text-medium-gray icon-extra-medium top-6"></i>
-          <div class="feature-content">
-            <h6 class="display-block text-extra-dark-gray text-medium text-font-sec no-offset-bottom timer xs-offset-5px-bottom" data-speed="3000" data-to="200">350</h6><span class="text-small text-uppercase position-relative">Finished Projects</span>
+<section class="wow fadeIn" style="padding-bottom: 0">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center sm-offset-30px-bottom wow fadeInRight">
+              <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
+                <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-laptop icon-medium text-medium-gray offset-15px-bottom"></i>
+                  <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="100">100</h6><span>Finished Projects</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center sm-offset-30px-bottom wow fadeInRight" data-wow-delay="0.2s">
+              <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
+                <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-landscape icon-medium text-medium-gray offset-15px-bottom"></i>
+                  <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="40">40</h6><span>New Ideas</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center xs-offset-30px-bottom wow fadeInRight" data-wow-delay="0.4s">
+              <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
+                <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-group-work icon-medium text-medium-gray offset-15px-bottom"></i>
+                  <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="60">60</h6><span>Satisfied Customers</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInRight" data-wow-delay="0.6s">
+              <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
+                <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-laptop-phone icon-medium text-medium-gray offset-15px-bottom"></i>
+                  <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="999">999</h6><span>Solved Issues </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12 sm-padding-twelve-left sm-offset-ten-bottom xs-offset-50px-bottom xs-padding-15px-left wow fadeInRight" data-wow-delay="0.2s">
-        <div class="feature-box-5 position-relative"><i class="linearicons-landscape text-medium-gray icon-extra-medium top-6"></i>
-          <div class="feature-content">
-            <h6 class="display-block text-extra-dark-gray text-medium text-font-sec no-offset-bottom timer xs-offset-5px-bottom" data-speed="3000" data-to="780">780</h6><span class="text-small text-uppercase position-relative">New Ideas</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12 sm-padding-twelve-left xs-offset-50px-bottom xs-padding-15px-left wow fadeInRight" data-wow-delay="0.4s">
-        <div class="feature-box-5 position-relative"><i class="linearicons-group-work text-medium-gray icon-extra-medium top-6"></i>
-          <div class="feature-content">
-            <h6 class="display-block text-extra-dark-gray text-medium text-font-sec no-offset-bottom timer xs-offset-5px-bottom" data-speed="3000" data-to="999">850</h6><span class="text-small text-uppercase position-relative">Satisfied Customers</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12 sm-padding-twelve-left xs-padding-15px-left wow fadeInRight" data-wow-delay="0.6s">
-        <div class="feature-box-5 position-relative"> <i class="linearicons-laptop-phone text-medium-gray icon-extra-medium top-6"> </i>
-          <div class="feature-content">
-            <h6 class="display-block text-extra-dark-gray text-medium text-font-sec no-offset-bottom timer xs-offset-5px-bottom" data-speed="3000" data-to="400">650</h6><span class="text-small text-uppercase position-relative">Solved Issues</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section parallax-container wow fadeIn bg-black" data-parallax-img="<?php echo base_url(); ?>assets/user/images/small-business-parallax-1-1920x1200.jpg">
-  <div class="parallax-content">
-    <div class="container position-relative">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 text-center center-col"><a class="popup-youtube" href="https://vimeo.com/51430433"><img class="width-30" src="images/icon-play.png" alt=""></a>
-          <h5 class="text-font-sec text-white">#1 Creative Company </h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 <section class="wow fadeIn inset-90px-top sm-padding-50px-top xs-padding-30px-top" id="work">
   <div class="container">
@@ -532,27 +374,43 @@
                             </div>
                           </div>
                         </section>
-                        <section class="bg-light-gray wow fadeIn">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
-                                <div class="text-font-sec text-medium-gray offset-5px-bottom text-uppercase text-small">Testimonials</div>
-                                <h5 class="text-font-sec text-extra-dark-gray">Take a look at what our clients say</h5>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-md-4 col-sm-4 col-xs-12 sm-offset-four-bottom text-center xs-offset-twelve-bottom wow fadeInRight last-paragraph-no-margin"><img class="border-radius-100 width-30 offset-30px-bottom" src="<?php echo base_url(); ?>assets/user/images/blog-post-layout-author-01.png" alt="">
-                                <p class="width-90 center-col">I was looking for the most experienced web designers and developers. I knew you had the best creative team I could probably need.</p><i class="fa fa-quote-left icon-small text-secondary display-block offset-30px-top offset-15px-bottom"></i><span class="text-extra-dark-gray text-medium text-small text-uppercase display-block text-line-height-10 text-font-sec">Jane Peterson</span><span class="text-light-gray2 text-extra-small text-uppercase text-medium-gray">Entrepreneur</span>
-                              </div>
-                              <div class="col-md-4 col-sm-4 col-xs-12 sm-offset-four-bottom text-center xs-offset-twelve-bottom wow fadeInRight last-paragraph-no-margin" data-wow-delay="0.2s"><img class="border-radius-100 width-30 offset-30px-bottom" src="images/blog-post-layout-author-02.png" alt="">
-                                <p class="width-90 center-col">MService has the best branding solutions! Thanks to a new branding strategy they developed for me, my products became more recognizable.</p><i class="fa fa-quote-left icon-small text-secondary display-block offset-30px-top offset-15px-bottom"></i><span class="text-extra-dark-gray text-medium text-small text-uppercase display-block text-line-height-10 text-font-sec">Sam Wilson</span><span class="text-light-gray2 text-extra-small text-uppercase text-medium-gray">Sales Manager</span>
-                              </div>
-                              <div class="col-md-4 col-sm-4 col-xs-12 sm-offset-four-bottom text-center wow fadeInRight last-paragraph-no-margin" data-wow-delay="0.4s"><img class="border-radius-100 width-30 offset-30px-bottom" src="<?php echo base_url(); ?>assets/user/images/blog-post-layout-author-04.png" alt="">
-                                <p class="width-90 center-col">I like MService, they are excellent in everything they do! I enjoyed the energy and the professional support the whole team gave me.</p><i class="fa fa-quote-left icon-small text-secondary display-block offset-30px-top offset-15px-bottom"></i><span class="text-extra-dark-gray text-medium text-small text-uppercase display-block text-line-height-10 text-font-sec">Catherine Lee</span><span class="text-light-gray2 text-extra-small text-uppercase text-medium-gray">Artist</span>
-                              </div>
-                            </div>
-                          </div>
-                        </section>
+                        <section class="bg-light-gray wow fadeIn" id="people">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
+              <div class="text-font-sec text-medium-gray offset-5px-bottom text-uppercase text-small">Testimonials</div>
+              <h5 class="text-font-sec text-extra-dark-gray">Take a look at what our clients say</h5>
+            </div>
+          </div>
+          <div class="row position-relative">
+            <div class="swiper-container swiper-pagination-bottom black-move blog-slider swiper-three-slides">
+              <div class="swiper-wrapper">
+                <div class="col-md-4 col-sm-6 col-xs-12 swiper-slide sm-offset-four-bottom">
+                  <div class="offset-half-all bg-white box-shadow-light text-center inset-fourteen-all xs-padding-30px-all"><img class="border-radius-100 width-40 offset-25px-bottom sm-offset-15px-bottom" src="<?php echo base_url(); ?>assets/user/images/home-corporate-testimonial-01.jpg" alt="">
+                    <p class="sm-offset-15px-bottom xs-offset-20px-bottom">I was looking for the most experienced web designers and developers. I knew you had the best creative team I could probably need.</p><span class="text-extra-dark-gray text-small text-uppercase display-block text-line-height-10 text-font-sec text-medium">Jane Peterson</span><span class="text-light-gray2 text-extra-small text-uppercase text-medium-gray">Entrepreneur</span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 swiper-slide sm-offset-four-bottom">
+                  <div class="offset-half-all bg-white box-shadow-light text-center inset-fourteen-all xs-padding-30px-all"><img class="border-radius-100 width-40 offset-25px-bottom sm-offset-15px-bottom" src="<?php echo base_url(); ?>assets/user/images/home-corporate-testimonial-02.jpg" alt="">
+                    <p class="sm-offset-15px-bottom xs-offset-20px-bottom">MService has the best branding solutions! Thanks to a new branding strategy they developed for me, my products became more recognizable.</p><span class="text-extra-dark-gray text-small text-uppercase display-block text-line-height-10 text-font-sec text-medium">Sam Wilson</span><span class="text-light-gray2 text-extra-small text-uppercase text-medium-gray">Sales Manager</span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 swiper-slide sm-offset-four-bottom">
+                  <div class="offset-half-all bg-white box-shadow-light text-center inset-fourteen-all xs-padding-30px-all"><img class="border-radius-100 width-40 offset-25px-bottom sm-offset-15px-bottom" src="<?php echo base_url(); ?>assets/user/images/home-corporate-testimonial-03.jpg" alt="">
+                    <p class="sm-offset-15px-bottom xs-offset-20px-bottom">I like MService, they are excellent in everything they do! I enjoyed the energy and the professional support the whole team gave me.</p><span class="text-extra-dark-gray text-small text-uppercase display-block text-line-height-10 text-font-sec text-medium">Catherine Lee</span><span class="text-light-gray2 text-extra-small text-uppercase text-medium-gray">Artist</span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 swiper-slide sm-offset-four-bottom">
+                  <div class="offset-half-all bg-white box-shadow-light text-center inset-fourteen-all xs-padding-30px-all"><img class="border-radius-100 width-40 offset-25px-bottom sm-offset-15px-bottom" src="<?php echo base_url(); ?>assets/user/images/home-corporate-testimonial-01.jpg" alt="">
+                    <p class="sm-offset-15px-bottom xs-offset-20px-bottom">I was looking for the most experienced web designers and developers. I knew you had the best creative team I could probably need.</p><span class="text-extra-dark-gray text-small text-uppercase display-block text-line-height-10 text-font-sec text-medium">Jane Peterson</span><span class="text-light-gray2 text-extra-small text-uppercase text-medium-gray">Entrepreneur</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination swiper-pagination-three-slides height-auto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
                         <section class="wow fadeIn">
                           <div class="container">
                             <div class="row">
@@ -601,7 +459,7 @@
                             </div>
                           </div>
                         </section>
-                        <section class="wow fadeIn bg-light-gray">
+                        <section class="wow fadeIn bg-light-gray" style="padding: 80px">
                           <div class="container text-center">
                             <div class="swiper-slider-clients swiper-container black-move">
                               <div class="swiper-wrapper">
@@ -617,3 +475,63 @@
                             </div>
                           </div>
                         </section>
+                        <section class="section parallax-container wow fadeIn bg-black" data-parallax-img="images/home-classic-start-up-slider-04.jpg" id="contact">
+        <div class="parallax-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7 col-sm-12 col-xs-12 center-col text-center offset-40x-bottom">
+                <div class="position-relative overflow-hidden width-100">
+                  <div class="text-white text-font-sec text-small text-uppercase offset-5px-bottom xs-offset-three-bottom">Complete the form below to find out more about our services </div>
+                  <h5 class="offset-55px-bottom text-white text-font-sec text-medium text-uppercase">Request a quote</h5>
+                </div>
+              </div>
+            </div>
+            <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <div class="row row-20">
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <label class="form-label" for="contact-name-3">Name</label>
+                    <input class="form-input" id="contact-name-3" type="text" name="name" data-constraints="@Required">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <label class="form-label" for="contact-phone-3">Phone</label>
+                    <input class="form-input" id="contact-phone-3" type="text" name="phone" data-constraints="@Required @Numeric">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <label class="form-label" for="contact-email-3">E-Mail</label>
+                    <input class="form-input" id="contact-email-3" type="email" name="email" data-constraints="@Required @Email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <select class="form-input select select-inline" data-placeholder="Your budget" data-constraints="@Required" data-dropdown-class="select-inline-dropdown">
+                      <option label="placeholder"></option>
+                      <option value="2">$500 - $1000</option>
+                      <option value="3">$1000 - $2000</option>
+                      <option value="4">$2000 - $5000</option>
+                      <option value="5">$5000 - $7500</option>
+                      <option value="6">$7500 - $10000</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-wrap">
+                    <label class="form-label" for="contact-message-3">Message</label>
+                    <textarea class="form-input" id="contact-message-3" name="message" data-constraints="@Required"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-button group-sm text-center text-lg-left">
+                <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+ <section class="w3-col l12 no-padding" style="padding: 0">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.578573098557!2d73.76471457487463!3d18.45743398155607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295eb7242f4f9%3A0xbb7abb920bc02587!2sAnandtara&#39;s+Haritara!5e0!3m2!1sen!2sin!4v1539411827476" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
