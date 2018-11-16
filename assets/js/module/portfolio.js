@@ -249,6 +249,7 @@ $(document).ready(function () {
   });
   $(wrapper).on("click", ".delete", function (e) {
     e.preventDefault();
+    alert('hii');
     $(this).parent('div').remove();
     x--;
   })

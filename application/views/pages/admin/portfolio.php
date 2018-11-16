@@ -67,6 +67,7 @@
                     <iframe src="<?php echo $vidArr[0]; ?>" class="w3-border" style="width: 100%;height: 120px;display:none" id="edit_portVideoPreview_1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                   </div>
                 </div>
+                <div class="w3-col l12" id="edit_addedmore_vidDiv">
                 <?php 
                 $vidCount=1;
                 for ($i=1; $i < count($vidArr); $i++) { 
@@ -86,6 +87,7 @@
                   <?php 
                 }
                 ?>
+              </div>
                 <input type="hidden" id="vidCount" value="<?php echo count($vidArr)+1; ?>">
                 <?php
               }
@@ -103,11 +105,11 @@
                 </div>
               </div>
               <input type="hidden" id="vidCount" value="1">
+              <div class="w3-col l12" id="edit_addedmore_vidDiv"></div>
               <?php 
             }
             ?>
 
-            <div class="w3-col l12" id="edit_addedmore_vidDiv"></div>
             <div class="w3-col l12 w3-margin-bottom">
              <a id="edit_add_morevideo" title="Add new video" class="btn w3-text-red add_moreProduct w3-small w3-right" style="padding-right: 0"><b>Add Video <i class="fa fa-plus"></i></b>
              </a>
@@ -127,14 +129,15 @@
                <span class="w3-text-red w3-small" id="edit_file_error_1"></span>
              </div>
            </div>
+           <div class="w3-col l12" id="edit_addedmore_linkDiv">
            <?php 
            $linkCount=1;
            for ($i=1; $i < count($linkArr); $i++) { 
             $linkCount=$i+1;
             ?>
             <div>
-              <div class="col-md-12 col-xs-12 w3-padding-small w3-margin-top" style="border:1px dotted">
-                <a href="#" style="padding:1px" class="delete btn w3-text-red w3-right w3-small" title="remove link"><i class="fa fa-remove"></i></a>
+              <div class="col-md-12 col-xs-12 w3-padding-small w3-margin-bottom" style="border:1px dotted">
+                <a style="padding:1px" class="delete btn w3-text-red w3-right w3-small" title="remove link"><i class="fa fa-remove"></i></a>
                 <div class="w3-col l12 w3-margin-bottom">
                  <label>Important links (optional):</label>
                  <input type="input" value="<?php echo $linkArr[$i]; ?>" name="edit_port_link[]" id="edit_port_link_<?php echo $linkCount; ?>" class="w3-input w3-border" placeholder="Paste important links">
@@ -145,7 +148,8 @@
            <?php 
          }
          ?>
-         <input type="hidden" id="linkCount" value="<?php echo count($linkArr); ?>">
+       </div>
+         <input type="hidden" id="linkCount" value="<?php echo count($linkArr)+1; ?>">
          <?php
        }
        else{
@@ -158,11 +162,11 @@
          </div>
        </div>
        <input type="hidden" id="linkCount" value="1">
+       <div class="w3-col l12" id="edit_addedmore_linkDiv"></div>
        <?php 
      }
      ?>
 
-     <div class="w3-col l12" id="edit_addedmore_linkDiv"></div>
      <div class="w3-col l12 w3-margin-bottom">
       <a id="edit_add_morelink" title="Add new links" class="btn w3-text-red add_moreProduct w3-small w3-right" style="padding-right: 0"><b>Add More <i class="fa fa-plus"></i></b>
       </a>
