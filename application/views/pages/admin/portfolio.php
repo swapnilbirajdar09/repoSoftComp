@@ -73,6 +73,7 @@
                 for ($i=1; $i < count($vidArr); $i++) { 
                   $vidCount=$i+1;
                   ?>
+                  <div>
                   <div class="col-md-12 col-xs-12 w3-padding-small" style="border:1px dotted">
                     <div class="w3-col l12 ">
                       <label>Embed Video (optional):</label>
@@ -84,6 +85,7 @@
                       <iframe src="<?php echo $vidArr[$i]; ?>" class="w3-border" style="width: 100%;height: 120px;display:none" id="edit_portVideoPreview_<?php echo $vidCount; ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                   </div>
+                </div>
                   <?php 
                 }
                 ?>
