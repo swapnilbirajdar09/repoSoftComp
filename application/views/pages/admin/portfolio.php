@@ -253,8 +253,8 @@
 
           <!-- upload image -->
           <!-- <div class="col-md-12 col-xs-12 w3-padding-tiny">  -->
-            <div class="col-md-6 w3-small w3-padding-small w3-margin-bottom">
-             <div class="col-md-12 col-xs-12 w3-padding-small" style="border:1px dotted">
+            <div class="col-md-12 w3-small w3-padding-small w3-margin-bottom">
+             <div class="col-md-6 col-xs-12 w3-padding-small" style="background-color: #F7F7F7">
               <div class="w3-col l6 w3-margin-bottom">
                 <form id="uploadImageForm" enctype="multipart/form-data">
                   <input type="hidden" name="img_portfolio_name" value="<?php echo $portfolioDetail[0]['portfolio_name']; ?>">
