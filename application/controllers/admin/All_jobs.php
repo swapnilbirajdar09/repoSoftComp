@@ -10,8 +10,7 @@ class All_jobs extends CI_Controller {
 
         // load common model
         $this->load->model('admin/Postjob_model');
-        $this->load->helper('file');
-        $this->load->helper('download');
+       
     }
 
     // main index function
@@ -69,20 +68,7 @@ class All_jobs extends CI_Controller {
         $this->load->view('includes/footer');
     }
 
-    //---------------download candidate resume----------------------//
-    public function download($candidate_id = '') {
-        $arr = base64_decode($candidate_id);
-        $data = explode('|', $arr);
-        $cand_id = $data[0];
-        $candidate_name = $data[1];
-        $result = $this->Postjob_model->getCandidateResume($cand_id);
-        $file_name = $candidate_name;
-        $file = base_url() . $result;
-        $dataNew = file_get_contents($file);
-        force_download($file_name, $dataNew);
-    }
-
-    // -----------------download function ends---------------//
+   
 //--------------fun for delete applied candidate ------------//
     public function deleteCandidateData() {
         extract($_GET);
