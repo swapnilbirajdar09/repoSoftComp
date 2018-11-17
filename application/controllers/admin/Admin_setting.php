@@ -162,23 +162,11 @@ class Admin_setting extends CI_Controller {
                   $imagePath = $uploadPath . $fileData['file_name'];
               }
           }
-        //  $office_details = '';
-        //validating image ends---------------------------//
-     // for($i=0; $i< count($office_type); $i++){
-     //      $office_details[] = array(
-     //            'office_type'     => $office_type[$i],
-     //            'office_number'   => $office_number[$i],
-     //            'office_email'    => $office_email[$i],
-     //            'office_address'  => $office_address[$i],
-     //        );
-     //      }
-         // print_r(json_encode($office_details));die();
+        
           $c_profile['company_name'] = $company_name;
           $c_profile['company_email'] = $company_email;        
           $c_profile['company_logo'] = $imagePath;
-         // $c_profile['office_details'] = json_encode($office_details);
-
-          // print_r($office_details);die();
+        
        
      $result = $this->Setting_model->add_companyProfile($c_profile);
      
@@ -214,20 +202,18 @@ class Admin_setting extends CI_Controller {
    // ---------function to update office address
     public function add_officeaddress() { 
       extract($_POST);
-      print_r($_POST);
-      $office_details = '';
-      for($i=0; $i< count($office_type); $i++){
-           $office_details[] = array(
-                'office_type'     => $office_type[$i],
-                'office_number'   => $office_number[$i],
-                'office_email'    => $office_email[$i],
-               'office_address'  => $office_address[$i],
+     
+      $office_details = array(
+                'office_type'     => $office_type,
+                'office_number'   => $office_number,
+                'office_email'    => $office_email,
+               'office_address'  => $office_address,
             );
-          }
+   
 
            $result = $this->Setting_model->add_officeaddress($office_details);
-     
-    if ($result) {
+    
+      if ($result) {
       echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Success!</strong>Company Address Updated SuccessFully.
@@ -254,5 +240,37 @@ class Admin_setting extends CI_Controller {
                         }, 5000);
                         </script>';
           }
+    }
+
+    public function remove_officedetails(){
+    	extract($_POST);
+        $result = $this->Setting_model->remove_officedetails($key);
+       
+        if ($result) {
+            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success! </strong> Office Details Deleted SuccessFully.
+        </div>
+        <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+                });
+                window.location.reload();
+                }, 1500);                
+                </script>';
+        } else {
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Warning! </strong> Office Details Not Deleted SuccessFully.
+                </div>
+                 <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+        }
     }
 }

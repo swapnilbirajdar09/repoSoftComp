@@ -138,7 +138,7 @@
             <div class="w3-col l12">
               <div class="col-lg-6 w3-margin-bottom">
                   <label>Image(optional):</label>
-                  <input type="file" name="client_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px" required>
+                  <input type="file" name="client_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px">
                   <div id="image_error" class="w3-text-red"></div>
                 </div>
               <div class="col-lg-6 w3-margin-bottom">
@@ -228,7 +228,6 @@
   </div>
 
 
-  </div>
 
   <!-- /page content -->
 

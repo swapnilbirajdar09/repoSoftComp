@@ -95,7 +95,28 @@ class Setting_model extends CI_Model {
 
         //-------update COMPANY address FUNCTION--------------//
        public function add_officeaddress($office_details) {
-         $sql = " UPDATE company_tab SET office_details='$office_details' WHERE company_id='1'";
+       	$sqlselect="SELECT * FROM company_tab WHERE company_id='1'";
+       	 $resultnew = $this->db->query($sqlselect);
+       	  if ($resultnew) {
+           // return true;
+             $office_newdetails ='';
+           foreach ($resultnew->result_array() as $key) {
+
+            $office_newdetails = json_decode($key['office_details']);
+            }
+            if($office_newdetails!='' && $office_newdetails !='[]')
+            {
+                array_push($office_newdetails,$office_details); 
+            	
+            }
+            else{
+               $office_newdetails =$office_details;
+              }
+        } 
+
+    $jsonVal = json_encode($office_newdetails);
+     	//print_r($office_newdetails);die();
+         $sql = " UPDATE company_tab SET office_details='$jsonVal' WHERE company_id='1'";
         if ($this->db->query($sql)) {
             return true;
             
@@ -103,6 +124,32 @@ class Setting_model extends CI_Model {
             return false;
          
         }
-        return $response;
+        //return $response;
     }
+
+    public function remove_officedetails($key){
+    	//echo $key;die();
+    	$sqlselect="SELECT * FROM company_tab WHERE company_id='1'";
+       	 $resultnew = $this->db->query($sqlselect);
+       	  if ($resultnew) {
+           // return true;
+             $office_newdetails ='';
+           foreach ($resultnew->result_array() as $row) {
+
+            $office_newdetails = json_decode($row['office_details'],true);
+            }
+            				//print_r($office_newdetails[1]);die();
+
+				unset($office_newdetails[$key]);
+
+				$json = json_encode($office_newdetails);
+		$sql = " UPDATE company_tab SET office_details='$json' WHERE company_id='1'";
+        if ($this->db->query($sql)) {
+            return true;            
+        } else {
+            return false;         
+        }
+    }
+}
+
 }
