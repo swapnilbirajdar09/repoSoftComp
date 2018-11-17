@@ -35,14 +35,15 @@ class Manageservice_model extends CI_Model {
 
 //----------------fun for get all featured services ----------------------------//
     public function getAllFeaturedServices() {
-        $sql = "SELECT * FROM service_tab WHERE is_featured = '1'";
+        $sql = "SELECT * FROM service_tab ORDER BY is_featured DESC LIMIT 6";
         $result = $this->db->query($sql);
         if ($result->num_rows() <= 0) {
-            return 500;
+            return false;
         } else {
             return $result->result_array();
         }
     }
+
 
 //------------------fun for update service details--------------------------//
     public function updateServiceDetails($data) {
