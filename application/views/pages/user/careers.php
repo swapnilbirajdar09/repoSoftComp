@@ -7,104 +7,50 @@
                 <!--                <h5 class="text-font-sec text-extra-dark-gray">We apply a detailed approach to every project to achieve the best result</h5>-->
             </div>
         </div>
-        <div class="col-md-6" style="padding: 10px;">
-            <div class="card" style="background: lightgray; color: black; border: 2px; padding: 15px;">
-                <h5 class="card-header">Featured</h5>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <!--        <div class="row">
-                     Tabs
-                    <div class="col-md-12 col-sm-12 center-col text-center no-inset tab-style1" id="animated-tab2">
-                        
-                        <div class="tab-content">
-                            <div class="center-col tab-pane fade in active" id="tab6_sec1">
-                                <div class="tab-pane fade in">
-                                    <div class="equalize sm-equalize-auto">
-                                        <div class="col-md-4 text-left sm-offset-30px-bottom">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">01. Consultation</span><span class="text-font-sec text-medium-gray text-medium">Each website we design starts with an initial discussion with our client to find out what he/she exactly wants for the website.</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-left">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">We deliver the best results</span>
-                                                    <p>When you work with us, you will surely have a meticulously crafted and visually attractive website.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="center-col tab-pane fade in" id="tab6_sec2">
-                                <div class="tab-pane fade in">
-                                    <div class="equalize sm-equalize-auto">
-                                        <div class="col-md-4 text-left sm-offset-30px-bottom"><img src="images/service-classic-3-900x650.jpg" alt=""></div>
-                                        <div class="col-md-4 text-left sm-offset-30px-bottom">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">02. Creating the design</span><span class="text-font-sec text-medium-gray text-medium">After consulting with you, our designers create the concept of your future website, which can be changed and modified.</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-left">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">Providing the best services</span>
-                                                    <p>MService team offers our clients high-quality designs and creative branding and marketing campaigns since day one.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="center-col tab-pane fade in" id="tab6_sec3">
-                                <div class="tab-pane fade in">
-                                    <div class="equalize sm-equalize-auto">
-                                        <div class="col-md-4 text-left sm-offset-30px-bottom"><img src="images/service-classic-4-900x650.jpg" alt=""></div>
-                                        <div class="col-md-4 text-left sm-offset-30px-bottom">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">03. Developing the website</span><span class="text-font-sec text-medium-gray text-medium">When the design concept is done, our developers begin to work on the development of the website's final look.</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-left">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">Outstanding creative solutions</span>
-                                                    <p>MService’s products and services can easily help you improve the web image of your company and lead you to success.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="center-col tab-pane fade in" id="tab6_sec4">
-                                <div class="tab-pane fade in">
-                                    <div class="equalize sm-equalize-auto">
-                                        <div class="col-md-4 text-left sm-offset-30px-bottom"><img src="images/service-classic-5-900x650.jpg" alt=""></div>
-                                        <div class="col-md-4 text-left sm-offset-30px-bottom">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 border-all border-width-2 border-color-extra-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-medium text-medium text-font-sec text-uppercase offset-10px-bottom display-block text-extra-dark-gray">04. Testing</span><span class="text-font-sec text-medium-gray text-medium">Finally, our QA experts test your website to ensure its correct work and prepare it for later installation and usage.</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-left">
-                                            <div class="position-relative inset-45px-all sm-padding-30px-all height-100 width-100 bg-light-gray display-table">
-                                                <div class="display-table-cell vertical-align-middle"><span class="text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block text-medium">Rapid growth</span>
-                                                    <p>Developing and growing is vital to success and we prove it with our 5 new offices opened worldwide during the last 3 years.</p><a class="btn btn-dark-gray btn-very-small text-extra-small" href="about-us-classic.html">Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <?php
+        if ($jobs != '' && $jobs != []) {
+            foreach ($jobs as $key) {
+                ?>
+                <div class="col-md-6" style="padding: 10px;">
+                    <div class="card" style="background: #f7f7f7; color: black; border: 1px solid; padding: 15px;">
+                        <h5 class="card-header" style="border-bottom: 1px solid; margin-bottom: 5px;"><?php echo $key['job_name']; ?></h5>
+                        <div class="card-body">
+                            <p class="card-text"><i><?php echo $key['job_description']; ?></i></p>
+                            <span class="card-text"><i class="fa fa-user"></i><b> Vacancies :</b> <?php echo $key['vacancies']; ?></span><br>
+                            <span class="card-text"><i class=""></i><b>Experience : </b><i><?php echo $key['req_exp']; ?></i></span><br>
+                            <span><b>Requirements :</b></span>
+                            <ul>
+                                <?php
+                                if ($key['req_list'] != '') {
+                                    foreach (json_decode($key['req_list'], TRUE) as $val) {
+                                        ?>
+                                        <li><span class=" w3-text-black"><i><?php echo $val; ?></i></span></li>
+                                        <?php
+                                    }
+                                } else {
+                                    ?>
+                                    <li><span class="w3-text-black">No Requirements..</span></li>
+                                <?php } ?>
+                            </ul>
+                            <!--                            <a href="#" class="btn btn-primary" style="margin-top: 10px;">Apply</a>-->
+                            <a href="#applyfor" id="apply" class="btn btn-primary active" style="margin-top: 10px;">Apply</a>
                         </div>
                     </div>
-                </div>-->
+                </div>
+                <?php
+            }
+        } else {
+            ?>
+            <div class="col-md-12" style="padding: 10px;">
+                <center><span class="text-small text-font-sec text-medium text-uppercase"><h5><i>No Jobs Available.</i></h5></span></center>                
+            </div>
+        <?php }
+        ?>
     </div>
 </section>
 
 <section class="wow fadeIn no-inset-top" style=" margin-top: 10px;">
-    <div class="container">
+    <div class="container" id="applyfor">
         <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12 center-col text-center offset-40px-bottom xs-offset-40px-bottom">
                 <div class="position-relative overflow-hidden width-100"><span class="text-small text-outside-line-full text-font-sec text-medium text-uppercase">Apply Job</span></div>
@@ -191,5 +137,12 @@
             });
             return false;  //stop the actual form post !important!
         });
+    });
+</script>
+<script>
+    $("#apply").click(function () {
+        $('html,body').animate({
+            scrollTop: $("#applyfor").offset().top},
+                'slow');
     });
 </script>
