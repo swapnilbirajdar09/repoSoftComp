@@ -137,7 +137,6 @@
     							<li>"https://www.youtube.com/watch?v=OdCqB-uouHA" <i class="fa fa-remove w3-large w3-text-red"></i></li>
     						</ol>
     					</li>
-    					
     				</ul>
     			</div>
     		</div>

@@ -242,9 +242,13 @@
             ?>
             <div class="col-md-3 col-xs-12 w3-margin-bottom">            
               <div class="w3-col l12 w3-card-2 w3-opacity w3-hover-opacity-off" style="height: 200px;background-image: url('<?php echo base_url(); ?><?php echo $value; ?>');background-repeat: no-repeat;background-position: center;background-size: contain;">
-                <div class="w3-col l2 s2 theme_bg" style="height: 40px;z-index: 1;position: absolute;border-bottom-right-radius:100%;">
-                  <a onclick="removeImage(<?php echo $key; ?>,<?php echo $portfolioDetail[0]['portfolio_id']; ?>)" class="w3-large w3-text-lightgrey btn" id="imgBtn_<?php echo $key; ?>" style="padding:0 0 0 8px" title="delete image"><i class="fa fa-times"></i></a>
+                <?php 
+                  if($key!=0){
+                  ?>
+                <div class="w3-col l2 s2 theme_bg" style="height: 40px;z-index: 1;position: absolute;border-bottom-right-radius:100%;">                  
+                  <a onclick="removeImage(<?php echo $key; ?>,<?php echo $portfolioDetail[0]['portfolio_id']; ?>)" class="w3-large w3-text-lightgrey btn" id="imgBtn_<?php echo $key; ?>" style="padding:0 0 0 8px" title="delete image"><i class="fa fa-times"></i></a>                
                 </div>
+                <?php } ?>
               </div>            
             </div>
             <?php 

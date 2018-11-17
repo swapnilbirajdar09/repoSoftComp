@@ -64,31 +64,7 @@
     </div>
   </div>
 </section>
-      <!-- <section class="section parallax-container bg-light-gray prlx-overlay-1" data-parallax-img="<?php echo base_url(); ?>assets/user/images/home-classic-corp-bg-01.jpg">
-  <div class="parallax-content">
-    <div class="container">
-      <div class="row equalize sm-equalize-auto">
-        <div class="col-md-6 col-sm-12 wow fadeInLeft">
-          <div class="display-table width-100 heidth-100">
-            <div class="display-table-cell vertical-align-middle"><span class="text-medium text-extra-dark-gray text-font-sec offset-10px-bottom display-inline-block">Guarantee of a great business website</span>
-              <h5 class="text-font-sec text-extra-dark-gray">Unique websites and online apps for your business</h5>
-              <p class="text-extra-dark-gray">MService is always ready to help you create an attractive website that matches your business goals. We create a custom mockup of each design, for each page and then we make revisions to your design until it's exactly the way you want it. This is a true custom design, and unlike many others, our designs are an exact match for your brand.</p>
-              <div class="offset-30px-tb">
-                <ul class="no-inset list-style-4 text-extra-dark-gray">
-                  <li>Stunning and easy-to-understand UI with incredible animations</li>
-                  <li>Innovative design & clear code built in every website</li>
-                  <li>You can introduce your services with ready-made pages</li>
-                  <li>Discover lots of creative inspiration for your projects</li>
-                  <li>Improved performance and great customization</li>
-                </ul>
-              </div><a class="btn btn-dark-gray btn-small text-extra-small" href="services-modern.html">View more info</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
+ 
 <section class="no-inset wow fadeIn bg-extra-dark-gray">
   <div class="container-fluid no-inset">
     <div class="row equalize no-margin">
@@ -130,7 +106,7 @@
           </div>      
           <?php 
         }
-        echo '<div class="col-md-12"><a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="" style="">View all Services <i class="fa fa-chevron-right"></i></a></div>';
+        echo '<div class="col-md-12"><a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="'.base_url().'services" style="">View all Services <i class="fa fa-chevron-right"></i></a></div>';
       }
       ?>
     </div>    
@@ -235,7 +211,7 @@
                 $imgArr=json_decode($key['portfolio_images'],TRUE);      
                 ?>
                 <li class="grid-item <?php echo $key['cat_id']; ?> wow fadeInUp">
-                  <a href="<?php echo base_url(); ?>/viewportfolio/<?php echo base64_encode('PORTFOLIO|'.$key['portfolio_id']); ?>">
+                  <a href="<?php echo base_url(); ?>viewportfolio/info/<?php echo base64_encode('PORTFOLIO|'.$key['portfolio_id']); ?>">
                     <figure>
                       <div class="portfolio-img"><img src="<?php echo base_url(); ?><?php echo $imgArr[0]; ?>" alt=""></div>
                       <figcaption>
@@ -390,49 +366,79 @@
           </div>
         </div>
       </div>
-      <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+      <form class="rd-mailform text-left" id="contact_us_form" >
         <div class="row row-20">
           <div class="col-md-6">
             <div class="form-wrap">
               <label class="form-label" for="contact-name-3">Name</label>
-              <input class="form-input" id="contact-name-3" type="text" name="name" data-constraints="@Required">
+              <input class="form-input" id="contact-name-3" type="text" name="name" >
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-wrap">
               <label class="form-label" for="contact-phone-3">Phone</label>
-              <input class="form-input" id="contact-phone-3" type="text" name="phone" data-constraints="@Required @Numeric">
+              <input class="form-input" id="contact-phone-3" type="text" name="phone">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-wrap">
               <label class="form-label" for="contact-email-3">E-Mail</label>
-              <input class="form-input" id="contact-email-3" type="email" name="email" data-constraints="@Required @Email">
+              <input class="form-input" id="contact-email-3" type="email" name="email" >
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-wrap">
-              <select class="form-input select select-inline" data-placeholder="Your budget" data-constraints="@Required" data-dropdown-class="select-inline-dropdown">
-                <option label="placeholder"></option>
-                <option value="2">$500 - $1000</option>
-                <option value="3">$1000 - $2000</option>
-                <option value="4">$2000 - $5000</option>
-                <option value="5">$5000 - $7500</option>
-                <option value="6">$7500 - $10000</option>
+              <select class="form-input select select-inline" name="service" data-placeholder="Choose service" data-dropdown-class="select-inline-dropdown">
+                <option value="0" label="placeholder">Choose service</option>
+                <?php 
+                if($allServices){
+                  foreach ($allServices as $key) {
+                    echo '<option value="'.$key['service_name'].'">'.ucwords($key['service_name']).'</option>';
+                  }                  
+                }
+                ?>
               </select>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-wrap">
               <label class="form-label" for="contact-message-3">Message</label>
-              <textarea class="form-input" id="contact-message-3" name="message" data-constraints="@Required"></textarea>
+              <textarea class="form-input" id="contact-message-3" name="message" ></textarea>
             </div>
           </div>
         </div>
-        <div class="form-button group-sm text-center text-lg-left">
+        <div class="form-button group-sm text-center text-lg-left" id="submitContact">
           <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>
         </div>
       </form>
+      <div id="errMsgContact">
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  $(function () {
+    $("#contact_us_form").submit(function () {
+      dataString = $("#contact_us_form").serialize();
+      $.ajax({
+        type: "POST",
+        url: BASE_URL + "homepage/sendContactEmail",
+        data: dataString,
+        return: false,
+        beforeSend: function(){
+          $('#submitContact').html('<span><i class="fa fa-circle-o-notch fa-spin w3-large"></i> Sending message...</span>');
+        },
+        success: function(data){
+          $('#errMsgContact').html(data);
+          $('#submitContact').html('<button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>');
+        },
+        error:function(data){
+         $('#errMsgContact').html('<p style="background-color: red;margin: 10px;padding: 5px 10px;color: white"><b>Server Error:</b> Something went wrong. Please refresh the page and try again!</p>');
+         $('#submitContact').html('<button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>');
+       }
+     });
+      return false;
+    });
+  });
+</script>
