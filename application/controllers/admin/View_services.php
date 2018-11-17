@@ -147,6 +147,7 @@ class View_services extends CI_Controller {
     public function featuredService() {
         extract($_GET);
         $result = $this->Manageservice_model->featuredService($service_id);
+        //print_r($result);die();
         if ($result == '200') {
             echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -160,6 +161,18 @@ class View_services extends CI_Controller {
                 window.location.reload();
                 }, 1500);                
                 </script>';
+            } elseif ($result == '700') {
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Warning! </strong> You Can Featured Only 6 Services..
+                </div>
+                 <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
         } else {
             echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

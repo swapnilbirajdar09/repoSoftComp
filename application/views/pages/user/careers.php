@@ -3,8 +3,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
-                <div class="position-relative overflow-hidden width-100"><span class="text-small text-outside-line-full text-font-sec text-medium text-uppercase"><h4>Current Openings</h4></span></div>
-                <!--                <h5 class="text-font-sec text-extra-dark-gray">We apply a detailed approach to every project to achieve the best result</h5>-->
+                <div class="position-relative overflow-hidden width-100">
+                    <span class="text-small text-outside-line-full text-font-sec text-medium text-uppercase">
+                        <h4>Current Openings</h4>
+                    </span>
+                </div>
             </div>
         </div>
         <?php
@@ -13,18 +16,22 @@
                 ?>
                 <div class="col-md-6" style="padding: 10px;">
                     <div class="card" style="background: #f7f7f7; color: black; border: 1px solid; padding: 15px;">
-                        <h5 class="card-header" style="border-bottom: 1px solid; margin-bottom: 5px;"><?php echo $key['job_name']; ?></h5>
+                        <a class="text-font-sec offset-5px-bottom display-block text-extra-dark-gray text-medium text-uppercase text-small" href="#"><b><?php echo $key['job_name']; ?></b></a>
                         <div class="card-body">
-                            <p class="card-text"><i><?php echo $key['job_description']; ?></i></p>
-                            <span class="card-text"><i class="fa fa-user"></i><b> Vacancies :</b> <?php echo $key['vacancies']; ?></span><br>
-                            <span class="card-text"><i class=""></i><b>Experience : </b><i><?php echo $key['req_exp']; ?></i></span><br>
-                            <span><b>Requirements :</b></span>
+                            <p class="width-95 sm-width-100"><?php echo $key['job_description']; ?></p>                            
+                            <a class="text-font-sec text-extra-dark-gray text-medium text-extra-small" href="#">Vacancies : <?php echo $key['vacancies']; ?></a><br>
+                            <a class="text-font-sec text-extra-dark-gray text-medium text-extra-small" href="#">Experience : <?php echo $key['req_exp']; ?></a><br>                            
+                            <a class="text-font-sec text-extra-dark-gray text-medium text-extra-small" href="#">Requirements :</a>
                             <ul>
                                 <?php
                                 if ($key['req_list'] != '') {
                                     foreach (json_decode($key['req_list'], TRUE) as $val) {
                                         ?>
-                                        <li><span class=" w3-text-black"><i><?php echo $val; ?></i></span></li>
+                                        <li>
+                                            <span class="text-font-sec offset-5px-bottom display-block text-extra-dark-gray text-medium text-small">
+                                                <i class="fa fa-check"> <?php echo $val; ?></i>
+                                            </span>
+                                        </li>
                                         <?php
                                     }
                                 } else {
@@ -33,7 +40,7 @@
                                 <?php } ?>
                             </ul>
                             <!--                            <a href="#" class="btn btn-primary" style="margin-top: 10px;">Apply</a>-->
-                            <a href="#applyfor" id="apply" class="btn btn-primary active" style="margin-top: 10px;">Apply</a>
+                            <a href="#applyfor" id="apply" class="btn btn-primary active" style="margin-top: 15px;">Apply Now</a>
                         </div>
                     </div>
                 </div>
@@ -41,9 +48,9 @@
             }
         } else {
             ?>
-            <div class="col-md-12" style="padding: 10px;">
-                <center><span class="text-small text-font-sec text-medium text-uppercase"><h5><i>No Jobs Available.</i></h5></span></center>                
-            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 xs-offset-30px-bottom wow fadeInUp xs-text-center">
+                    <center><h6 class="text-light text-dark-gray"> No Jobs Available..!</h6></center>
+                </div>
         <?php }
         ?>
     </div>

@@ -44,7 +44,6 @@ class Manageservice_model extends CI_Model {
         }
     }
 
-
 //------------------fun for update service details--------------------------//
     public function updateServiceDetails($data) {
         extract($data);
@@ -74,7 +73,9 @@ class Manageservice_model extends CI_Model {
 
 //--------------fun for featured service -----------------------------------//
     public function featuredService($service_id) {
-
+        $count = Manageservice_model::getFeatiredServiceCount();
+        //print_r($count);die();
+        if($count < 6){
         $sql = "UPDATE service_tab SET is_featured = '1' WHERE service_id = '$service_id'";
         // echo $sql; die();
         $this->db->query($sql);
@@ -83,8 +84,24 @@ class Manageservice_model extends CI_Model {
         } else {
             return 500;
         }
+        }else{
+            return 700;
+        }
     }
-
+//----------------fun for get the service count-----------------------//
+    public function getFeatiredServiceCount(){
+        $sql = "SELECT count(*) as count FROM service_tab WHERE is_featured = '1'";
+        $result = $this->db->query($sql);
+        $count ='';
+        if ($result->num_rows() <= 0) {
+            return 0;
+        } else {
+            foreach ($result->result_array() as $key){
+                $count = $key['count'];
+            }
+            return $count;
+        }        
+    }
 //------------fun for unfeatured service --------------------------------------//
     public function unFeaturedService($service_id) {
         $sql = "UPDATE service_tab SET is_featured = '0' WHERE service_id = '$service_id'";
@@ -94,6 +111,17 @@ class Manageservice_model extends CI_Model {
             return 200;
         } else {
             return 500;
+        }
+    }
+
+//-------------fun for all services--------------------------//
+    public function allServices() {
+        $sql = "SELECT * FROM service_tab ORDER BY is_featured DESC";
+        $result = $this->db->query($sql);
+        if ($result->num_rows() <= 0) {
+            return FALSE;
+        } else {
+            return $result->result_array();
         }
     }
 

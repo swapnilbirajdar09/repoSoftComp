@@ -35,7 +35,7 @@
                                 <td class="w3-center" style="vertical-align: middle;">
                                     <span class=""><b><?php echo $key['service_name']; ?></b></span>
                                 </td>
-                                <td class="w3-center" width="180px" style="vertical-align: middle;">
+                                <td class="w3-center" width="350px" style="vertical-align: middle;">
                                     <p><?php echo $key['service_description']; ?></p>
                                 </td>
 
@@ -191,6 +191,7 @@
                                                 },
                                                 cache: false,
                                                 success: function (data) {
+                                                    //alert(data);
                                                     $('#err_message').html(data);
                                                 }
                                             });
@@ -248,7 +249,6 @@
 </div>
 <script>
     function readURL(input, service_id) {
-        alert(service_id);
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
