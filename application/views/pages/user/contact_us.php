@@ -70,6 +70,7 @@
           <form id="contact_us_form" class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" >
             <div class="row row-20">
               <div class="col-md-6">
+              	  <div class="w3-col l12 w3-center" id="fpasswd_err"></div>
                 <div class="form-wrap">
                   <label class="form-label" for="contact-name">Name</label>
                   <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
@@ -91,7 +92,7 @@
                 <div class="form-wrap">
                   <div class="form-wrap">
                   <label class="form-label" for="contact-subject">Subject</label>
-                  <input class="form-input" id="contact-subject" type="text" name="email" data-constraints="@Required">
+                  <input class="form-input" id="contact-subject" type="text" name="subject" data-constraints="@Required">
                 </div>
                 </div>
               </div>
@@ -103,7 +104,7 @@
               </div>
             </div>
             <div class="form-button group-sm text-center text-lg-left">
-              <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>
+              <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" id="submitbtn" type="submit">send message</button>
             </div>
           </form>
         </div>
@@ -123,10 +124,11 @@
     $(function () {
         $("#contact_us_form").submit(function () {
             dataString = $("#contact_us_form").serialize();
+            	alert(dataString);
             $("#submitbtn").html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-spinner fa-spin w3-large"></i> <b>Sending Message. Hang on...</b></span>');
             $.ajax({
                 type: "POST",
-                url: BASE_URL + "user/contact_us/sendContactEmail",
+                url: BASE_URL + "contact_us/sendContactEmail",
                 //dataType : 'text',
                 data: dataString,
                 return: false, //stop the actual form post !important!

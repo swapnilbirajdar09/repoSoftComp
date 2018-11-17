@@ -21,8 +21,11 @@ class Contact_us extends CI_Controller {
 
     public function sendContactEmail() {
         extract($_POST);
-        $admin_email = $this->adminprofile_model->getAdminEmail();
-        $adminEmail = $admin_email[0]['admin_email'];
+       // print_r($_POST);die();
+        $admin_email = $this->Setting_model->getAllcompany_details();
+        $adminEmail = $admin_email[0]['company_email'];
+        $companyName = $admin_email[0]['company_name'];
+        //print_r($companyName);die();
         $config = Array(
             'protocol' => 'smtp',
             'smtp_host' => 'mx1.hostinger.in',
@@ -39,7 +42,7 @@ class Contact_us extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from('support@jumlakuwait.com', "Admin Team");
         $this->email->to($adminEmail, 'Admin Team');
-        $this->email->subject("Parinay-Contact Form");
+        $this->email->subject($companyName,'Contact Form');
         $this->email->message("<html>"
                 . "<head>"
                 . "</head>"
@@ -47,7 +50,7 @@ class Contact_us extends CI_Controller {
                 . "<p><label><h3><b>Contact Form</label></b></h3></p>"
                 . "<p><label>Contact form has been submitted by: Name:- $name </label></p>"
                 . "<p><label>Email Id:- $email </label></p>"
-                . "<p><label>Subject:- $number</label></p>"
+                . "<p><label>Subject:- $subject</label></p>"
                 . "<p><label>For The Purpose Of: $message </label></p>"
                 . "</body>"
                 . "</html>");
@@ -69,7 +72,7 @@ class Contact_us extends CI_Controller {
             $this->email->set_newline("\r\n");
             $this->email->from('support@jumlakuwait.com', "Admin Team");
             $this->email->to($email, $name);
-            $this->email->subject("Parinay Customer Support");
+            $this->email->subject(" Customer Support");
             $this->email->message('<html>
             <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,7 +82,7 @@ class Contact_us extends CI_Controller {
             </head>
             <body>
             <div class="container col-lg-8" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;margin:10px; font-family:Candara;">
-            <h2 style="color:#4CAF50; font-size:30px">ParinayCustomer Support</h2>
+            <h2 style="color:#4CAF50; font-size:30px">Customer Support</h2>
             <h3 style="font-size:15px;"> Your message was successfully sent!.<br><br>Thank you for contacting us, we will reply to your inquiry as soon as possible!</h3>
             <div class="col-lg-12">
             <div class="col-lg-4"></div>
