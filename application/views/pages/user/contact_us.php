@@ -12,6 +12,7 @@
           </div>
         </div>
       </section>
+    
       <section class="wow fadeIn big-section">
         <div class="container">
           <div class="row">
@@ -26,36 +27,48 @@
       <section class="no-inset bg-extra-dark-gray">
         <div class="container-fluid">
           <div class="row equalize sm-equalize-auto">
-            <div class="col-md-6 col-sm-12 no-inset cover-background sm-height-450px xs-height-350px wow fadeInLeft" style="background: url('<?php echo base_url(); ?>assets/user/images/contact-us-classic-1-1000x700.jpg')"></div>
-            <div class="col-md-6 col-sm-12 no-inset col-2-nth wow fadeInRight">
+         <!----- company address section -------->
+        
+           <div class="col-md-12 col-sm-12 no-inset col-2-nth wow fadeInRight">
+           	 <?php 
+	          	 $office =''; 
+	              foreach ($contact_email as $value) {
+	             // print_r(json_decode($value['office_details'],true));die();
+	             $office = json_decode($value['office_details'],TRUE);
+	             //print_r($office);die();
+	             if($office !='')
+	             {
+	             	$j = 1;
+	             for ($i=0;$i<count($office);$i++) {   
+	            ?>
               <div class="col-md-6 col-sm-6 col-xs-12 display-table bg-extra-dark-gray height-350px last-paragraph-no-margin">
                 <div class="display-table-cell vertical-align-middle text-center"><i class="linearicons-map2 text-secondary icon-medium offset-25px-bottom"></i>
-                  <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom">Our address</div>
-                  <p class="width-60 md-width-80 center-col text-medium">222 Stonybrook St. Los Angeles, CA 90044</p>
+                  <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom"><?php echo $office[$i]['office_type']; ?></div>
+                  <p class="width-60 md-width-80 center-col text-medium" style="margin-bottom:0;"><?php echo $office[$i]['office_address']; ?></p>
+                   <p class="center-col text-medium no-margin"><?php echo $office[$i]['office_email']; ?></p>
+                   <p class="center-col text-medium no-margin"><?php echo $office[$i]['office_number']; ?></p>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-6 col-xs-12 display-table bg-black height-350px last-paragraph-no-margin">
-                <div class="display-table-cell vertical-align-middle text-center"><i class="linearicons-laptop-phone text-secondary icon-medium offset-25px-bottom"></i>
-                  <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom">Phones</div>
-                  <p class="center-col text-medium no-margin">Phone: 1-818-539-9985</p>
-                  <p class="center-col text-medium">Fax: 1-818-524-9156</p>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-12 display-table bg-black height-350px last-paragraph-no-margin">
-                <div class="display-table-cell vertical-align-middle text-center"><i class="linearicons-voicemail text-secondary icon-medium offset-25px-bottom"></i>
-                  <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom">Emails</div>
-                  <p class="center-col text-medium no-margin"><a href="mailto:#">info@demolink.org</a></p>
-                  <p class="center-col text-medium"><a href="mailto:#">mail@demolink.org</a></p>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-12 display-table bg-extra-dark-gray height-350px last-paragraph-no-margin">
-                <div class="display-table-cell vertical-align-middle text-center"><i class="linearicons-clock3 text-secondary icon-medium offset-25px-bottom"></i>
-                  <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom">Opening hours</div>
-                  <p class="center-col text-medium no-margin">Mon to Sat - 9 AM to 11 PM</p>
-                  <p class="center-col text-medium">Sunday - 10 AM to 6 PM</p>
-                </div>
-              </div>
+             <?php $j++;
+	           }
+	        }
+	         else{
+	            ?>
+	            <tr>
+	              <td colspan="8" class="w3-center">
+	                <span> No Address Found </span>
+	              </td>              
+	            </tr>
+	            <?php
+	          }
+	        }
+	           
+	        
+	          ?>
+	         
             </div>
+            
+            <!----- company address section -------->
           </div>
         </div>
       </section>
