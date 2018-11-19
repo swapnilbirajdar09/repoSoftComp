@@ -1,18 +1,7 @@
 
-<title>SoftComp | Blogs Section</title>
-<style type="text/css">
-span.tag{
-  padding: 5px 9px;
-  background: #1ABB9C;
-  color: #F1F6F7;
-  margin-right: 5px;
-  font-weight: 500;
-  margin-bottom: 5px;
-  font-family: helvetica;
-}
-</style>
+<title>SoftComp | Blog Details</title>
 <!-- page content -->
-<div class="right_col" role="main" ng-app="BlogApp" ng-cloak ng-controller="BlogCtrl">
+<div class="right_col" role="main">
 
 	<div class="row" >
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -20,25 +9,27 @@ span.tag{
 
 				<div class="row x_title">
 					<div class="col-md-6">
-						<h4><i class="fa fa-plus"></i> Post Blog </h4>
+						<h4><i class="fa fa-edit"></i> Edit Blog - <?php echo $blogDetail[0]['blog_title']; ?> </h4>
 					</div>
-				</div>
+          <a class="btn btn-primary btn-sm pull-right" href="<?php echo base_url(); ?>admin/manage_blogs#allBlogDiv" ><i class="fa fa-chevron-left"></i> Back to All Blogs</a>
+        </div>
         <!-- <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
         </div> -->
         <div class="alert alert-fixed"></div>
         <div class="row w3-padding w3-white theme_text">
-         <form id="addBlog_form" name="addBlog_form" enctype="multipart/form-data">
-          <div class="w3-col l12 s12 m12 w3-margin-top">
-           <div class="col-lg-1"></div>
-           <div class="col-lg-9">
+          <form id="editBlog_form" name="editBlog_form" enctype="multipart/form-data">
+            <div class="w3-col l12 s12 m12 w3-margin-top">
+             <div class="col-lg-1"></div>
+             <div class="col-lg-9">
+
             <div class="w3-col l12 w3-padding-small">
               <div class="col-md-6 col-xs-12 s12 m12 w3-small w3-padding-bottom">
                 <label> Blog Category: <font color ="red"><span id ="pcat_star">*</span></font></label><br>
-                <select class="w3-input w3-border w3-margin-bottom" name="blog_category" id="blog_category">
+                <select class="w3-input w3-border w3-margin-bottom" name="edit_blog_category" id="edit_blog_category">
                   <option value="0" class="w3-light-grey">Choose category</option>
                   <?php foreach ($categories as $cat){ ?>
-                    <option value="<?php echo $cat['cat_id']; ?>"><?php echo strtoupper($cat['cat_name']); ?></option>
+                    <option value="<?php echo $cat['cat_id']; ?>" <?php if($blogDetail[0]['blog_category']==$cat['cat_id']){echo 'selected';} ?>><?php echo strtoupper($cat['cat_name']); ?></option>
                   <?php } ?>
                 </select>
                 <span class="w3-text-red w3-small" id="cat_error"></span>                   
@@ -47,7 +38,7 @@ span.tag{
             <div class="w3-col l12 w3-padding-small">
               <div class="col-md-12 col-xs-12 w3-small w3-padding-bottom">
                <label> Blog Title: <font color ="red"><span id ="pname_star">*</span></font></label><br>
-               <input type="text" name="blog_title" id="blog_title" value="" placeholder="Add Blog Title" class="w3-input w3-border w3-margin-bottom" required>
+               <input type="text" name="blog_title" id="blog_title" value="<?php echo $blogDetail[0]['blog_title']; ?>" placeholder="Add Blog Title" class="w3-input w3-border w3-margin-bottom" required>
              </div>
              <div class="col-md-12 col-xs-12 w3-small w3-padding-bottom">
               <label> Blog Description: <font color ="red"><span id ="pdescription_star">*</span></font></label><br>
@@ -108,7 +99,7 @@ span.tag{
                   <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
                 </div>
               </div>
-              <div id="editor-one" class="editor-wrapper"></div>
+              <div id="editor-one" class="editor-wrapper"><?php echo $blogDetail[0]['blog_message']; ?></div>
               <textarea name="blog_message" id="blog_message" style="display:none;"></textarea>
             </div>
             <div class="col-md-12 col-xs-12 w3-small w3-padding-bottom">
@@ -128,13 +119,14 @@ span.tag{
                 </div>
                 <div class="w3-col l12"><p class="w3-text-red">{{errortext}}</p></div>
                 <input type="hidden" name="tagAdded_field" value="{{tagsJSON}}" id="tagAdded_field">
+                <input type="hidden" name="addedTags" value="<?php echo $blogDetail[0]['blog_tags']; ?>" id="addedTags">
                 
               </div>
               <div class="w3-col l12 w3-padding w3-round w3-margin-top w3-border" style="background-color: #F7F7F7">
                 <label>Added Tags: </label><br>
                 <span ng-repeat="t in tags" class="w3-round theme_bg" style="display: inline-block;padding: 5px 8px;margin-right: 5px;margin-bottom: 5px">{{t|uppercase}}&nbsp;&nbsp;<a ng-click="removeTag($index)" style="cursor:pointer;" class="fa fa-times-circle"></a></span>
               </div>
-            </div>      						
+            </div>                  
           </div>
 
           <!-- ---div for images -->
@@ -196,45 +188,48 @@ span.tag{
 
 </div>
 <!-- ---div for images -->
-</div>
-<div class="col-lg-2"></div>
-</div>                   
-<div class="w3-col l12 w3-center" id="btnsubmit">
- <button type="submit" title="Post new Blog" id="submitForm" class="btn theme_bg">Post new Blog</button>
-</div>
-</form>
-<div id="formOutput" class="w3-margin"></div>
-<div ng-bind-html="delMessage" class="w3-margin"></div>
-<!-- Modal embed video help -->
-<div class="modal fade bs-example-modal-md" id="embedVidModal" role="dialog" aria-hidden="true">
- <div class="modal-dialog modal-md">
-  <div class="modal-content">
 
-   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-    </button>
-    <h4 class="modal-title w3-center theme_text" id="Edit Product title"> <b>Embed Video (HELP) </b></h4>
-  </div>
-  <div class="modal-body">
-    <p>Following are the instructions to embed video in a portfolio. </p>
-    <ul>
-     <li>Copy and Paste the remote url link in given input field.</li>
-     <li>As you paste the url link, if the url link is valid, you may see video controls and poster below input field.</li>
-     <li>Examples:
-      <ol>
-       <li>"https://<b><u>player.vimeo.com</u></b>/video/197879767" <i class="fa fa-check w3-large w3-text-green"></i></li>
-       <li>"https://vimeo.com/197879767" <i class="fa fa-remove w3-large w3-text-red"></i></li>
-       <li>"https://www.youtube.com/<b><u>embed</u></b>/OdCqB-uouHA" <i class="fa fa-check w3-large w3-text-green"></i></li>
-       <li>"https://www.youtube.com/watch?v=OdCqB-uouHA" <i class="fa fa-remove w3-large w3-text-red"></i></li>
-     </ol>
-   </li>
- </ul>
-</div>
-</div>
-</div>
-</div>
-<!-- end help modal -->
-</div>
+             </div>
+             <div class="col-lg-2"></div>
+           </div>            
+           <input type="hidden" name="blog_id" id="blog_id" value="<?php echo $blogDetail[0]['blog_id']; ?>">       
+           <div class="w3-col l12 w3-center" id="edit_btnsubmit">
+             <button type="submit" title="Save and Add new Blog" id="edit_submitForm" class="btn theme_bg">Save Changes</button>
+           </div>
+         </form>
+         <div id="edit_formOutput" class="w3-margin"></div>
+         <div ng-bind-html="edit_delMessage" class="w3-margin"></div>
+         <!-- Modal embed video help -->
+         <div class="modal fade bs-example-modal-md" id="edit_embedVidModal" role="dialog" aria-hidden="true">
+           <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+             <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title w3-center theme_text" id="Edit Product title"> <b>Embed Video (HELP) </b></h4>
+            </div>
+            <div class="modal-body">
+              <p>Following are the instructions to embed video in a blog. </p>
+              <ul>
+               <li>Copy and Paste the remote url link in given input field.</li>
+               <li>As you paste the url link, if the url link is valid, you may see video controls and poster below input field.</li>
+               <li>Examples:
+                <ol>
+                 <li>"https://<b><u>player.vimeo.com</u></b>/video/197879767" <i class="fa fa-check w3-large w3-text-green"></i></li>
+                 <li>"https://vimeo.com/197879767" <i class="fa fa-remove w3-large w3-text-red"></i></li>
+                 <li>"https://www.youtube.com/<b><u>embed</u></b>/OdCqB-uouHA" <i class="fa fa-check w3-large w3-text-green"></i></li>
+                 <li>"https://www.youtube.com/watch?v=OdCqB-uouHA" <i class="fa fa-remove w3-large w3-text-red"></i></li>
+               </ol>
+             </li>
+
+           </ul>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- end help modal -->
+ </div>
 
 </div>
 </div>
@@ -242,82 +237,61 @@ span.tag{
 </div>
 <br />
 
-<!-- all product list -->
+<!-- Galeery section -->
 <div class="row" >
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="page_title">
 
       <div class="row x_title">
         <div class="col-md-6">
-          <h4><i class="fa fa-list"></i> Posted Blogs </h4>
+          <h4><i class="fa fa-list"></i> <?php echo $blogDetail[0]['blog_title']; ?> Gallery </h4>
         </div>
-
       </div>
-      <div class="container">
+      <div class="container">        
+        <div class="w3-col l12 w3-padding w3-small" id="blogGallery">
+          <?php 
+          $imageArr=json_decode($blogDetail[0]['blog_images'],TRUE);
+          foreach ($imageArr as $key=>$value) {
+            ?>
+            <div class="col-md-3 col-xs-12 w3-margin-bottom">            
+              <div class="w3-col l12 w3-card-2 w3-opacity w3-hover-opacity-off" style="height: 200px;background-image: url('<?php echo base_url(); ?><?php echo $value; ?>');background-repeat: no-repeat;background-position: center;background-size: contain;">
+                <div class="w3-col l2 s2 theme_bg" style="height: 40px;z-index: 1;position: absolute;border-bottom-right-radius:100%;">                  
+                  <a onclick="removeImage(<?php echo $key; ?>,<?php echo $blogDetail[0]['blog_id']; ?>)" class="w3-large w3-text-lightgrey btn" id="imgBtn_<?php echo $key; ?>" style="padding:0 0 0 8px" title="delete image"><i class="fa fa-times"></i></a>                
+                </div>
+              </div>            
+            </div>
+            <?php 
+          }
+          ?>
 
-        <div class="w3-col l12 w3-padding w3-small" id="allPortfolioDiv">
-          <table id="datatable" class="table table-striped table-bordered">
-            <thead>
-              <tr >
-                <th class="text-center">Category</th>
-                <th class="text-center">Title</th>
-                <th class="text-center">Tags Included</th>
-                <th class="text-center">Posted on</th>
-                <th class="text-center"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php 
-              if($all_blogs){
-                foreach($all_blogs as $blog){
-                  ?>
-                  <tr class="w3-center">
-                    <td>
-                      <?php echo $blog['cat_name']; ?>
-                    </td>
-                    <td><?php echo $blog['blog_title']; ?></td>
-                    <td>
-                      <?php 
-                      if($blog['blog_tags']!='' && $blog['blog_tags']!='[]'){
-                        foreach (json_decode($blog['blog_tags'],TRUE) as $key) {
-                          echo '<span class="badge" style="padding:2px 6px;display:inline-block;margin-right:5px;margin-bottom:5px">'.$key.'</span>';
-                        }                        
-                      }
-                      ?>
-                    </td>
-                    <td><?php echo date("d M Y", strtotime($blog['posted_date'])); ?></td>
-                    <td class="w3-center" style="vertical-align: middle;">
-                      <div class="btn-group">
-                        <button data-toggle="dropdown" class="btn btn-default w3-small dropdown-toggle" type="button" style="padding: 2px 6px">Action <span class="caret"></span>
-                        </button>
-                        <ul role="menu" class="dropdown-menu pull-right">
-                          <li><a title="edit blog" href="<?php echo base_url(); ?>admin/manage_blogs/blog/<?php echo base64_encode($blog['blog_id']); ?>">Edit Portfolio</a>
-                          </li>
-                          <li><a ng-click="removeBlog(<?php echo $blog['blog_id']; ?>)" title="delete blog">Delete Portfolio</a>
-                          </li>                    
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <?php
-                } 
-              }
-              else{
-                ?>
-                <tr>
-                  <td colspan="5" class="w3-center theme_text"><b>No Blog Available</b></td>
-                </tr>
-              <?php } ?>                       
-            </tbody>
-
-          </table>
-
+          <!-- upload image -->
+          <!-- <div class="col-md-12 col-xs-12 w3-padding-tiny">  -->
+            <div class="col-md-12 w3-small w3-padding-small w3-margin-bottom">
+             <div class="col-md-6 col-xs-12 w3-padding-small" style="background-color: #F7F7F7">
+              <div class="w3-col l6 w3-margin-bottom">
+                <form id="uploadImageForm" enctype="multipart/form-data">
+                  <input type="hidden" name="img_blog_name" value="<?php echo $blogDetail[0]['blog_title']; ?>">
+                  <input type="hidden" name="img_blog_id" value="<?php echo $blogDetail[0]['blog_id']; ?>">
+                  <input type="hidden" name="img_blog_cat" value="<?php echo $blogDetail[0]['blog_category']; ?>">
+                  <input type="hidden" name="img_blog_count" value="<?php echo count(json_decode($blogDetail[0]['blog_images'])); ?>">
+                  <label>Blog Image: <font color ="red"><span id ="simage_star">*</span></font></label>
+                  <input type="file" name="edit_port_image" id="edit_port_image_1" class="w3-input w3-border" onchange="edit_readURL(this,1);" style="padding:5px" required>
+                  <span class="w3-text-red w3-small" id="edit_image_error_1"></span>
+                  <div class="w3-col l12 w3-margin-top">
+                   <button type="submit" title="upload image" id="uploadImage" class="btn theme_bg">Upload Image</button>
+                 </div>
+               </form>
+             </div>
+             <div class="col-md-6 w3-margin-bottom">
+              <img src="<?php echo base_url(); ?>assets/images/admin/default_image.jpg" width="auto" id="edit_ImagePreview_1" height="150px" alt="Blog Image will be displayed here once chosen." class="img img-thumbnail w3-margin-top">
+            </div>
+          </div>
         </div>
-
+        <!-- </div> -->
       </div>
     </div>
   </div>
-
+</div>
 </div>
 <br />
 </div>

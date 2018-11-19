@@ -66,6 +66,7 @@ class Blog_model extends CI_Model {
         // print_r($insert_data);die();
         $this->db->insert('blogs_tab',$insert_data);
         if($this->db->affected_rows()>0){
+            if($tagAdded_field!='' && $tagAdded_field!='[]'){
             foreach (json_decode($tagAdded_field) as $key) {
                 // print_r($key);
                 $this->db->where('tag_value',$key);
@@ -78,6 +79,7 @@ class Blog_model extends CI_Model {
                     $this->db->insert('tags_tab',$insert_tag);
                 } 
             }
+        }
             return true;
         }
         else{
@@ -100,6 +102,7 @@ class Blog_model extends CI_Model {
         $this->db->where('blog_id', $blog_id);
         $this->db->update('blogs_tab', $result);
         if($this->db->affected_rows()==1){
+            if($edit_tagAdded_field!='' && $edit_tagAdded_field!='[]'){
             foreach (json_decode($edit_tagAdded_field) as $key) {
                 // print_r($key);
                 $this->db->where('tag_value',$key);
@@ -112,6 +115,7 @@ class Blog_model extends CI_Model {
                     $this->db->insert('tags_tab',$insert_tag);
                 } 
             }
+        }
             return true;
         }
         else{

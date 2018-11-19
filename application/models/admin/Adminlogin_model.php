@@ -19,6 +19,7 @@ class Adminlogin_model extends CI_Model {
         $role_name = '';
         if ($result->num_rows() <= 0) {
             return false;
+            die();
         } else {
             foreach ($result->result_array() as $key) {
                 $user_id = $key['user_id'];
