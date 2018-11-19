@@ -123,9 +123,7 @@
         </div>
       </section>
       <section class="wow fadeIn bg-light-gray">
-     
-         
-            <div class="col-md-12 text-center social-style-4 border round"><span class="text-medium text-medium text-uppercase display-block text-font-sec text-extra-dark-gray offset-30px-bottom">Follow Us</span>
+     <div class="col-md-12 text-center social-style-4 border round"><span class="text-medium text-medium text-uppercase display-block text-font-sec text-extra-dark-gray offset-30px-bottom">Follow Us</span>
               <div class="social-icon-style-4">
                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.525124457551!2d73.83154621436857!3d18.505157274476428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf8d90261449%3A0xbbb511df2afe0c9c!2sBizmo+Technologies!5e0!3m2!1sen!2sin!4v1542367197142" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>

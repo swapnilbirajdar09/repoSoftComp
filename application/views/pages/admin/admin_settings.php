@@ -224,7 +224,7 @@
 	  <script>
 	          //--------------fun for remove office details-------------------------------//
 	          function deleteofficeDetails(i) {
-	          	alert(i);
+	          //	alert(i);
 	            $.confirm({
 	              title: '<h4 class="w3-text-red"><i class="fa fa-warning"></i> Are you sure you want to delete this Office Details.!</h4>',
 	              content: '',
@@ -239,7 +239,7 @@
 	              },
 	              cache: false,
 	              success: function (data) {
-	               alert(data);
+	              // alert(data);
 	              // $.alert(data);
 	               $('#msgdiv').html(data);
 	                //location.reload();
