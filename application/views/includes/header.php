@@ -62,7 +62,7 @@ $userName = $this->session->userdata('userName'); //----session variable
                                 <!-- <h3>General</h3> -->
                                 <ul class="nav side-menu">
                                     <li><a href="<?php echo base_url(); ?>admin/admin_dashboard"><i class="fa fa-dashboard"></i> Dashboard </a></li>
-                                    <li><a href="<?php echo base_url(); ?>admin/all_users"><i class="fa fa-product-hunt"></i> Manage Portfolio </a></li>
+                                    <li><a href="<?php echo base_url(); ?>admin/manage_portfolio"><i class="fa fa-product-hunt"></i> Manage Portfolio </a></li>
                                     <li><a><i class="fa fa-server"></i> Manage Services <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo base_url(); ?>admin/add_services">Add Services</a></li>
