@@ -131,13 +131,11 @@ class Admin_setting extends CI_Controller {
         //print_r($_POST); die();
         extract($_FILES);
         $data = $_POST;
-        // print_r($data);die();
+        // print_r($data);die(); 
+
         $allowed_types = ['gif', 'jpg', 'png', 'jpeg', 'JPG', 'GIF', 'JPEG', 'PNG'];
         $imagePath = '';
-
         $image_name = $_FILES['company_logo']['name'];
-
-
         if (!empty(($_FILES['company_logo']['name']))) {
             $extension = pathinfo($_FILES['company_logo']['name'], PATHINFO_EXTENSION);
 
@@ -199,12 +197,26 @@ class Admin_setting extends CI_Controller {
     // ---------function to update office address
     public function add_officeaddress() {
         extract($_POST);
-
+        //print_r($_POST);die();
+        if ($office_type == '0') {
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> Please Select Valid Office Type.
+        </div>
+        <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+            die();
+        }
         $office_details = array(
             'office_type' => $office_type,
             'office_number' => $office_number,
             'office_email' => $office_email,
-            'office_address' => $office_address,
+            'office_address' => $office_address
         );
         $result = $this->Setting_model->add_officeaddress($office_details);
         if ($result) {
