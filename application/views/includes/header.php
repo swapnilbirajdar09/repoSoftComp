@@ -63,7 +63,6 @@ $userName = $this->session->userdata('userName'); //----session variable
                                 <ul class="nav side-menu">
                                     <li><a href="<?php echo base_url(); ?>admin/admin_dashboard"><i class="fa fa-dashboard"></i> Dashboard </a></li>
                                     <li><a href="<?php echo base_url(); ?>admin/all_users"><i class="fa fa-product-hunt"></i> Manage Portfolio </a></li>
-<!--                                    <li><a href="<?php echo base_url(); ?>admin/admin_profile"><i class="fa fa-server"></i>  </a></li>-->
                                     <li><a><i class="fa fa-server"></i> Manage Services <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="<?php echo base_url(); ?>admin/add_services">Add Services</a></li>
@@ -76,6 +75,7 @@ $userName = $this->session->userdata('userName'); //----session variable
                                             <li><a href="<?php echo base_url(); ?>admin/all_jobs">View All Jobs</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="<?php echo base_url(); ?>admin/manage_blogs"><i class="fa fa-comments"></i> Manage Blogs </a></li>
                                     <li><a href="<?php echo base_url(); ?>admin/admin_setting"><i class="fa fa-cogs"></i> General Settings </a></li>
                                 </ul>
                             </div>
