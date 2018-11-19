@@ -40,7 +40,7 @@
                                 <?php } ?>
                             </ul>
                             <!--                            <a href="#" class="btn btn-primary" style="margin-top: 10px;">Apply</a>-->
-                            <a href="#applyfor" id="apply" class="btn btn-primary active" style="margin-top: 15px;">Apply Now</a>
+                            <a href="#applyfor" id="apply" class="btn btn-secondary active" style="margin-top: 15px;">Apply Now</a>
                         </div>
                     </div>
                 </div>
