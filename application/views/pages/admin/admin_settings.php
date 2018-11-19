@@ -33,7 +33,7 @@
 
 	                                        <form id="updatePass">
 	                                            <div class="w3-col l8 w3-padding-right w3-margin-bottom">
-	                                                <input type="text" name="admin_pass" value="<?php echo $admin_details[0]['user_passwd']; ?>" placeholder="Enter Password here..." id="admin_email" class="w3-input" required>
+                                                        <input type="text" name="admin_pass" value="<?php echo base64_decode($admin_details[0]['user_passwd']); ?>" placeholder="Enter Password here..." id="admin_email" class="w3-input" required>
 	                                            </div>
 	                                            <div class="w3-col l4">
 	                                                <button type="submit" class="w3-button btn theme_bg">Update Password</button>

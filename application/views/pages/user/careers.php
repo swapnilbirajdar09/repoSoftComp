@@ -36,7 +36,7 @@
                                     }
                                 } else {
                                     ?>
-                                    <li><span class="w3-text-black">No Requirements..</span></li>
+                                    <center><span class="text-black text-font-sec offset-5px-bottom display-block text-extra-dark-gray text-small">No Requirements Available..!</span></center>
                                 <?php } ?>
                             </ul>
                             <!--                            <a href="#" class="btn btn-primary" style="margin-top: 10px;">Apply</a>-->
@@ -106,7 +106,7 @@
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-message-re">Message</label>
-                        <textarea class="form-input" id="contact-message-re" name="message" data-constraints="@Required"></textarea>
+                        <textarea class="form-input" id="contact-message-re" name="message" data-constraints="@Required" style="resize: none;"></textarea>
                     </div>
                 </div>
                 <div class="col-md-12">
