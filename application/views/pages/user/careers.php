@@ -49,8 +49,8 @@
         } else {
             ?>
             <div class="col-md-12 col-sm-12 col-xs-12 xs-offset-30px-bottom wow fadeInUp xs-text-center">
-                    <center><h6 class="text-light text-dark-gray"> No Jobs Available..!</h6></center>
-                </div>
+                <center><h6 class="text-light text-dark-gray"> No Jobs Available..!</h6></center>
+            </div>
         <?php }
         ?>
     </div>
@@ -69,24 +69,24 @@
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-name-re">Name</label>
-                        <input class="form-input" id="contact-name-re" type="text" name="candidateName" data-constraints="@Required" required>
+                        <input class="form-input" id="contact-name-re" type="text" name="candidateName" data-constraints="@Required">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-phone-re">Phone</label>
-                        <input class="form-input" id="contact-phone-re" type="text" name="candidate_phone" data-constraints="@Required @Numeric" required>
+                        <input class="form-input" id="contact-phone-re" type="number" maxlength="10" name="candidate_phone" data-constraints="@Required @Numeric">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-email-re">E-Mail</label>
-                        <input class="form-input" id="contact-email-re" type="email" name="candidate_email" data-constraints="@Required @Email" required>
+                        <input class="form-input" id="contact-email-re" type="email" name="candidate_email" data-constraints="@Required @Email">
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-wrap">
-                        <select class="form-input select select-inline" data-placeholder="Select The Job From Job List" name="job_id" data-constraints="@Required" data-dropdown-class="select-inline-dropdown" required>
+                        <select class="form-input select select-inline" id="selectBox" data-placeholder="Select The Job From Job List" name="job_id" data-constraints="@Required" data-dropdown-class="select-inline-dropdown">
                             <option label="placeholder"></option>
                             <?php
                             if ($jobs != '' && $jobs != []) {
@@ -97,7 +97,7 @@
                                 }
                             } else {
                                 ?>
-                                <option value="0">No Jobs Available..!</option>
+                                <option value="0">No Jobs Available</option>
                             <?php }
                             ?>
                         </select>
@@ -106,7 +106,7 @@
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-message-re">Message</label>
-                        <textarea class="form-input" id="contact-message-re" name="message" data-constraints="@Required" style="resize: none;" required></textarea>
+                        <textarea class="form-input" id="contact-message-re" name="message" data-constraints="@Required" style="resize: none;"></textarea>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -127,6 +127,46 @@
     //-----------fun for apply to the job----------------------//
     $(function () {
         $("#applyJobForm").submit(function () {
+            var name = $('#contact-name-re').val();
+            var phone = $('#contact-phone-re').val();
+            var email = $('#contact-email-re').val();
+            var message = $('#contact-message-re').val();
+            var resume = $('#resume').val();
+
+            if ($('#contact-name-re').val() == '') {
+                $('#contact-name-re').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-name-re').css('border-color', '');
+            }
+            if ($('#contact-phone-re').val() == '') {
+                $('#contact-phone-re').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-phone-re').css('border-color', '');
+            }
+            if ($('#contact-email-re').val() == '') {
+                $('#contact-email-re').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-email-re').css('border-color', '');
+            }
+           
+            if ($('#contact-message-re').val() == '') {
+                $('#contact-message-re').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-message-re').css('border-color', '');
+            }
+            if ($('#resume').val() == '') {
+                $('#resume').css('border-color', 'red');
+                return false;
+            } else {
+                $('#resume').css('border-color', '');
+            }
+            //alert(resume);
+
+
             dataString = $("#applyJobForm").serialize();
             $('#btnsubmit').html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-spinner fa-spin w3-large"></i> <b>Appling Job. Hang on...</b></span>');
             $.ajax({
