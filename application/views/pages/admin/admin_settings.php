@@ -15,7 +15,7 @@
                         <div class="col-lg-6 w3-padding-small ">
 
                             <div class="w3-col l12 w3-small w3-round w3-margin-bottom  w3-padding-small">
-                                <label><i class="fa fa-users"></i> Update Username</label><br>
+                                <label><i class="fa fa-users"></i> Update Username <b class="w3-text-red w3-medium">*</b></label><br>
                                 <form id="updateUname">
                                     <div class="w3-col l8 w3-padding-right w3-margin-bottom">
                                         <input type="text" name="admin_uname" value="<?php echo $admin_details[0]['user_name']; ?>" placeholder="Enter Username Here..." id="admin_uname" class="w3-input" required>
@@ -29,7 +29,7 @@
                         <div class="col-lg-6 w3-margin-bottom">
 
                             <div class="w3-col l12 w3-round w3-margin-bottom w3-padding-small">
-                                <label><i class="fa fa-lock"></i> Update Password</label><br>
+                                <label><i class="fa fa-lock"></i> Update Password <b class="w3-text-red w3-medium">*</b></label><br>
 
                                 <form id="updatePass">
                                     <div class="w3-col l8 w3-padding-right w3-margin-bottom">
@@ -45,7 +45,7 @@
                     <div class="w3-col l12">
                         <div class="col-lg-6 w3-margin-bottom">
                             <div class="w3-col l12 w3-small w3-round w3-margin-bottom  w3-padding-small">
-                                <label><i class="fa fa-envelope"></i>Update Email-ID</label><br>
+                                <label><i class="fa fa-envelope"></i>Update Email-ID <b class="w3-text-red w3-medium">*</b></label><br>
                                 <form id="updateEmail">
                                     <div class="w3-col l8 w3-padding-right w3-margin-bottom">
                                         <input type="email" name="admin_email" value="<?php echo $admin_details[0]['user_email']; ?>" placeholder="Enter Email-ID here..." id="admin_email" class="w3-input" required>
@@ -69,22 +69,22 @@
         <div class="col-lg-12 w3-margin-top " >
             <div class="col-lg-12">
                 <div class="w3-col l12 w3-padding w3-white" style="border:1px dotted">
-                    <h4 class="theme_text"><i class="fa fa-building"></i> Company Profile:</h4>
+                    <h4 class="theme_text"><i class="fa fa-building"></i> Company Profile</h4>
                     <form id="add_company_profile">    
                         <input type="hidden" name="_token" id="_token" value="">          
                         <div class="w3-col l12 w3-margin-top">
                             <div class="col-lg-6 w3-margin-bottom">
-                                <label>Company Name:</label>
+                                <label>Company Name <b class="w3-text-red w3-medium">*</b></label>
                                 <input type="text" name="company_name" value="<?php echo $company_details[0]['company_name']; ?>" class="w3-input" placeholder="Enter Company Name Here" required>
                             </div>
                             <div class="col-lg-6 w3-margin-bottom">
-                                <label>Company Email:</label>
+                                <label>Company Email <b class="w3-text-red w3-medium">*</b></label>
                                 <input type="email" name="company_email" value="<?php echo $company_details[0]['company_email']; ?>"  class="w3-input" placeholder="Enter Company Email Here" required>
                             </div>
                         </div>
                         <div class="w3-col l12">
                             <div class="col-lg-3 w3-margin-bottom">
-                                <label>Company Logo:</label>
+                                <label>Company Logo <b class="w3-text-red w3-medium">*</b></label>
                                 <input type="file" name="company_logo" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px" required>
                                 <div id="image_error" class="w3-text-red"></div>
 
@@ -104,11 +104,11 @@
                 </div>
                 <!-- ---div for office details -->
                 <div class="col-lg-12 w3-margin-top w3-border w3-white" style="border:1px dotted" id="officedetail">
-                    <h4 class="theme_text"><i class="fa fa-address-book"></i> Office Details:</h4>
+                    <h4 class="theme_text"><i class="fa fa-address-book"></i> Office Details</h4>
                     <form id="add_company_address">    
                         <div class="w3-col l12 s12 m12 w3-small">
                             <div class="col-md-3 ">
-                                <label>Office Type:</label>
+                                <label>Office Type <b class="w3-text-red w3-medium">*</b></label>
                                 <select class="w3-input w3-border control w3-text-grey" name="office_type" id="mc-caste" required>
                                     <option value="0" class="w3-light-grey" selected>Select Office Type</option>
                                     <option value="Head Office">Head Office</option>                      
@@ -116,19 +116,18 @@
                                 </select>
                             </div>
                             <div class="col-md-3 ">
-                                <label>Phone Number :</label>
+                                <label>Phone Number <b class="w3-text-red w3-medium">*</b></label>
                                 <input type="number" name="office_number" class="w3-input" placeholder="Enter office number here" required>
                             </div>
                             <div class="col-md-3">
-                                <label>Office Email:</label>
+                                <label>Office Email <b class="w3-text-red w3-medium">*</b></label>
                                 <input type="email" name="office_email" class="w3-input" placeholder="Enter Office Email Here" required>
                             </div>
                             <div class="col-md-3 ">
-                                <label>Office Address:</label>
+                                <label>Office Address <b class="w3-text-red w3-medium">*</b></label>
                                 <textarea class="w3-input" name="office_address" placeholder="Enter Office Address Here..." rows="4" required></textarea>
                             </div>
                             <div class="w3-col l12" id="addedmore_Div"></div>
-
                             <div class="col-lg-12 w3-center w3-margin-bottom w3-padding-top" id="archSubmit">
                                 <button class="btn theme_bg w3-button w3-center" id="addofficedetails" type="submit">  Submit office Details </button>
                             </div>
@@ -136,14 +135,12 @@
                     </form>
                 </div>
                 <!-- ---div for office details -->
-
                 <!-- ---div for show office details -->
                 <div class="w3-col l12 w3-margin-top">
                     <hr>
                     <label class="theme_text"><i class="fa fa-database"></i> Office Details:</label>
                     <form id="archListForm">
                         <table id="datatable" class="table table-striped table-bordered">
-
                             <thead>
                                 <tr>
                                     <th class="w3-center">Sr no</th>

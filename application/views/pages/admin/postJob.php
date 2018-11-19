@@ -4,16 +4,16 @@
 <div class="right_col page_title" role="main" ng-app="addJobApp" ng-controller="jobCtrl">
     <div class="w3-col l12" id="jobErrMsg"></div>
     <div class="container page_title">
-        <div class="row x_title w3-margin-top"><div class="w3-padding"><h3><i class="fa fa-users"></i> Career Section</h3></div></div>
+        <div class="row x_title w3-margin-top"><div class="w3-padding"><h3><i class="fa fa-briefcase"></i> Career Section</h3></div></div>
         <!--        <fieldset>-->
         <div class="row w3-padding">
             <div class="col-lg-3"></div>
             <div class="col-lg-6 w3-padding w3-margin-bottom" style="border:1px dotted">
                 <form id="add_jobform" name="add_jobform" method="post" role="form">
-                    <div class="w3-col l12">
+                    <div class="w3-col l12 w3-padding-bottom w3-border-bottom">
                         <h4><i class="fa fa-plus"></i> Post Job</h4>
                     </div>
-                    <div class="col-lg-12 col-xs-12 col-sm-12 w3-margin-bottom">
+                    <div class="col-lg-12 col-xs-12 col-sm-12 w3-margin-bottom w3-margin-top">
                         <label>Job Position <b class="w3-text-red w3-medium">*</b></label>
                         <input type="text" name="job_title" ng-model="job_title" id="job_title" class="form-control" placeholder="Enter Job Title here..." value="" required>
                     </div>
