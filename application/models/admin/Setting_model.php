@@ -38,8 +38,8 @@ class Setting_model extends CI_Model {
     }
   //-------UPDATE ADMIN PASSWORD FUNCTION--------------//
        public function updatePass($upass) {
-
-        $sql = "UPDATE user_tab SET user_passwd='$upass' WHERE user_id='1'";
+        $password = base64_encode($upass);   
+        $sql = "UPDATE user_tab SET user_passwd='$password' WHERE user_id='1'";
 
         if ($this->db->query($sql)) {
             return true;

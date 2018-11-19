@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
                                     <label>Service Image <b class="w3-text-red w3-medium">*</b></label>
-                                    <input type="file" name="serviceImage" id="serviceImage" value="" class="form-control">
+                                    <input type="file" name="serviceImage" id="serviceImage" value="" class="form-control" required>
                                     <input type="hidden" class="form-control w3-small" name="profile_imageEdit" id="profile_imageEdit" value="">
                                 </div>
                             </div>
@@ -26,7 +26,7 @@
                             <div class="w3-col l12 w3-margin-bottom">
                                 <div class="col-lg-6 col-xs-12 col-sm-12">
                                     <label>Service Description <b class="w3-text-red w3-medium">*</b></label>
-                                    <textarea class="form-control" name="serviceDescription" id="serviceDescription" ng-model="serviceDescription" placeholder="Service Description" rows="6" cols="50" style="resize: none;"></textarea>
+                                    <textarea class="form-control" name="serviceDescription" id="serviceDescription" ng-model="serviceDescription" placeholder="Service Description" rows="6" cols="50" style="resize: none;" required></textarea>
                                 </div>
                                 <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
                                     <label>
