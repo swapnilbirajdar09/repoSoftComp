@@ -18,7 +18,10 @@ class Adminlogin_model extends CI_Model {
         $user_role = '';
         $role_name = '';
         if ($result->num_rows() <= 0) {
-            return false;
+            $response = array(
+                'status' => 500
+            );
+            return $response;
             die();
         } else {
             foreach ($result->result_array() as $key) {
