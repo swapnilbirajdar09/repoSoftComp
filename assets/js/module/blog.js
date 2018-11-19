@@ -15,8 +15,8 @@ $(document).ready(function () {
         <a href="#" style="padding:1px" class="delete btn w3-text-red w3-right w3-small" title="remove image"><i class="fa fa-remove"></i>\n\
         </a>\n\
         <div class="w3-col l12 ">\n\
-        <label>Portfolio Image: <font color ="red"><span id ="simage_star">*</span></font></label>\n\
-        <input type="file" name="port_image[]" id="port_image_'+x+'" class="w3-input w3-border" onchange="readURL(this,'+x+');" style="padding:5px" required>\n\
+        <label>Image: <font color ="red"><span id ="simage_star">*</span></font></label>\n\
+        <input type="file" name="blog_image[]" id="blog_image_'+x+'" class="w3-input w3-border" onchange="readURL(this,'+x+');" style="padding:5px" required>\n\
         <span class="w3-text-red w3-small" id="image_error_'+x+'"></span>\n\
         </div>\n\
         <div class="w3-col l12 w3-margin-top w3-margin-bottom">\n\
@@ -53,7 +53,7 @@ $(document).ready(function () {
         </a>\n\
         <div class="w3-col l12 ">\n\
         <label>Embed Video (optional):</label>\n\
-        <input type="input" name="port_video[]" id="port_video_'+x+'" class="w3-input w3-border" onkeyup="readVideo(this,'+x+');" placeholder="Copy & paste url link">\n\
+        <input type="input" name="blog_video[]" id="blog_video_'+x+'" class="w3-input w3-border" onkeyup="readVideo(this,'+x+');" placeholder="Copy & paste url link">\n\
         <span class="w3-text-red w3-small" id="video_error_'+x+'"></span>\n\
         </div>\n\
         <div class="w3-col l12 w3-margin-top">\n\
@@ -88,7 +88,7 @@ $(document).ready(function () {
         </a>\n\
         <div class="w3-col l12 w3-margin-bottom">\n\
         <label>Important links (optional):</label>\n\
-        <input type="input" name="port_link[]" id="port_link_'+x+'" class="w3-input w3-border" placeholder="Paste important url link">\n\
+        <input type="input" name="blog_link[]" id="blog_link_'+x+'" class="w3-input w3-border" placeholder="Paste important url link">\n\
         <span class="w3-text-red w3-small" id="file_error_'+x+'"></span>\n\
         </div>\n\
         </div>\n\
@@ -109,7 +109,7 @@ function readURL(input,id) {
 	if (input.files && input.files[0]) {
 		var reader = new FileReader();
 
-    var extension = $('#port_image_'+id).val().split('.').pop().toLowerCase();
+    var extension = $('#blog_image_'+id).val().split('.').pop().toLowerCase();
     // image validation
     if ($.inArray(extension, ['jpeg', 'png', 'jpg']) == -1) {
       $('#ImagePreview_'+id).hide();
@@ -128,7 +128,7 @@ function readURL(input,id) {
 
 // ----function to read video link and set to iframe for portfolio------//
 function readVideo(input,id) {
-  var url=$('#port_video_'+id).val();    
+  var url=$('#blog_video_'+id).val();    
   if(url==''){
     $('#portVideoPreview_'+id).hide();
     $('#video_error_'+id).html('');
@@ -318,112 +318,67 @@ function openHelp(modal_id) {
 var app = angular.module("BlogApp", ['ngSanitize']); 
 app.controller("BlogCtrl", function($scope,$http,$window) {
 
-// remove prtfolio from db
-$scope.removePortfolio = function (portfolio_id) {
-  $.confirm({
-    title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Do you really want to delete this portfolio?</span>',
-    content: '',
-    type: 'red',
-    buttons: {
-      confirm: function () {
-       $http({
-         method: 'get',
-         url: BASE_URL+'admin/manage_portfolio/removePortfolio',
-         params: {portfolio_id: portfolio_id},
-       }).then(function successCallback(response) {
-        $scope.delMessage = response.data;
-        $window.setTimeout(function() {
-          $(".alert").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove(); 
-          });
-          location.reload();
-        }, 1500);
-      }); 
-     },
-     cancel: function () {
+  $scope.tags = [];
+
+  // add tags to temp 
+  $scope.addTag = function () {
+    $scope.errortext = "";
+    if (!$scope.addTagValue) {
+      return;
+    }
+    if ($scope.tags.indexOf($scope.addTagValue) == -1) {
+      $scope.tags.push($scope.addTagValue);
+      $scope.tagsJSON = JSON.stringify($scope.tags);
+      $scope.addTagValue='';
+    } else {
+      $scope.errortext = "<b>Warning:</b> This Tag is already included !";
+    }
+  };
+  // remove tag from temp
+  $scope.removeTag = function (x) {
+    $scope.errortext = "";
+    $scope.tags.splice(x, 1);
+    $scope.tagsJSON = JSON.stringify($scope.tags);
+  };
+
+  // remove blog from db
+  $scope.removeBlog = function (portfolio_id) {
+    $.confirm({
+      title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Do you really want to delete this portfolio?</span>',
+      content: '',
+      type: 'red',
+      buttons: {
+        confirm: function () {
+         $http({
+           method: 'get',
+           url: BASE_URL+'admin/manage_portfolio/removePortfolio',
+           params: {portfolio_id: portfolio_id},
+         }).then(function successCallback(response) {
+          $scope.delMessage = response.data;
+          $window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+              $(this).remove(); 
+            });
+            location.reload();
+          }, 1500);
+        }); 
+       },
+       cancel: function () {
+       }
      }
-   }
- });
-}
+   });
+  }
 
-// mark portfolio as featured
-$scope.markPortfolio = function (portfolio_id) {
-  $.confirm({
-    title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Mark this as <b>Featured Portfolio</b>?</span>',
-    content: '',
-    type: 'red',
-    buttons: {
-      confirm: function () {
-       $http({
-         method: 'get',
-         url: BASE_URL+'admin/manage_portfolio/markPortfolio',
-         params: {portfolio_id: portfolio_id},
-       }).then(function successCallback(response) {
-        $scope.delMessage = response.data;
-        $window.setTimeout(function() {
-          $(".alert").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove(); 
-          });
-          location.reload();
-        }, 1500);
-      }); 
-     },
-     cancel: function () {
-     }
-   }
- });
-}
-
-// unmark portfolio as featured
-$scope.unmarkPortfolio = function (portfolio_id) {
-  $.confirm({
-    title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Do you really want to unmark this <b>Featured Portfolio</b>?</span>',
-    content: '',
-    type: 'red',
-    buttons: {
-      confirm: function () {
-       $http({
-         method: 'get',
-         url: BASE_URL+'admin/manage_portfolio/unmarkPortfolio',
-         params: {portfolio_id: portfolio_id},
-       }).then(function successCallback(response) {
-        $scope.delMessage = response.data;
-        $window.setTimeout(function() {
-          $(".alert").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove(); 
-          });
-          location.reload();
-        }, 1500);
-      }); 
-     },
-     cancel: function () {
-     }
-   }
- });
-}
-
-// Download file code
-$scope.downloadFile = function (file_path) {
-  $http({
-   method: 'get',
-   url: 'product/downloadFile',
-   params: {file_path: file_path},
- }).then(function successCallback(response) {
-  alert(response.data);
-});
-}
-
-
-// add new product
-$("#addPortfolio_form").on('submit', function(e) {
+// add new blog
+$("#addBlog_form").on('submit', function(e) {
  e.preventDefault(); 
- var cat=$('#portfolio_category').val();
-
+ var cat=$('#blog_category').val();
+ $('#blog_message').text($('#editor-one').html());
  $('#cat_error').html('');
 
  if(cat==0){
-  $('#portfolio_category').focus();
-  $('#cat_error').html('<b> ERROR: Please select Portfolio Category. </b>');
+  $('#blog_category').focus();
+  $('#cat_error').html('<b> ERROR: Please select one Category. </b>');
   if(navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {           
     $("html,body").animate({scrollTop:0},"slow");
     document.scrollingElement.scrollTop;
@@ -433,9 +388,9 @@ $("#addPortfolio_form").on('submit', function(e) {
  return false;
 }
 
-dataString = $("#addPortfolio_form").serialize();
+dataString = $("#addBlog_form").serialize();
 $.ajax({
-    url: BASE_URL+"admin/manage_portfolio/addPortfolio", // point to server-side PHP script
+    url: BASE_URL+"admin/manage_blogs/addBlog", // point to server-side PHP script
     data: new FormData(this),
     type: 'POST',
     contentType: false, // The content type used when sending data to the server.
@@ -446,18 +401,11 @@ $.ajax({
     },
     success: function(data){
       $('#formOutput').html(data);
-      $('#btnsubmit').html('<button type="submit" title="Save and Add new Portfolio" id="submitForm" class="btn theme_bg">Save new Portfolio</button>');
-
-      window.setTimeout(function() {
-       $(".alert").fadeTo(500, 0).slideUp(500, function(){
-         $(this).remove(); 
-       });
-       window.location.reload();
-     }, 1000);
+      $('#btnsubmit').html('<button type="submit" title="Post new Blog" id="submitForm" class="btn theme_bg">Post new Blog</button>');
     },
     error:function(data){
      $('#formOutput').html('<div class="alert alert-warning alert-dismissible fade in alert-fixed w3-round"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Failure!</strong> Something went wrong. Please refresh the page and try once again.</div>');
-     $('#btnsubmit').html('<button type="submit" title="Save and Add new Portfolio" id="submitForm" class="btn theme_bg">Save new Portfolio</button>');
+     $('#btnsubmit').html('<button type="submit" title="Post new Blog" id="submitForm" class="btn theme_bg">Post new Blog</button>');
      window.setTimeout(function() {
        $(".alert").fadeTo(500, 0).slideUp(500, function(){
          $(this).remove(); 
