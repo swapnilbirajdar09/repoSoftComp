@@ -68,7 +68,7 @@ class Careers extends CI_Controller {
         $data['imagePath'] =  $imagePath;
 
         $result = $this->Careers_model->applyJob($data);
-       print_r($imagePath);
+      // print_r($imagePath);
        //print_r($result);die();
 //        die();
         if ($result == '200') {
