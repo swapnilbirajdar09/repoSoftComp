@@ -86,33 +86,33 @@
               	  <div class="w3-col l12 w3-center" id="fpasswd_err"></div>
                 <div class="form-wrap">
                   <label class="form-label" for="contact-name">Name</label>
-                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
+                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-phone">Phone</label>
-                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @Numeric">
+                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @Numeric" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-email">E-Mail</label>
-                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email">
+                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required @Email" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-wrap">
                   <div class="form-wrap">
                   <label class="form-label" for="contact-subject">Subject</label>
-                  <input class="form-input" id="contact-subject" type="text" name="subject" data-constraints="@Required">
+                  <input class="form-input" id="contact-subject" type="text" name="subject" data-constraints="@Required" required>
                 </div>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-wrap">
                   <label class="form-label" for="contact-message">Message</label>
-                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required" required></textarea>
                 </div>
               </div>
             </div>
@@ -134,8 +134,38 @@
       <script>
     $(function () {
         $("#contact_us_form").submit(function () {
+        	if ($('#contact-name').val() == '') {
+                $('#contact-name').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-name').css('border-color', '');
+            }
+            if ($('#contact-phone').val() == '') {
+                $('#contact-phone').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-phone').css('border-color', '');
+            }
+            if ($('#contact-email').val() == '') {
+                $('#contact-email').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-email').css('border-color', '');
+            }
+            if ($('#contact-subject').val() == '') {
+                $('#contact-subject').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-subject').css('border-color', '');
+            }
+            if ($('#contact-message').val() == '') {
+                $('#contact-message').css('border-color', 'red');
+                return false;
+            } else {
+                $('#contact-message').css('border-color', '');
+            }
             dataString = $("#contact_us_form").serialize();
-            	alert(dataString);
+            	//alert(dataString);
             $("#submitbtn").html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-spinner fa-spin w3-large"></i> <b>Sending Message. Hang on...</b></span>');
             $.ajax({
                 type: "POST",
