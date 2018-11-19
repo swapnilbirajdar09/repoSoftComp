@@ -11,6 +11,7 @@ class Careers_model extends CI_Model {
         extract($data);
 
         $exist = Careers_model::checkEmailExist($candidate_email, $job_id);
+       // print_r($exist);die();
         if ($exist == 0) {
             $sql = "INSERT INTO candidate_tab(candidate_name,application_message,candidate_email,"
                     . "candidate_mobile,candidate_cv,applied_job, application_status,applied_date)"
@@ -37,7 +38,7 @@ class Careers_model extends CI_Model {
             'applied_job' => $job_id
         ));
 
-        if ($query->num_rows() >= 0) {
+        if ($query->num_rows() > 0) {
             return 1;
         } else {
             return 0;

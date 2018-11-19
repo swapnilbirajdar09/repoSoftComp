@@ -18,7 +18,7 @@
                         <th class="w3-center"><span>Job Name</span></th>
                         <th class="w3-center"><span>Job Description</span></th>                        
                         <th class="w3-center"><span>Requirements</span></th>                        
-                        <th class="w3-center"><span>Vacancies</span></th>
+                        
                         <th class="w3-center"><span>Req.Experience</span></th>
                         <th class="w3-center"><span>Added Date</span></th>
                         <th class="w3-center"><span>Action</span></th>
@@ -35,29 +35,29 @@
                             <tr>
                                 <td class="w3-center"><?php echo $count; ?></td>
                                 <td class="w3-center"> 
-                                    <span class=" w3-text-black"><b><?php echo $key['job_name']; ?></b></span>
+                                    <p class=" w3-text"><b><?php echo $key['job_name']; ?><br>Position : <?php echo $key['vacancies'] ?></b></p>
                                 </td>
                                 <td class="w3-center">
-                                    <p class=" w3-text-black"><b><?php echo $key['job_description']; ?></b></p>
+                                    <p class=" w3-text"><b><?php echo $key['job_description']; ?></b></p>
                                 </td>
-                                <td class="w3-text-black" width="180px" style="vertical-align: middle;">
+                                <td class="w3-text" width="180px" style="vertical-align: middle;">
                                     <ul>
                                         <?php
                                         if ($key['req_list'] != '') {
                                             foreach (json_decode($key['req_list'],TRUE) as $val) {
                                                 ?>
-                                        <li><span class=" w3-text-black"><b><?php echo $val; ?></b></span></li>
+                                        <li><p class=" w3-text"><b><?php echo $val; ?></b></p></li>
                                                 <?php
                                             }
                                         } else {
                                             ?>
-                                        <li><span class="w3-text-black">No Requirements..</span></li>
+                                        <li><span class="w3-text">No Requirements..</span></li>
                                         <?php } ?>
                                     </ul>
                                 </td>
-                                <td class="w3-center w3-text-black"><b><?php echo $key['vacancies'] ?></b></td>
-                                <td class="w3-center w3-text-black"><b><?php echo $key['req_exp']; ?></b></td>
-                                <td class="w3-center w3-text-black"><b><?php echo $key['added_date']; ?></b></td>
+                                
+                                <td class="w3-center w3-text"><b><?php echo $key['req_exp']; ?></b></td>
+                                <td class="w3-center w3-text"><b><?php echo $key['added_date']; ?></b></td>
                                 <td class="w3-center" >
                                     <div class="btn-group">
                                         <a class="btn btn-sm btn-default" href="<?php echo base_url().'admin/all_jobs/view_applied_candidate_list/'. base64_encode($key['job_id']);?>" title="View Applied Candidates" style=" margin-bottom: 5px; padding: 2px 8px;">

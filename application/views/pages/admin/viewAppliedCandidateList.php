@@ -38,20 +38,20 @@
                             <tr>
                                 <td class="w3-center"><?php echo $count; ?></td>
                                 <td class="w3-center"> 
-                                    <span class=" w3-text-black"><b><?php echo $key['candidate_name']; ?></b></span>
+                                    <span class=" w3-text"><b><?php echo $key['candidate_name']; ?></b></span>
                                 </td>
                                 <td class="w3-center">
-                                    <span class="w3-text-black"><b><?php echo $key['candidate_email']; ?></b></span>
+                                    <span class="w3-text"><b><?php echo $key['candidate_email']; ?></b></span>
                                 </td>
                                 <td class="w3-center w3-text-black" width="150px">
-                                    <span class="w3-text-black"><b><?php echo $key['candidate_mobile']; ?></b></span>
+                                    <span class="w3-text"><b><?php echo $key['candidate_mobile']; ?></b></span>
                                 </td>
-                                <td class="w3-center w3-text-black">
-                                    <a class="btn" target="_self" href="<?php echo base_url(); ?><?php echo $key['candidate_cv']; ?>" download="<?php echo $key['candidate_name']; ?>" style="padding:0"><span class="w3-small w3-text-grey"><i class="fa fa-download"></i><b> <?php echo $key['candidate_name']; ?></b></span></a>
+                                <td class="w3-center w3-text">
+                                    <a class="btn" target="_self" href="<?php echo base_url(); ?><?php echo $key['candidate_cv']; ?>" download="<?php echo $key['candidate_name']; ?>" style="padding:0"><span class="w3-small w3-text"><i class="fa fa-download"></i><b> <?php echo $key['candidate_name']; ?></b></span></a>
 <!--                                    <a class="btn w3-medium" title="Download Resume" href="<?php //echo base_url() . 'admin/all_jobs/download/' . base64_encode($key['candidate_id'] . '|' . $key['candidate_name']); ?>"><i class="fa fa-download"></i> Download</a>-->
                                 </td>
-                                <td class="w3-center w3-text-black">
-                                    <span class="w3-text-black"><b><?php echo $key['applied_date']; ?></b></span>
+                                <td class="w3-center w3-text">
+                                    <span class="w3-text"><b><?php echo $key['applied_date']; ?></b></span>
                                 </td>
                                 <td class="w3-center" style="vertical-align: middle;">
                                     <div class="btn-group">                   
