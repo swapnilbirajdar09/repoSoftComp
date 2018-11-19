@@ -236,8 +236,8 @@
                 } else {
                     ?>
                     <tr>
-                        <td colspan="8" class="w3-center">
-                            <span> No User Found </span>
+                        <td colspan="5" class="w3-center">
+                            <span> No Services Available..! </span>
                         </td>              
                     </tr>
                     <?php

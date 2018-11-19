@@ -97,7 +97,7 @@
                                 }
                             } else {
                                 ?>
-                                <option value="0">No Jobs Available</option>
+                                <option value="0">No Jobs Available..!</option>
                             <?php }
                             ?>
                         </select>
