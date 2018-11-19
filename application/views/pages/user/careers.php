@@ -69,24 +69,24 @@
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-name-re">Name</label>
-                        <input class="form-input" id="contact-name-re" type="text" name="candidateName" data-constraints="@Required">
+                        <input class="form-input" id="contact-name-re" type="text" name="candidateName" data-constraints="@Required" required>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-phone-re">Phone</label>
-                        <input class="form-input" id="contact-phone-re" type="text" name="candidate_phone" data-constraints="@Required @Numeric">
+                        <input class="form-input" id="contact-phone-re" type="text" name="candidate_phone" data-constraints="@Required @Numeric" required>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-email-re">E-Mail</label>
-                        <input class="form-input" id="contact-email-re" type="email" name="candidate_email" data-constraints="@Required @Email">
+                        <input class="form-input" id="contact-email-re" type="email" name="candidate_email" data-constraints="@Required @Email" required>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-wrap">
-                        <select class="form-input select select-inline" data-placeholder="Select The Job From Job List" name="job_id" data-constraints="@Required" data-dropdown-class="select-inline-dropdown">
+                        <select class="form-input select select-inline" data-placeholder="Select The Job From Job List" name="job_id" data-constraints="@Required" data-dropdown-class="select-inline-dropdown" required>
                             <option label="placeholder"></option>
                             <?php
                             if ($jobs != '' && $jobs != []) {
@@ -106,7 +106,7 @@
                 <div class="col-md-12">
                     <div class="form-wrap">
                         <label class="form-label" for="contact-message-re">Message</label>
-                        <textarea class="form-input" id="contact-message-re" name="message" data-constraints="@Required" style="resize: none;"></textarea>
+                        <textarea class="form-input" id="contact-message-re" name="message" data-constraints="@Required" style="resize: none;" required></textarea>
                     </div>
                 </div>
                 <div class="col-md-12">

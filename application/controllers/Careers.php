@@ -24,6 +24,21 @@ class Careers extends CI_Controller {
         extract($_FILES);
         $data = $_POST;
 
+        if ($job_id == 0) {  //for prod images
+            echo '<div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Warning! </strong> Please Select The Valid Job.
+                </div>
+                 <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+            die();
+        }
+
         $imagePath = '';
         if (!empty(($_FILES['resume']['name']))) {
             $extension = pathinfo($_FILES['resume']['name'], PATHINFO_EXTENSION);
