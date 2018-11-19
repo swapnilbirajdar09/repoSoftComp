@@ -16,6 +16,7 @@ app.controller("jobCtrl", function ($scope, $http) {
         } else {
             $scope.errortext = "This Requirement is already listed.";
         }
+        $scope.addSkillbtn = '';
     };
 //--------------------------------------------------------------------------------------------------------------------------------
     // remove skill from temp
