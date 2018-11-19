@@ -127,11 +127,6 @@
     //-----------fun for apply to the job----------------------//
     $(function () {
         $("#applyJobForm").submit(function () {
-            var name = $('#contact-name-re').val();
-            var phone = $('#contact-phone-re').val();
-            var email = $('#contact-email-re').val();
-            var message = $('#contact-message-re').val();
-            var resume = $('#resume').val();
 
             if ($('#contact-name-re').val() == '') {
                 $('#contact-name-re').css('border-color', 'red');
@@ -151,7 +146,7 @@
             } else {
                 $('#contact-email-re').css('border-color', '');
             }
-           
+
             if ($('#contact-message-re').val() == '') {
                 $('#contact-message-re').css('border-color', 'red');
                 return false;
