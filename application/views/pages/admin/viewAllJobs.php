@@ -13,7 +13,7 @@
 
             <table id="datatable" class="table">
                 <thead>
-                    <tr class="theme_bg">
+                    <tr class="theme_bg w3-small">
                         <th class="w3-center"><span>Sr No</span></th>
                         <th class="w3-center"><span>Job Name</span></th>
                         <th class="w3-center"><span>Job Description</span></th>                        
@@ -32,10 +32,10 @@
                         $count = 1;
                         foreach ($jobs as $key) {
                             ?>
-                            <tr>
+                    <tr class="w3-small">
                                 <td class="w3-center"><?php echo $count; ?></td>
                                 <td class="w3-center"> 
-                                    <p class=" w3-text"><b><?php echo $key['job_name']; ?><br>Position : <?php echo $key['vacancies'] ?></b></p>
+                                    <p class=" w3-text"><b><?php echo $key['job_name']; ?><br><span class="w3-small">(Positions&nbsp;:&nbsp;<?php echo $key['vacancies'] ?>)</span></b></p>
                                 </td>
                                 <td class="w3-center">
                                     <p class=" w3-text"><b><?php echo $key['job_description']; ?></b></p>
