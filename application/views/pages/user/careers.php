@@ -11,7 +11,7 @@
             </div>
         </div>
         <?php
-        if ($jobs != '' && $jobs != []) {
+        if ($jobs != '500' && $jobs != []) {
             foreach ($jobs as $key) {
                 ?>
                 <div class="col-md-6" style="padding: 10px;">

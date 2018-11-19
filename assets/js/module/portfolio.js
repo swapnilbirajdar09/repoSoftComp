@@ -576,7 +576,7 @@ function removeImage(key,portfolio_id) {
                $(this).remove(); 
              });
              window.location.reload();
-           }, 1000);
+           }, 2000);
           },
           error:function(data){
            $('#edit_formOutput').html('<div class="alert alert-warning alert-dismissible fade in alert-fixed w3-round"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Failure!</strong> Something went wrong. Please refresh the page and try once again.</div>');

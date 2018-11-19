@@ -38,6 +38,7 @@
                   <li class="dropdown simple-dropdown"><a href="<?php echo base_url(); ?>about_us">About Us</a></li>
                   <li class="dropdown simple-dropdown"><a href="<?php echo base_url(); ?>services">Services</a></li>
                   <li class="dropdown simple-dropdown"><a href="<?php echo base_url(); ?>viewportfolio">Portfolio</a></li>
+                  <li class="dropdown simple-dropdown"> <a href="<?php echo base_url(); ?>careers">Careers</a></li>
                   <li class="dropdown simple-dropdown"> <a href="<?php echo base_url(); ?>contact_us">Contact Us</a></li>
                 </ul>
               </div>

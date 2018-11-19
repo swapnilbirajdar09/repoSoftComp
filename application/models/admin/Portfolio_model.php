@@ -19,7 +19,7 @@ class Portfolio_model extends CI_Model {
 
     //----------------function to get all portfolios
     public function getAllPortfolios() {
-        $sql = "SELECT * FROM portfolio_tab,category_tab WHERE portfolio_tab.portfolio_category=category_tab.cat_id";
+        $sql = "SELECT * FROM portfolio_tab,category_tab WHERE portfolio_tab.portfolio_category=category_tab.cat_id ORDER BY is_featured DESC";
         $result = $this->db->query($sql);
         if ($result->num_rows() <= 0) {
             return false;
@@ -142,6 +142,14 @@ class Portfolio_model extends CI_Model {
         }
 
         $imgArr=json_decode($currentImages);
+        if(count($imgArr)==1){
+            $response=array(
+                'status'    =>  'false',
+                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Cannot remove Image. Atleast one image should be uploaded.</div>'
+            );
+            return $response;
+            die();
+        }
         // unset key value
         unset($imgArr[$key]);
         $imgArr = array_values($imgArr);
@@ -152,10 +160,18 @@ class Portfolio_model extends CI_Model {
         $this->db->where('portfolio_id', $portfolio_id);
         $this->db->update('portfolio_tab', $result);
         if($this->db->affected_rows()==1){
-            return true;
+            $response=array(
+                'status'    =>  'success',
+                'message'   =>  '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio Image was successfully deleted.</div>'
+            );
+            return $response;
         }
         else{
-            return false;
+            $response=array(
+                'status'    =>  'failure',
+                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio Image was not deleted.</div>'
+            );
+            return $response;
         }
     }
 

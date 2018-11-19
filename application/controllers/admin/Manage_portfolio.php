@@ -216,11 +216,15 @@ public function removeImage(){
     if(isset($portfolio_id) && $portfolio_id!=''){
         $result = $this->portfolio_model->removeImage($key,$portfolio_id);
 
-        if($result){
-            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio Image was successfully deleted.</div>';
+        if($result['status']=='warning'){
+            echo $result['message'];
+            die();
+        }
+        if($result['status']=='success'){
+            echo $result['message'];
         }
         else{
-            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio Image was not deleted.</div>';
+            echo $result['message'];
         } 
     }
     else{
