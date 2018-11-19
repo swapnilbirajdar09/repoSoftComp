@@ -54,12 +54,13 @@
                         <div class="w3-col l12">
                             <div class="w3-col l12">
                                 <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
-                                    <label>Technology Name:</label>
+                                    <label>Technology Name:
+                                  <font color ="red"><span id ="pdescription_star">*</span></font></label>
                                     <input type="text" name="technology_name" class="w3-input" placeholder="Enter Technology name" required>
                                 </div>
 
                                 <div class="col-lg-6 w3-margin-bottom">
-                                    <label>Technology Logo:</label>
+                                    <label>Technology Logo: <font color ="red"><span id ="pdescription_star">*</span></font></label>
                                     <input type="file" name="logo_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px" required>
                                     <div id="image_error" class="w3-text-red"></div>
                                 </div>
@@ -110,11 +111,11 @@
                     <input type="hidden" name="_token" id="_token" value="">          
                     <div class="w3-col l12 w3-margin-top">
                         <div class="col-lg-6 w3-margin-bottom">
-                            <label> Name:</label>
+                            <label> Name:<font color ="red"><span id ="pdescription_star">*</span></font></label>
                             <input type="text" name="client_name" class="w3-input" placeholder="Enter Client Name Here" required>
                         </div>
                         <div class="col-lg-6 w3-margin-bottom">
-                            <label>Designation:</label>
+                            <label>Designation:<font color ="red"><span id ="pdescription_star">*</span></font></label>
                             <input type="text" name="client_desig" class="w3-input" placeholder="Enter Client Designation Here" required>
                         </div>
                     </div>
@@ -125,7 +126,7 @@
                             <div id="image_error" class="w3-text-red"></div>
                         </div>
                         <div class="col-lg-6 w3-margin-bottom">
-                            <label>Comments:</label>
+                            <label>Comments:<font color ="red"><span id ="pdescription_star">*</span></font></label>
                             <textarea class="w3-input" name="client_comment" placeholder="Enter Client Comments Here..." rows="4"></textarea>
                         </div>
                     </div>
