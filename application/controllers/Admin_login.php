@@ -15,10 +15,10 @@ class Admin_login extends CI_Controller {
     // main index function
     public function index() {
         // start session		
-        // $admin_name = $this->session->userdata('admin_name'); //----session variable
-        // if ($admin_name != '') {
-        //     redirect('admin/dashboard');
-        // }
+         $admin_name = $this->session->userdata('userName'); //----session variable
+         if ($admin_name != '') {
+             redirect('admin/dashboard');
+         }
         $this->load->view('pages/admin/adminlogin'); //------loading the admin login view
     }
 
@@ -59,7 +59,7 @@ class Admin_login extends CI_Controller {
         //if logout success then destroy session and unset session variables
         $this->session->unset_userdata(array('admin_name'));
         $this->session->sess_destroy();
-        redirect('admin/admin_login');
+        redirect('admin_login');
     }
 
     // logout function ends here---------------------------------------------------------

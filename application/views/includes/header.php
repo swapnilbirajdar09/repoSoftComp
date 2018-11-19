@@ -88,7 +88,7 @@ $userName = $this->session->userdata('userName'); //----session variable
                             <a href="<?php echo base_url(); ?>admin/admin_setting" data-toggle="tooltip" data-placement="top" title="Settings" style="width: 50%;" title="General Settings">
                                 <span class="fa fa-cogs" aria-hidden="true"></span>
                             </a>
-                            <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url(); ?>admin/admin_login/logoutAdmin" style="width: 50%;" title="Admin Logout">
+                            <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url(); ?>admin_login/logoutAdmin" style="width: 50%;" title="Admin Logout">
                                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                             </a>
                         </div>
@@ -110,7 +110,7 @@ $userName = $this->session->userdata('userName'); //----session variable
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                                         <li><a href="<?php echo base_url(); ?>admin/admin_setting"><i class="fa fa-cogs"></i> Settings</a></li>
-                                        <li><a href="<?php echo base_url(); ?>admin/admin_login/logoutAdmin"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                                        <li><a href="<?php echo base_url(); ?>admin_login/logoutAdmin"><i class="fa fa-sign-out"></i> Log Out</a></li>
                                     </ul>
                                 </li>
 

@@ -13,6 +13,10 @@ class Admin_setting extends CI_Controller {
 
     // main index function
     public function index() {
+        $user_name = $this->session->userdata('userName'); //----session variable
+        if ($user_name == '') {
+            redirect('admin_login');
+        }
         $data['admin_details'] = $this->Setting_model->getAlladmin_details();
         $data['company_details'] = $this->Setting_model->getAllcompany_details();
         $this->load->view('includes/header');

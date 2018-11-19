@@ -15,6 +15,10 @@
 
       // main index function
       public function index() {
+          $user_name = $this->session->userdata('userName'); //----session variable
+        if ($user_name == '') {
+            redirect('admin_login');
+        }
            $data['tech'] = $this->Dashboard_model->getTechnologyDetails();
            $data['testimonial'] = $this->Dashboard_model->getTestimonialDetails();
           // print_r($data);

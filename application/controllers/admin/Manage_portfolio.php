@@ -14,6 +14,10 @@ class Manage_portfolio extends CI_Controller {
 
     // main index function
     public function index() {
+        $user_name = $this->session->userdata('userName'); //----session variable
+        if ($user_name == '') {
+            redirect('admin_login');
+        }
         $data['categories']=$this->portfolio_model->getAllCategories();
         $data['all_portfolios']=$this->portfolio_model->getAllPortfolios();
         $this->load->view('includes/header');
