@@ -58,3 +58,4 @@ $route['admin/manage_portfolio/portfolio/(:any)'] = "admin/manage_portfolio/port
 $route['admin/manage_blogs/blog/(:any)'] = "admin/manage_blogs/blog/$1";
 $route['viewportfolio/info/(:any)'] = "viewportfolio/info/$1";
 $route['viewblog/info/(:any)'] = "viewblog/info/$1";
+

@@ -259,7 +259,8 @@ public function removeImage(){
     // function to redirect page to selected blog
 public function blog($url=''){
     $blog_id=base64_decode($url);
-    $data['categories']=$this->blog_model->getAllCategories();
+    $data['all_categories']=$this->blog_model->getAllCategories();
+    $data['category_count']=$this->blog_model->getCategoriesCount();
     $data['allTags']=$this->blog_model->getAllTags();
     $data['blogDetail']=$this->blog_model->getBlogDetail($blog_id);
     $this->load->view('includes/header');

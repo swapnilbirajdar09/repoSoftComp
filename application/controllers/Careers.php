@@ -24,6 +24,7 @@ class Careers extends CI_Controller {
 
     public function applyJob() {
         extract($_POST);
+        //print_r($_POST);
         extract($_FILES);
         $data = $_POST;
 
