@@ -11,18 +11,20 @@ class Homepage extends CI_Controller {
         $this->load->model('admin/setting_model');
         $this->load->model('admin/dashboard_model');
         $this->load->model('admin/portfolio_model');
+        $this->load->model('admin/Setting_model');
     }
 
     // main index function
     public function index() {
+        $data['social_logos']=$this->Setting_model->getAllSocialLinks();
         $data['allServices']=$this->manageservice_model->getAllFeaturedServices();
         $data['allTestimonials']=$this->dashboard_model->getTestimonialDetails();
         $data['allTechnologies']=$this->dashboard_model->getTechnologyDetails();
         $data['allCategories']=$this->portfolio_model->getAllCategories();
         $data['allPortfolios']=$this->portfolio_model->getAllPortfolios();
-        $this->load->view('includes/user/header');
+        $this->load->view('includes/user/header',$data);
         $this->load->view('pages/user/home',$data); 
-        $this->load->view('includes/user/footer');
+        $this->load->view('includes/user/footer',$data);
     }
 
     // send a quick quote

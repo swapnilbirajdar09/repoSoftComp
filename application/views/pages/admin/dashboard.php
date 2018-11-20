@@ -47,7 +47,6 @@
         <div class="w3-col l9">
             <div class="w3-col l12 w3-white w3-round w3-padding theme_text">
                 <h4 class="theme_text"><i class="fa fa-first-order"></i> Our Offerings:</h4>
-
                 <div class="w3-col l6 w3-margin-top">
                     <form id="addtechnologyForm" action="" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" id="_token" value="">
@@ -58,16 +57,14 @@
                                         <font color ="red"><span id ="pdescription_star">*</span></font></label>
                                     <input type="text" name="technology_name" class="w3-input" placeholder="Enter name" required>
                                 </div>
-
                                 <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
                                     <label>Logo: <font color ="red"><span id ="pdescription_star">*</span></font></label>
                                     <input type="file" name="logo_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px">
                                     <div id="image_error" class="w3-text-red"></div>
                                 </div>
-
-                                <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
+                                <div class="col-lg-12 col-xs-12 col-sm-12 w3-margin-bottom">
                                     <label>Short Description: <font color ="red"><span id ="pdescription_star">*</span></font></label>
-                                    <textarea class="w3-input" name="description" placeholder="Enter Short Description Here..." rows="4" required style=" resize: none;" required></textarea>
+                                    <textarea class="w3-input" name="description" placeholder="Enter Short Description Here..." maxlength="255" rows="4" required style=" resize: none;" required></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12 w3-center" id="btnsubmit">
@@ -79,7 +76,7 @@
                 </div>
 
                 <div class="w3-col l6 w3-padding w3-border-left w3-border-bottom " >
-                    <label class="theme_text"> Technology list:</label>
+                    <label class="theme_text"> Offering list:</label>
                     <div ng-html-bind=""></div>
                     <div class="w3-col l12" style="height: 360px;overflow-y: auto;" id="brand_listDiv">
                         <?php
