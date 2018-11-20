@@ -62,6 +62,7 @@
             extract($data);
             $result = array(
                 'tech_name' => $technology_name,
+                'description' => $description,
                 'tech_logo' => $imagePath
                 
             );
