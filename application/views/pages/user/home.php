@@ -73,7 +73,7 @@
                     <h4 class="text-font-sec text-light-gray">The leading provider of worthy digital experiences since 1999</h4>
                     <p class="text-extra-large width-85 md-width-100">Our team delivers top-notch digital solutions for our clients to maintain their competitive advantage online.</p>
                     <p class="width-85 md-width-100">
-                        All kinds of companies worldwide have been gaining the advantage of collaborating with us since our establishment. We work with owners and entrepreneurs to help them build a sustainable business through data-driven creative marketing, branding, web design, and development that are all aimed at moving the revenue needle. We’re a true business partner and our dedicated industry practice can help you define and meet specific business goals.</p><a class="btn btn-small offset-35px-top btn-white" href="about-us-modern.html">Read more</a>
+                    All kinds of companies worldwide have been gaining the advantage of collaborating with us since our establishment. We work with owners and entrepreneurs to help them build a sustainable business through data-driven creative marketing, branding, web design, and development that are all aimed at moving the revenue needle. We’re a true business partner and our dedicated industry practice can help you define and meet specific business goals.</p><a class="btn btn-small offset-35px-top btn-white" href="about-us-modern.html">Read more</a>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 position-relative sm-height-500px xs-height-350px cover-background wow fadeInRight" style="background-image: url('<?php echo base_url(); ?>assets/user/images/home-classic-one-page-bg-03.jpg');"></div>
@@ -129,41 +129,7 @@
         </div>
     </div>
 </section>
-<!--
-<section class="wow fadeIn" style="padding-bottom: 0">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-12 text-center sm-offset-30px-bottom wow fadeInRight">
-        <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
-          <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-laptop icon-medium text-medium-gray offset-15px-bottom"></i>
-            <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="100">100</h6><span>Finished Projects</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12 text-center sm-offset-30px-bottom wow fadeInRight" data-wow-delay="0.2s">
-        <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
-          <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-landscape icon-medium text-medium-gray offset-15px-bottom"></i>
-            <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="40">40</h6><span>New Ideas</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12 text-center xs-offset-30px-bottom wow fadeInRight" data-wow-delay="0.4s">
-        <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
-          <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-group-work icon-medium text-medium-gray offset-15px-bottom"></i>
-            <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="60">60</h6><span>Satisfied Customers</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInRight" data-wow-delay="0.6s">
-        <div class="counter-feature-box-1 border-all display-table width-100 inset-5px-all">
-          <div class="counter-box display-table-cell vertical-align-middle bg-white"><i class="linearicons-laptop-phone icon-medium text-medium-gray offset-15px-bottom"></i>
-            <h6 class="display-block text-medium text-extra-dark-gray text-font-sec no-offset-bottom timer" data-speed="3000" data-to="999">999</h6><span>Solved Issues </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>-->
+
 <?php if ($allPortfolios) { ?>
     <section class="wow fadeIn inset-90px-top sm-padding-50px-top xs-padding-30px-top" id="work">
         <div class="container">
@@ -232,6 +198,9 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="<?php echo base_url(); ?>viewportfolio" style="margin: 16px 0 0 0">View all Portfolios<i class="fa fa-chevron-right"></i></a>
+                    </div>
                     <?php
                 }
                 ?>
@@ -281,54 +250,47 @@
         </div>
     </section>
 <?php } ?>
-<section class="wow fadeIn">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
-                <div class="text-font-sec text-medium-gray offset-5px-bottom text-uppercase text-small">Our Blog</div>
-                <h5 class="text-font-sec text-extra-dark-gray">Here are the latest posts by our team</h5>
+
+<?php if ($all_blogs) { ?>
+    <section class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
+                    <div class="text-font-sec text-medium-gray offset-5px-bottom text-uppercase text-small">Our Blog</div>
+                    <h5 class="text-font-sec text-extra-dark-gray">Here are the latest posts by our admin</h5>
+                </div>
             </div>
-        </div>
-        <div class="row equalize xs-equalize-auto">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 offset-80px-bottom sm-offset-50px-bottom xs-offset-30px-bottom wow fadeInUp">
-                <article class="blog-post blog-post-style2">
-                    <div class="blog-post-images overflow-hidden offset-25px-bottom xs-offset-15px-bottom"><a href="blog-standard-post.html"><img src="<?php echo base_url(); ?>assets/user/images/blog-grid-image-01.jpg" alt=""/></a></div>
-                    <div class="post-details"><a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="blog-standard-post.html">Top 10 Web Design Trends to Know in 2018</a>
-                        <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb xs-offset-15px-tb"></div>
-                        <div class="author"><img class="border-radius-100" src="<?php echo base_url(); ?>assets/user/images/blog-clean-author-01.png" alt=""/><span class="text-medium-gray text-uppercase text-extra-small inset-15px-left display-inline-block"> by <a class="text-medium-gray" href="blog-posts.html">Kate Smith | 7 February 2018</a></span></div>
+            <div class="row equalize xs-equalize-auto">
+                <?php 
+                $limit=4;
+                foreach ($all_blogs as $key) {
+                    if($limit==0){break;}
+                    $imgArr=json_decode($key['blog_images'],TRUE);
+                    ?>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 offset-80px-bottom sm-offset-50px-bottom xs-offset-30px-bottom wow fadeInUp">
+                        <article class="blog-post blog-post-style2">
+                            <div class="blog-post-images overflow-hidden offset-25px-bottom xs-offset-15px-bottom"><a href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>" style="background-color: black">
+                                <center><img src="<?php echo base_url(); ?><?php echo $imgArr[0]; ?>" alt=""/ style="height: 200px"></center>
+                            </a>
+                        </div>
+                        <div class="post-details"><a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>"><?php echo $key['blog_title']; ?></a>
+                            <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb xs-offset-15px-tb"></div>
+                            <div class="author"><span class="text-medium-gray text-uppercase text-extra-small inset-15px-left display-inline-block"> by <a class="text-medium-gray" href="blog-posts.html"><?php echo date('d M Y',strtotime($key['posted_date'])); ?></a></span></div>
+                        </div>
+                    </article>
+                </div>
+                <?php
+                $limit--;
+            }
+            ?>
+            <div class="col-md-12">
+                        <a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="<?php echo base_url(); ?>viewblog" style="margin: 16px 0 0 0">View more posts<i class="fa fa-chevron-right"></i></a>
                     </div>
-                </article>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 offset-80px-bottom sm-offset-50px-bottom xs-offset-30px-bottom wow fadeInUp" data-wow-delay="0.2s">
-                <article class="blog-post blog-post-style2">
-                    <div class="blog-post-images overflow-hidden offset-25px-bottom xs-offset-15px-bottom"><a href="blog-standard-post.html"><img src="<?php echo base_url(); ?>assets/user/images/blog-grid-image-02.jpg" alt=""/></a></div>
-                    <div class="post-details"><a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="blog-standard-post.html">The Basics of Using SEO for Your Website</a>
-                        <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb xs-offset-15px-tb"></div>
-                        <div class="author"><img class="border-radius-100" src="<?php echo base_url(); ?>assets/user/images/blog-clean-author-02.png" alt=""/><span class="text-medium-gray text-uppercase text-extra-small inset-15px-left display-inline-block"> by <a class="text-medium-gray" href="blog-posts.html">Peter Williams | 16 March 2018</a></span></div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 offset-80px-bottom sm-offset-50px-bottom xs-offset-30px-bottom wow fadeInUp" data-wow-delay="0.4s">
-                <article class="blog-post blog-post-style2">
-                    <div class="blog-post-images overflow-hidden offset-25px-bottom xs-offset-15px-bottom"><a href="blog-standard-post.html"><img src="<?php echo base_url(); ?>assets/user/images/blog-grid-image-03.jpg" alt=""/></a></div>
-                    <div class="post-details"><a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="blog-standard-post.html">The Best Tutorials for Web Development Beginners</a>
-                        <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb xs-offset-15px-tb"></div>
-                        <div class="author"><img class="border-radius-100" src="<?php echo base_url(); ?>assets/user/images/blog-clean-author-03.png" alt=""/><span class="text-medium-gray text-uppercase text-extra-small inset-15px-left display-inline-block"> by <a class="text-medium-gray" href="blog-posts.html">Jim Samson | 1 April 2018</a></span></div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 offset-80px-bottom sm-offset-50px-bottom xs-offset-30px-bottom wow fadeInUp" data-wow-delay="0.6s">
-                <article class="blog-post blog-post-style2">
-                    <div class="blog-post-images overflow-hidden offset-25px-bottom xs-offset-15px-bottom"><a href="blog-standard-post.html"><img src="<?php echo base_url(); ?>assets/user/images/blog-grid-image-04.jpg" alt=""/></a></div>
-                    <div class="post-details"><a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="blog-standard-post.html">How Having an Instagram Account Can Help You</a>
-                        <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb xs-offset-15px-tb"></div>
-                        <div class="author"><img class="border-radius-100" src="<?php echo base_url(); ?>assets/user/images/blog-clean-author-04.png" alt=""/><span class="text-medium-gray text-uppercase text-extra-small inset-15px-left display-inline-block"> by <a class="text-medium-gray" href="blog-posts.html">Alex McMillan | 25 May 2018</a></span></div>
-                    </div>
-                </article>
-            </div>
         </div>
     </div>
 </section>
+<?php } ?>
+
 <?php if ($allTechnologies) { ?>
     <section class="wow fadeIn bg-light-gray" style="padding: 80px">
         <div class="container text-center">

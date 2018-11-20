@@ -11,6 +11,7 @@ class Homepage extends CI_Controller {
         $this->load->model('admin/setting_model');
         $this->load->model('admin/dashboard_model');
         $this->load->model('admin/portfolio_model');
+        $this->load->model('admin/blog_model');
     }
 
     // main index function
@@ -20,6 +21,7 @@ class Homepage extends CI_Controller {
         $data['allTechnologies']=$this->dashboard_model->getTechnologyDetails();
         $data['allCategories']=$this->portfolio_model->getAllCategories();
         $data['allPortfolios']=$this->portfolio_model->getAllPortfolios();
+        $data['all_blogs']=$this->blog_model->getAllBlogs();
         $this->load->view('includes/user/header');
         $this->load->view('pages/user/home',$data); 
         $this->load->view('includes/user/footer');

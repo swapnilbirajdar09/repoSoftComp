@@ -17,6 +17,17 @@ class Blog_model extends CI_Model {
         }
     }
 
+    //----------------function to get categoory count
+    public function getCategoriesCount() {
+        $sql = "SELECT DISTINCT(category_tab.cat_name) as category, count(category_tab.cat_name) AS count, category_tab.cat_id FROM blogs_tab,category_tab WHERE blogs_tab.blog_category=category_tab.cat_id GROUP BY blogs_tab.blog_category";
+        $result = $this->db->query($sql);
+        if ($result->num_rows() <= 0) {
+            return false;
+        } else {
+            return $result->result_array();
+        }
+    }
+
     //----------------function to get all tags
     public function getAllTags() {
         $sql = "SELECT * FROM tags_tab";
@@ -30,7 +41,31 @@ class Blog_model extends CI_Model {
 
     //----------------function to get all blog
     public function getAllBlogs() {
-        $sql = "SELECT * FROM blogs_tab,category_tab WHERE blogs_tab.blog_category=category_tab.cat_id ORDER BY posted_date DESC";
+        $sql = "SELECT * FROM blogs_tab,category_tab WHERE blogs_tab.blog_category=category_tab.cat_id ORDER BY blogs_tab.blog_id DESC";
+        $result = $this->db->query($sql);
+        if ($result->num_rows() <= 0) {
+            return false;
+        } else {
+            return $result->result_array();
+        }
+    }
+
+    //----------------function to get all blog by category
+    public function getAllBlogsByCategory($token) {
+        $cat_id=base64_decode($token);
+        $sql = "SELECT * FROM blogs_tab,category_tab WHERE blogs_tab.blog_category=category_tab.cat_id AND blogs_tab.blog_category='$cat_id' ORDER BY blogs_tab.blog_id DESC";
+        $result = $this->db->query($sql);
+        if ($result->num_rows() <= 0) {
+            return false;
+        } else {
+            return $result->result_array();
+        }
+    }
+
+    //----------------function to get all blog by tag value
+    public function getAllBlogsByTag($tag_value) {
+        $sql = "SELECT * FROM blogs_tab,category_tab WHERE blogs_tab.blog_category=category_tab.cat_id AND blogs_tab.blog_tags LIKE '%$tag_value%' ORDER BY blogs_tab.blog_id DESC";
+        // echo $sql;die();
         $result = $this->db->query($sql);
         if ($result->num_rows() <= 0) {
             return false;

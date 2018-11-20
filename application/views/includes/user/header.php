@@ -30,7 +30,7 @@
         <div class="container-fluid nav-header-container">
           <div class="row">
             <div class="col-md-2 col-xs-5"><a class="logo" href="<?php echo base_url(); ?>" title="MService"><img class="logo-dark default" src="<?php echo base_url(); ?>assets/user/images/logo.png" data-at2x="<?php echo base_url(); ?>assets/user/images/logo@2x.png" alt=""><img class="logo-light" src="<?php echo base_url(); ?>assets/user/images/logo-white.png" data-at2x="<?php echo base_url(); ?>assets/user/images/logo-white@2x.png" alt=""></a></div>
-            <div class="col-md-7 col-xs-2 width-auto pull-right accordion-menu xs-no-padding-right">
+            <div class="col-md-8 col-xs-2 width-auto pull-right accordion-menu xs-no-padding-right">
               <button class="navbar-toggle collapsed pull-right" type="button" data-toggle="collapse" data-target="#navbar-collapse-toggle-1"><span class="sr-only">toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
               <div class="navbar-collapse collapse pull-right" id="navbar-collapse-toggle-1">
                 <ul class="nav navbar-nav navbar-left no-margin text-font-sec text-normal" id="accordion" data-in="fadeIn" data-out="fadeOut">
