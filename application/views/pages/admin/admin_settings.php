@@ -95,14 +95,12 @@
                     </form>
                     <div class="col-lg-12 w3-margin-top w3-margin-bottom w3-border-top">
                         <?php if ($social_links == '500') { ?>
-                        
+                        <center><span class="w3-padding w3-margin-top"> No Social Links Are Available..!</span></center>
                         <?php } else { ?>
-                            <?php foreach($social_links as $key){?>
-                        
-                        <span class="w3-large w3-margin-top w3-border" style="padding: 2px 6px; display: inline-block;"><i class="fa <?php echo $key['social_symbole']; ?>"></i> <?php echo strtoupper($key['social_link_name']); ?> <a onclick="deleteSocialLink(<?php echo $key['social_id']; ?>)" class="w3-padding pull-right w3-text-red btn" style="padding:2px;" title="Delete Link"><i class="fa fa-times"></i></a></span>;
+                            <?php foreach($social_links as $key){?>                        
+                        <span class="w3-padding w3-small w3-margin-top w3-border" style="padding: 2px 6px; display: inline-block;"><i class="fa <?php echo $key['social_symbole']; ?> w3-text-blue w3-large"></i>&nbsp;&nbsp;&nbsp;<?php echo strtoupper($key['social_link_name']); ?>&nbsp;&nbsp;<a onclick="deleteSocialLink(<?php echo $key['social_id']; ?>)" class="pull-right w3-text-red btn" style="padding:0px;" title="Delete Link"><i class="fa fa-times"></i></a></span>
                             <?php }} ?>
                         </div>
-
                     </div>
 
 
@@ -254,6 +252,34 @@
 
 
     <script>
+        function deleteSocialLink(social_id){
+            $.confirm({
+                title: '<h4 class="w3-text-red"><i class="fa fa-warning"></i> Are you sure you want to delete this Social Link.!</h4>',
+                content: '',
+                type: 'red',
+                buttons: {
+                    confirm: function () {
+                        $.ajax({
+                            url: "<?php echo base_url(); ?>admin/admin_setting/deleteSocialLink",
+                            type: "POST",
+                            data: {
+                                social_id: social_id
+                            },
+                            cache: false,
+                            success: function (data) {
+                                // alert(data);
+                                // $.alert(data);
+                                $('#msgdiv').html(data);
+                                //location.reload();
+                            }
+                        });
+                    },
+                    cancel: function () {
+                    }
+                }
+            });
+        }
+        
         //--------------fun for remove office details-------------------------------//
         function deleteofficeDetails(i) {
             //	alert(i);

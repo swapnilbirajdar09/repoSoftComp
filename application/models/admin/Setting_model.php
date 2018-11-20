@@ -18,6 +18,17 @@ class Setting_model extends CI_Model {
         }
     }
 
+//-------------------fun for delete social link------------------//
+    public function deleteSocialLink($social_id) {
+        $sql = "DELETE FROM social_tab WHERE social_id = '$social_id'";
+        $this->db->query($sql);
+        if ($this->db->affected_rows() > 0) {
+            return 200;
+        } else {
+            return 500;
+        }
+    }
+
 //-----------fun for get all social links -----------------------------//
     public function getAllSocialLinks() {
         $sql = "SELECT * FROM social_tab";

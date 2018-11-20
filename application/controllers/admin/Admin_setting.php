@@ -26,10 +26,57 @@ class Admin_setting extends CI_Controller {
         $this->load->view('includes/footer');
     }
 
+//--------------fun for delete social links -----------------//
+    public function deleteSocialLink() {
+        extract($_POST);
+        $result = $this->Setting_model->deleteSocialLink($social_id);
+        if ($result == '200') {
+            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success! </strong> Social Link Deleted SuccessFully.
+        </div>
+        <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+                });
+                window.location.reload();
+                }, 2000);                
+                </script>';
+        } else {
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Warning! </strong> Social Link Not Deleted SuccessFully.
+                </div>
+                 <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+        }
+    }
+
     //------------------fun for save social links--------------------------//
     public function addSocialLinks() {
         extract($_POST);
         $data = $_POST;
+        
+        if($social_link_type =='0'){
+            echo'<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Warning! </strong> Please Select Valid Social Link First.
+                </div>
+                 <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+            die();
+        }
         $result = $this->Setting_model->addSocialLinks($data);
         if ($result) {
             echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
