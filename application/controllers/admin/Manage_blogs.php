@@ -216,28 +216,28 @@ else{
 }
 
     // function to delete portfolio
-public function removePortfolio(){
+public function removeBlog(){
     extract($_GET);
-    if(isset($portfolio_id) && $portfolio_id!=''){
-        $result = $this->blog_model->removePortfolio($portfolio_id);
+    if(isset($blog_id) && $blog_id!=''){
+        $result = $this->blog_model->removeBlog($blog_id);
 
         if($result){
-            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio was successfully deleted.</div>';
+            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Blog post was successfully deleted.</div>';
         }
         else{
-            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio was not deleted.</div>';
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog post was not deleted.</div>';
         } 
     }
     else{
-        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Portfolio not found.</div>';
+        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog post not found.</div>';
     } 
 }
 
     // function to delete portfolio image frim gallery
 public function removeImage(){
     extract($_GET);
-    if(isset($portfolio_id) && $portfolio_id!=''){
-        $result = $this->blog_model->removeImage($key,$portfolio_id);
+    if(isset($blog_id) && $blog_id!=''){
+        $result = $this->blog_model->removeImage($key,$blog_id);
 
         if($result['status']=='warning'){
             echo $result['message'];

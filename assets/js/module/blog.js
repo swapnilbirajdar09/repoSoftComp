@@ -342,17 +342,17 @@ app.controller("BlogCtrl", function($scope,$http,$window) {
   };
 
   // remove blog from db
-  $scope.removeBlog = function (portfolio_id) {
+  $scope.removeBlog = function (blog_id) {
     $.confirm({
-      title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Do you really want to delete this portfolio?</span>',
+      title: '<h4 class="w3-text-red">Please confirm the action!</h4><span class="w3-medium">Do you really want to delete this post?</span>',
       content: '',
       type: 'red',
       buttons: {
         confirm: function () {
          $http({
            method: 'get',
-           url: BASE_URL+'admin/manage_portfolio/removePortfolio',
-           params: {portfolio_id: portfolio_id},
+           url: BASE_URL+'admin/manage_blogs/removeBlog',
+           params: {blog_id: blog_id},
          }).then(function successCallback(response) {
           $scope.delMessage = response.data;
           $window.setTimeout(function() {

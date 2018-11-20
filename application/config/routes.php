@@ -55,4 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['admin/all_jobs/view_applied_candidate_list/(:any)'] = "admin/all_jobs/view_applied_candidate_list/$1";
 $route['admin/all_jobs/download/(:any)'] = 'admin/all_jobs/download/$1';
 $route['admin/manage_portfolio/portfolio/(:any)'] = "admin/manage_portfolio/portfolio/$1";
+$route['admin/manage_blogs/blog/(:any)'] = "admin/manage_blogs/blog/$1";
 $route['viewportfolio/info/(:any)'] = "viewportfolio/info/$1";
+$route['viewblog/info/(:any)'] = "viewblog/info/$1";
