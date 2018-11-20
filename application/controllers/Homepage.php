@@ -1,42 +1,46 @@
 <?php
+
 error_reporting('E_ALL');
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Homepage extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         // load common model
         $this->load->model('admin/manageservice_model');
-        $this->load->model('admin/setting_model');
         $this->load->model('admin/dashboard_model');
         $this->load->model('admin/portfolio_model');
+        $this->load->model('admin/Setting_model');
         $this->load->model('admin/blog_model');
     }
 
     // main index function
     public function index() {
-        $data['allServices']=$this->manageservice_model->getAllFeaturedServices();
-        $data['allTestimonials']=$this->dashboard_model->getTestimonialDetails();
-        $data['allTechnologies']=$this->dashboard_model->getTechnologyDetails();
-        $data['allCategories']=$this->portfolio_model->getAllCategories();
-        $data['allPortfolios']=$this->portfolio_model->getAllPortfolios();
-        $data['all_blogs']=$this->blog_model->getAllBlogs();
-        $this->load->view('includes/user/header');
-        $this->load->view('pages/user/home',$data); 
-        $this->load->view('includes/user/footer');
+        $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
+        $data['allServices'] = $this->manageservice_model->getAllFeaturedServices();
+        $data['allTestimonials'] = $this->dashboard_model->getTestimonialDetails();
+        $data['allTechnologies'] = $this->dashboard_model->getTechnologyDetails();
+        $data['allCategories'] = $this->portfolio_model->getAllCategories();
+        $data['allPortfolios'] = $this->portfolio_model->getAllPortfolios();
+        $data['all_blogs'] = $this->blog_model->getAllBlogs();
+
+        $this->load->view('includes/user/header', $data);
+        $this->load->view('pages/user/home', $data);
+        $this->load->view('includes/user/footer', $data);
     }
 
     // send a quick quote
-    public function sendContactEmail(){
+    public function sendContactEmail() {
         extract($_POST);
 
-        if($service==0){
+        if ($service == 0) {
             echo '<p style="background-color: red;margin: 10px;padding: 5px 10px;color: white"><b>Error:</b> Please choose appropriate service!</p>';
             die();
         }
-       // print_r($_POST);die();
-        $admin_email = $this->setting_model->getAllcompany_details();
+        // print_r($_POST);die();
+        $admin_email = $this->Setting_model->getAllcompany_details();
         $adminEmail = $admin_email[0]['company_email'];
         $companyName = $admin_email[0]['company_name'];
 
@@ -63,15 +67,15 @@ class Homepage extends CI_Controller {
             </head>
             <body>
             <div class="container col-lg-8" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;margin:10px; font-family:Candara;">
-            <h2 style="text-align:center">Message from '.$name.'</h3>
+            <h2 style="text-align:center">Message from ' . $name . '</h3>
             <p><label><h3><b>Contact Form</label></b></h3></p>
-            <p><label>Contact form has been submitted by: Name: '.$name.' </label></p>
-            <p><label>Email Id: '.$email.' </label></p>
-            <p><label>Regarding Service: '.$service.' </label></p>
-            <p><label>For The Purpose Of: '.$message.' </label></p>
+            <p><label>Contact form has been submitted by: Name: ' . $name . ' </label></p>
+            <p><label>Email Id: ' . $email . ' </label></p>
+            <p><label>Regarding Service: ' . $service . ' </label></p>
+            <p><label>For The Purpose Of: ' . $message . ' </label></p>
             <h3 style="font-size:15px;">Regards,</h3>
             <h3 style="font-size:15px;">Admin Team,</h3>
-            <h3 style="font-size:15px;"><b>'.$companyName.'</b></h3>
+            <h3 style="font-size:15px;"><b>' . $companyName . '</b></h3>
             <div class="col-lg-12">
             <div class="col-lg-4"></div>
             <div class="col-lg-4">
@@ -85,7 +89,7 @@ class Homepage extends CI_Controller {
             $this->email->set_newline("\r\n");
             $this->email->from('support@jumlakuwait.com', "Admin Team");
             $this->email->to($email, $name);
-            $this->email->subject("Acknowlegdement from ".$companyName);
+            $this->email->subject("Acknowlegdement from " . $companyName);
             $this->email->message('<html>
             <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,4 +124,5 @@ class Homepage extends CI_Controller {
             }
         }
     }
+
 }

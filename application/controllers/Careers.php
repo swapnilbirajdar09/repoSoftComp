@@ -8,19 +8,23 @@ class Careers extends CI_Controller {
         parent::__construct();
 // load common model
         $this->load->model('admin/Postjob_model');
+        $this->load->model('admin/Setting_model');
         $this->load->model('Careers_model');
     }
 
 // main index function
     public function index() {
+        $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
+
         $data['jobs'] = $this->Postjob_model->getAllJobs();
-        $this->load->view('includes/user/header');
+        $this->load->view('includes/user/header',$data);
         $this->load->view('pages/user/careers', $data);
-        $this->load->view('includes/user/footer');
+        $this->load->view('includes/user/footer',$data);
     }
 
     public function applyJob() {
         extract($_POST);
+        //print_r($_POST);
         extract($_FILES);
         $data = $_POST;
 
@@ -59,17 +63,17 @@ class Careers extends CI_Controller {
 
             if ($this->upload->do_upload('userFile')) {
                 $fileData = $this->upload->data();
-               $imagePath = $uploadPath . $fileData['file_name'];
+                $imagePath = $uploadPath . $fileData['file_name'];
             } else {
                 $error = array('error' => $this->upload->display_errors());
             }
         }
 
-        $data['imagePath'] =  $imagePath;
+        $data['imagePath'] = $imagePath;
 
         $result = $this->Careers_model->applyJob($data);
-      // print_r($imagePath);
-       //print_r($result);die();
+        // print_r($imagePath);
+        //print_r($result);die();
 //        die();
         if ($result == '200') {
             echo '<div class="alert alert-success">

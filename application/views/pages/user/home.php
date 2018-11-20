@@ -292,24 +292,71 @@
 <?php } ?>
 
 <?php if ($allTechnologies) { ?>
+    <div class="row">
+        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
+            <h5 class="text-font-sec text-extra-dark-gray">Our Offerings</h5>
+        </div>
+    </div>
     <section class="wow fadeIn bg-light-gray" style="padding: 80px">
+
         <div class="container text-center">
+
             <?php
             if (!$allTechnologies) {
                 ?>
                 <div class="col-md-12 col-sm-12 col-xs-12 xs-offset-30px-bottom wow fadeInUp xs-text-center">
-                    <center><h6 class="text-light text-dark-gray"> No Technologies Available </h6></center>
+                    <center><h6 class="text-light text-dark-gray"> No Offerings Available </h6></center>
                 </div>
                 <?php
             } else {
                 ?>
-                <div class="swiper-slider-clients swiper-container black-move">
+                <div class="swiper-slider-clients swiper-container swiper-three-slides black-move">
                     <div class="swiper-wrapper">
                         <?php
                         foreach ($allTechnologies as $key) {
+
+//                            if ($key['tech_logo'] == '') {
+//                                
                             ?>
-                            <div class="swiper-slide text-center"><img src="<?php echo base_url(); ?><?php echo $key['tech_logo']; ?>" title="<?php echo $key['tech_name']; ?>" alt="<?php echo $key['tech_name']; ?> logo" style="height: 120px;width: auto"></div>
+                            <div class="swiper-slide text-center latest-post position-relative top-3 col-md-6 col-sm-12 col-xs-12 sm-offset-seven-bottom xs-offset-40px-bottom wow fadeInRight last-paragraph-no-margin">
+                                <div class="feature-box-6 position-relative">
+                                    <div class="col-md-5">
+                                        <img class="icon-extra-medium text-secondary" src="<?php echo base_url() . $key['tech_logo']; ?>" alt="">
+                                    </div>
+            <!--                                    <i class="linearicons-diamond4 icon-extra-medium text-secondary"></i>-->
+                                    <div class="col-md-7">
+                                        <div class="text-font-sec text-extra-dark-gray text-medium text-line-height-20" style=" vertical-align: middle;"><?php echo $key['tech_name']; ?></div>
+                                        <p class="text-line-height-20"><?php echo $key['description']; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                                <div class="swiper-slide text-center latest-post position-relative top-3" style="padding-right: 3px;">
+                                                                <figure>
+                                                                    <a href="">
+                                                                        <img src="//<?php echo base_url() . $key['tech_logo']; ?>" alt="">
+                                                                    </a>
+                                                                </figure>
+                                                                <div class="text-small" style=" vertical-align: middle;">
+                                                                    <span><b>//<?php echo $key['tech_name']; ?></b></span>
+                                                                    <p class="clearfix">//<?php echo $key['description']; ?></p>
+                                                                </div>
+                                                                            <img src="//<?php echo base_url(); ?><?php echo $key['tech_logo']; ?>" title="<?php echo $key['tech_name']; ?>" alt="<?php echo $key['tech_name']; ?> logo" style="height: 120px;width: auto">
+                                                            </div>-->
+                            <?php //} else {  ?>
+                            <!--                                <div class="swiper-slide text-center latest-post position-relative top-3" style="padding-right: 3px;">
+                                                                <figure>
+                                                                    <a href="">
+                                                                        <img src="//<?php echo base_url() . $key['tech_logo']; ?>" alt="">
+                                                                    </a>
+                                                                </figure>
+                                                                <div class="text-small">
+                                                                    <span><b>//<?php echo $key['tech_name']; ?></b></span>
+                                                                    <p class="clearfix">//<?php echo $key['description']; ?></p>
+                                                                </div>
+                                                                            <img src="//<?php echo base_url(); ?><?php echo $key['tech_logo']; ?>" title="<?php echo $key['tech_name']; ?>" alt="<?php echo $key['tech_name']; ?> logo" style="height: 120px;width: auto">
+                                                            </div>-->
                             <?php
+//                            }
                         }
                         ?>
                     </div>

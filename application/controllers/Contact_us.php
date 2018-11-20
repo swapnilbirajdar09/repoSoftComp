@@ -1,27 +1,27 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Contact_us extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         // load common model
-     $this->load->model('admin/Setting_model');
+        $this->load->model('admin/Setting_model');
     }
 
     // main index function
     public function index() {
+        $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
         $data['contact_email'] = $this->Setting_model->getAllcompany_details();
-        $this->load->view('includes/user/header');
-        $this->load->view('pages/user/Contact_us',$data); 
-        $this->load->view('includes/user/footer');
+        $this->load->view('includes/user/header',$data);
+        $this->load->view('pages/user/Contact_us', $data);
+        $this->load->view('includes/user/footer',$data);
     }
-
-     
 
     public function sendContactEmail() {
         extract($_POST);
-       // print_r($_POST);die();
+        // print_r($_POST);die();
         $admin_email = $this->Setting_model->getAllcompany_details();
         $adminEmail = $admin_email[0]['company_email'];
         $companyName = $admin_email[0]['company_name'];
@@ -42,16 +42,16 @@ class Contact_us extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from('support@jumlakuwait.com', "Admin Team");
         $this->email->to($adminEmail, 'Admin Team');
-        $this->email->subject('Message from '.$name.' (via website)');
+        $this->email->subject('Message from ' . $name . ' (via website)');
         $this->email->message("<html>"
                 . "<head>"
                 . "</head>"
                 . "<body>"
                 . "<p><label><h3><b>Contact Form</label></b></h3></p>"
-                . "<p><label>Contact form has been submitted by: Name:- ".$name." </label></p>"
-                . "<p><label>Email Id:- ".$email." </label></p>"
-                . "<p><label>Subject:- ".$subject."</label></p>"
-                . "<p><label>For The Purpose Of: ".$message." </label></p>"
+                . "<p><label>Contact form has been submitted by: Name:- " . $name . " </label></p>"
+                . "<p><label>Email Id:- " . $email . " </label></p>"
+                . "<p><label>Subject:- " . $subject . "</label></p>"
+                . "<p><label>For The Purpose Of: " . $message . " </label></p>"
                 . "</body>"
                 . "</html>");
         if (!$this->email->send()) {
@@ -72,7 +72,7 @@ class Contact_us extends CI_Controller {
             $this->email->set_newline("\r\n");
             $this->email->from('support@jumlakuwait.com', "Admin Team");
             $this->email->to($email, $name);
-            $this->email->subject("Acknowlegdement from ".$companyName);
+            $this->email->subject("Acknowlegdement from " . $companyName);
             $this->email->message('<html>
             <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,4 +105,5 @@ class Contact_us extends CI_Controller {
             }
         }
     }
+
 }
