@@ -17,11 +17,47 @@ class Admin_setting extends CI_Controller {
         if ($user_name == '') {
             redirect('admin_login');
         }
+        $data['socials'] = $this->Setting_model->getSocials();
+        $data['social_links'] = $this->Setting_model->getAllSocialLinks();
         $data['admin_details'] = $this->Setting_model->getAlladmin_details();
         $data['company_details'] = $this->Setting_model->getAllcompany_details();
         $this->load->view('includes/header');
         $this->load->view('pages/admin/admin_settings', $data);
         $this->load->view('includes/footer');
+    }
+
+    //------------------fun for save social links--------------------------//
+    public function addSocialLinks() {
+        extract($_POST);
+        $data = $_POST;
+        $result = $this->Setting_model->addSocialLinks($data);
+        if ($result) {
+            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> Social Links Added SuccessFully.
+        </div>
+         <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+                });
+                window.location.reload();
+                }, 2000);                
+                </script>';
+        } else {
+
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> Social Links Not Added Successfully.
+        </div>
+        <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+        }
     }
 
     //----------this function to update admin email-----------------------------//

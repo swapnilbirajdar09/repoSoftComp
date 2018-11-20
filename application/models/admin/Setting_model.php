@@ -6,6 +6,51 @@ class Setting_model extends CI_Model {
         parent::__construct();
     }
 
+    //-------fun for get all links-----------//
+    public function getSocials() {
+        $sql = "SELECT * FROM social_class_tab";
+        //echo $sql; die();
+        $result = $this->db->query($sql);
+        if ($result->num_rows() <= 0) {
+            return 500;
+        } else {
+            return $result->result_array();
+        }
+    }
+
+//-----------fun for get all social links -----------------------------//
+    public function getAllSocialLinks() {
+        $sql = "SELECT * FROM social_tab";
+        //echo $sql; die();
+        $result = $this->db->query($sql);
+        if ($result->num_rows() <= 0) {
+            return 500;
+        } else {
+            return $result->result_array();
+        }
+    }
+
+    //------------fun for add social links to social tab--------------//
+
+    public function addSocialLinks($data) {
+        extract($data);
+        $sql = "SELECT * FROM social_class_tab WHERE social_classes = '$social_link_type'";
+        $result = $this->db->query($sql);
+        if ($result) {
+            $social_name = '';
+            foreach ($result->result_array() as $key) {
+                $social_name = $key['social_name'];
+            }
+        }
+        $sqlInsert = "INSERT INTO social_tab(social_symbole,social_link_name,social_url)values('$social_link_type','$social_name','$social_url')";
+        $resultNew = $this->db->query($sqlInsert);
+        if ($resultNew) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
     //-------UPDATE ADMIN EMAIL FUNCTION--------------//
     public function updateEmail($email) {
 

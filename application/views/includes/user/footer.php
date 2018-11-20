@@ -13,7 +13,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
+<!--        <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
           <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Additional Links</div>
           <ul class="list-unstyled">
             <li><a class="text-small" href="home-classic-corporate.html">Classic corporate</a></li>
@@ -23,15 +23,15 @@
             <li><a class="text-small" href="home-classic-interactive-agency.html">Classic interactive agency</a></li>
             <li><a class="text-small" href="home-creative-branding-agency.html">Creative branding agency</a></li>
           </ul>
-        </div>
-        <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
+        </div>-->
+<!--        <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
           <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Contact Info</div>
           <p class="text-small display-block offset-15px-bottom width-80 xs-center-col">MService Design Agency<br>222 Stonybrook St.
             Los Angeles, CA 90044
           </p>
           <div class="text-small">Email:<a href="mailto:#">info@demolink.org</a></div>
           <div class="text-small">Phone: +1 (0) 213-283-3723</div><a class="text-small text-uppercase text-decoration-underline" href="contact-us-classic.html">VIEW DIRECTIONS</a>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

@@ -55,7 +55,7 @@
                             <div class="w3-col l12">
                                 <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
                                     <label>Technology Name:
-                                  <font color ="red"><span id ="pdescription_star">*</span></font></label>
+                                        <font color ="red"><span id ="pdescription_star">*</span></font></label>
                                     <input type="text" name="technology_name" class="w3-input" placeholder="Enter Technology name" required>
                                 </div>
 
@@ -81,10 +81,11 @@
                         if ($tech != '') {
                             foreach ($tech as $key) {
                                 ?>
-                                <div class="w3-border col-lg-4 col-sm-6 col-xs-6 w3-margin-bottom" style="background-image: url(<?php echo base_url() . $key['tech_logo']; ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                                <div class="w3-col l4 col-sm-6 col-xs-6 w3-margin-bottom" style="background-image: url(<?php echo base_url() . $key['tech_logo']; ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
                                     <div class="w3-col l3 theme_bg" style="z-index: 1;position: absolute;border-bottom-right-radius:100%;">
+                                        <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
                                     </div>
-                                    <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class=" w3-large w3-text-red btn" style="padding: 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
+
                                 </div>
                                 <?php
                             }
@@ -104,38 +105,38 @@
     <div class="w3-col l12 w3-white w3-round w3-margin-top theme_text" style="padding: 16px">
         <div id="archOutput"></div>
         <!-- add Testimonial form -->
-<!--        <div class="col-lg-12">-->
-            <div class="w3-col l12 w3-padding" style="border:1px dotted">
-                <h4 class="theme_text"><i class="fa fa-building"></i> Add Testimonial:</h4>
-                <form id="add_testimonial_Form">    
-                    <input type="hidden" name="_token" id="_token" value="">          
-                    <div class="w3-col l12 w3-margin-top">
-                        <div class="col-lg-6 w3-margin-bottom">
-                            <label> Name:<font color ="red"><span id ="pdescription_star">*</span></font></label>
-                            <input type="text" name="client_name" class="w3-input" placeholder="Enter Client Name Here" required>
-                        </div>
-                        <div class="col-lg-6 w3-margin-bottom">
-                            <label>Designation:<font color ="red"><span id ="pdescription_star">*</span></font></label>
-                            <input type="text" name="client_desig" class="w3-input" placeholder="Enter Client Designation Here" required>
-                        </div>
+        <!--        <div class="col-lg-12">-->
+        <div class="w3-col l12 w3-padding" style="border:1px dotted">
+            <h4 class="theme_text"><i class="fa fa-building"></i> Add Testimonial:</h4>
+            <form id="add_testimonial_Form">    
+                <input type="hidden" name="_token" id="_token" value="">          
+                <div class="w3-col l12 w3-margin-top">
+                    <div class="col-lg-6 w3-margin-bottom">
+                        <label> Name:<font color ="red"><span id ="pdescription_star">*</span></font></label>
+                        <input type="text" name="client_name" class="w3-input" placeholder="Enter Client Name Here" required>
                     </div>
-                    <div class="w3-col l12">
-                        <div class="col-lg-6 w3-margin-bottom">
-                            <label>Image(optional):</label>
-                            <input type="file" name="client_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px">
-                            <div id="image_error" class="w3-text-red"></div>
-                        </div>
-                        <div class="col-lg-6 w3-margin-bottom">
-                            <label>Comments:<font color ="red"><span id ="pdescription_star">*</span></font></label>
-                            <textarea class="w3-input" name="client_comment" placeholder="Enter Client Comments Here..." rows="4"></textarea>
-                        </div>
+                    <div class="col-lg-6 w3-margin-bottom">
+                        <label>Designation:<font color ="red"><span id ="pdescription_star">*</span></font></label>
+                        <input type="text" name="client_desig" class="w3-input" placeholder="Enter Client Designation Here" required>
                     </div>
-                    <div class="col-lg-12 w3-center w3-margin-bottom" id="archSubmit">
-                        <button class="btn theme_bg w3-center" id="addtestimonial" type="submit"><i class="fa fa-plus"></i>  Add Testimonial</button>
+                </div>
+                <div class="w3-col l12">
+                    <div class="col-lg-6 w3-margin-bottom">
+                        <label>Image(optional):</label>
+                        <input type="file" name="client_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px">
+                        <div id="image_error" class="w3-text-red"></div>
                     </div>
-                </form>
-            </div>
-<!--        </div>-->
+                    <div class="col-lg-6 w3-margin-bottom">
+                        <label>Comments:<font color ="red"><span id ="pdescription_star">*</span></font></label>
+                        <textarea class="w3-input" name="client_comment" placeholder="Enter Client Comments Here..." rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-12 w3-center w3-margin-bottom" id="archSubmit">
+                    <button class="btn theme_bg w3-center" id="addtestimonial" type="submit"><i class="fa fa-plus"></i>  Add Testimonial</button>
+                </div>
+            </form>
+        </div>
+        <!--        </div>-->
 
         <div class="w3-col l12 w3-margin-top">
             <hr>
@@ -165,7 +166,7 @@
                                     <td class="text-center"> 
                                         <?php echo $value['client_designation']; ?>
                                     </td>
-                                    <td class="text-center"> 
+                                    <td class="text-center" width="500px"> 
                                         <?php echo $value['client_comment']; ?>
                                     </td>
                                     <td class="text-center">
