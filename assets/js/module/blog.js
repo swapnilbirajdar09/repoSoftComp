@@ -542,3 +542,4 @@ function removeImage(key,portfolio_id) {
     }
   });
 }
+

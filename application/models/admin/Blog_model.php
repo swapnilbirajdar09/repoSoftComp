@@ -102,19 +102,19 @@ class Blog_model extends CI_Model {
         $this->db->insert('blogs_tab',$insert_data);
         if($this->db->affected_rows()>0){
             if($tagAdded_field!='' && $tagAdded_field!='[]'){
-            foreach (json_decode($tagAdded_field) as $key) {
+                foreach (json_decode($tagAdded_field) as $key) {
                 // print_r($key);
-                $this->db->where('tag_value',$key);
-                $q = $this->db->get('tags_tab');
-                if ( $q->num_rows() == 0 ) 
-                {
-                    $insert_tag = array(
-                        'tag_value' => $key
-                    );
-                    $this->db->insert('tags_tab',$insert_tag);
-                } 
+                    $this->db->where('tag_value',$key);
+                    $q = $this->db->get('tags_tab');
+                    if ( $q->num_rows() == 0 ) 
+                    {
+                        $insert_tag = array(
+                            'tag_value' => $key
+                        );
+                        $this->db->insert('tags_tab',$insert_tag);
+                    } 
+                }
             }
-        }
             return true;
         }
         else{
@@ -128,29 +128,14 @@ class Blog_model extends CI_Model {
         $result = array(
             'blog_title' => $edit_blog_title,
             'blog_category' => $edit_blog_category,
-            'blog_message' => $edit_blog_message,
-            'blog_tags' => $edit_tagAdded_field,
-            'blog_videos' => $edit_blog_videos,
-            'blog_links' => $edit_blog_links
+            'blog_message' => $blog_message,
+            'blog_videos' => $blog_videos,
+            'blog_links' => $blog_links
         );
 
         $this->db->where('blog_id', $blog_id);
         $this->db->update('blogs_tab', $result);
         if($this->db->affected_rows()==1){
-            if($edit_tagAdded_field!='' && $edit_tagAdded_field!='[]'){
-            foreach (json_decode($edit_tagAdded_field) as $key) {
-                // print_r($key);
-                $this->db->where('tag_value',$key);
-                $q = $this->db->get('tags_tab');
-                if ( $q->num_rows() == 0 ) 
-                {
-                    $insert_tag = array(
-                        'tag_value' => $key
-                    );
-                    $this->db->insert('tags_tab',$insert_tag);
-                } 
-            }
-        }
             return true;
         }
         else{
@@ -185,6 +170,81 @@ class Blog_model extends CI_Model {
         }
     }
 
+    // add more tag
+    public function addTag($tag_name,$blog_id){
+        $currentTags='';
+        $sql = "SELECT blog_tags FROM blogs_tab WHERE blog_id='$blog_id'";
+        $result_arr = $this->db->query($sql);
+        foreach ($result_arr->result_array() as $key) {
+            $currentTags = $key['blog_tags'];
+        }
+
+        $tagArr=json_decode($currentTags);
+        if (in_array($tag_name, $tagArr)) {
+            $response=array(
+                'status'    =>  'warning',
+                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Tag already included in post.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     }, 5000);
+                     </script>'
+                 );
+            return $response;
+            die();
+        }
+        array_push($tagArr,$tag_name);
+
+        $result = array(
+            'blog_tags' => json_encode($tagArr)
+        );
+
+        $this->db->where('blog_id', $blog_id);
+        $this->db->update('blogs_tab', $result);
+        if($this->db->affected_rows()==1){
+            if($tag_name!=''){
+                $this->db->where('tag_value',$tag_name);
+                $q = $this->db->get('tags_tab');
+                if ( $q->num_rows() == 0 ) 
+                {
+                    $insert_tag = array(
+                        'tag_value' => $tag_name
+                    );
+                    $this->db->insert('tags_tab',$insert_tag);
+                } 
+            }
+            $response=array(
+                'status'    =>  'success',
+                'message'   =>  '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Tag was successfully added.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     window.location.reload();
+                     }, 1000);
+                     </script>'
+                 );
+            return $response;
+        }
+        else{
+            $response=array(
+                'status'    =>  'failure',
+                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Tag was not added.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     }, 5000);
+                     </script>'
+                 );
+            return $response;
+        }
+    }
+
     // delete the selected blog
     public function removeBlog($blog_id){
         $sql = "DELETE FROM blogs_tab WHERE blog_id='$blog_id'";
@@ -209,8 +269,15 @@ class Blog_model extends CI_Model {
         if(count($imgArr)==1){
             $response=array(
                 'status'    =>  'false',
-                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Cannot remove Image. Atleast one image should be uploaded.</div>'
-            );
+                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Cannot remove Image. Atleast one image should be uploaded.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     }, 5000);
+                     </script>'
+                 );
             return $response;
             die();
         }
@@ -226,15 +293,80 @@ class Blog_model extends CI_Model {
         if($this->db->affected_rows()==1){
             $response=array(
                 'status'    =>  'success',
-                'message'   =>  '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Image was successfully deleted.</div>'
-            );
+                'message'   =>  '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Image was successfully deleted.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     window.location.reload();
+                     }, 1000);
+                     </script>'
+                 );
             return $response;
         }
         else{
             $response=array(
                 'status'    =>  'failure',
-                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Image was not deleted.</div>'
-            );
+                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Image was not deleted.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     }, 5000);
+                     </script>'
+                 );
+            return $response;
+        }
+    }
+
+
+    // delete the selected blog tag f
+    public function removeTag($key,$blog_id){
+        $sql = "SELECT blog_tags FROM blogs_tab WHERE blog_id='$blog_id'";
+        $result_arr = $this->db->query($sql);
+        foreach ($result_arr->result_array() as $row) {
+            $currentTags = $row['blog_tags'];
+        }
+
+        $tagArr=json_decode($currentTags);
+        // unset key value
+        unset($tagArr[$key]);
+        $tagArr = array_values($tagArr);
+        $result = array(
+            'blog_tags' => json_encode($tagArr)
+        );
+
+        $this->db->where('blog_id', $blog_id);
+        $this->db->update('blogs_tab', $result);
+        if($this->db->affected_rows()==1){
+            $response=array(
+                'status'    =>  'success',
+                'message'   =>  '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Tag was successfully deleted.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     window.location.reload();
+                     }, 1000);
+                     </script>'
+                 );
+            return $response;
+        }
+        else{
+            $response=array(
+                'status'    =>  'failure',
+                'message'   =>  '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Tag was not deleted.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     }, 5000);
+                     </script>'
+                 );
             return $response;
         }
     }

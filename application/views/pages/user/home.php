@@ -284,8 +284,8 @@
             }
             ?>
             <div class="col-md-12">
-                        <a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="<?php echo base_url(); ?>viewblog" style="margin: 16px 0 0 0">View more posts<i class="fa fa-chevron-right"></i></a>
-                    </div>
+                <a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="<?php echo base_url(); ?>viewblog" style="margin: 16px 0 0 0">View more posts<i class="fa fa-chevron-right"></i></a>
+            </div>
         </div>
     </div>
 </section>

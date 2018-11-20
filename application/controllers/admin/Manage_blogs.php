@@ -1,5 +1,5 @@
 <?php
-
+error_reporting('E_ALL');
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Manage_blogs extends CI_Controller {
@@ -124,68 +124,90 @@ class Manage_blogs extends CI_Controller {
                 } 
             }
 
-    // edit portfolio function
-            public function editPortfolio(){
+    // edit blog function
+            public function editBlog(){
                 extract($_POST);
                 $data = $_POST;
-        // print_r($_POST);die();
                 $count=0;
-                $portVid_Arr = array();    
-                $portLink_Arr = array();    
+                $blogVid_Arr = array();    
+                $blogLink_Arr = array();    
 
         // videos json arr
-                if(!empty($edit_port_video)){
-                    foreach ($edit_port_video as $key) {
-                        $portVid_Arr[]=$key;
+                if(!empty($edit_blog_video)){
+                    foreach ($edit_blog_video as $key) {
+                        $blogVid_Arr[]=$key;
                     }
-                    $data['port_videos']=json_encode($portVid_Arr);
+                    $data['blog_videos']=json_encode($blogVid_Arr);
                 }else{
-                    $data['port_videos']='';
+                    $data['blog_videos']='';
                 }
 
         // links json array
-                if(!empty($edit_port_link) && sizeof($edit_port_link)>0){
-                    foreach ($edit_port_link as $key) {
-                        $portLink_Arr[]=$key;
+                if(!empty($edit_blog_link) && sizeof($edit_blog_link)>0){
+                    foreach ($edit_blog_link as $key) {
+                        $blogLink_Arr[]=$key;
                     }
-                    $data['port_links']=json_encode($portLink_Arr);
+                    $data['blog_links']=json_encode($blogLink_Arr);
                 }else{
-                    $data['port_links']='';
+                    $data['blog_links']='';
                 }
         // print_r($data);die();
-                $result = $this->blog_model->editPortfolio($data,$portfolio_id);
-
+                $result = $this->blog_model->editBlog($data,$blog_id);
                 if($result){
-                    echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Portfolio was successfully updated.</div>';
-                }
-                else{
-                    echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Perhaps you have not changed anything. Portfolio was not updated. </div>';
-                } 
-            }
+                    echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Blog was successfully updated.</div>
+                    <script>
+                    window.setTimeout(function() {
+                       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                         $(this).remove(); 
+                         });
+                         window.location.reload();
+                         }, 1000);
+                         </script>
+                         ';
+                     }
+                     else{
+                        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Perhaps you have not changed anything. Blog was not updated. </div>
+                        <script>
+                        window.setTimeout(function() {
+                           $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                             $(this).remove(); 
+                             });
+                             }, 3000);
+                             </script>
+                             ';
+                         } 
+                     }
 
-    // upload image in gallery portfolio function
-            public function uploadImagePortfolio(){
-                extract($_POST);
-                $data = $_POST;        
-                $filepath = '';
+    // upload image in gallery blogs function
+                     public function uploadImageBlog(){
+                        extract($_POST);
+                        $data = $_POST;        
+                        $filepath = '';
 
-                $file_name = $_FILES['edit_port_image']['name'];
-                if (!empty(($_FILES['edit_port_image']['name']))) {
+                        $file_name = $_FILES['edit_blog_image']['name'];
+                        if (!empty(($_FILES['edit_blog_image']['name']))) {
         //file validating---------------------------//
-                    if ($_FILES['edit_port_image']['size'] > 10485760) {  
-            //for portfolio image
-                        echo '<div class="alert alert-warning alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Warning-</strong> Image size exceeds 10MB!</div>';
-                        die();
-                    }
-                    $i=$img_portfolio_count+1;
-                    $extension = pathinfo($_FILES['edit_port_image']['name'], PATHINFO_EXTENSION);
-                    $_FILES['userFile']['name'] = $img_portfolio_name.'_0'.$img_portfolio_cat.'_'.time().'.'.$extension;
-                    $_FILES['userFile']['type'] = $_FILES['edit_port_image']['type'];
-                    $_FILES['userFile']['tmp_name'] = $_FILES['edit_port_image']['tmp_name'];
-                    $_FILES['userFile']['error'] = $_FILES['edit_port_image']['error'];
-                    $_FILES['userFile']['size'] = $_FILES['edit_port_image']['size'];
+                            if ($_FILES['edit_blog_image']['size'] > 10485760) {  
+                                echo '<div class="alert alert-warning alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Warning-</strong> Image size exceeds 10MB!</div>
+                                <script>
+                                window.setTimeout(function() {
+                                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                                     $(this).remove(); 
+                                     });
+                                     }, 5000);
+                                     </script>
+                                     ';
+                                     die();
+                                 }
+                                 $i=$img_blog_count+1;
+                                 $extension = pathinfo($_FILES['edit_blog_image']['name'], PATHINFO_EXTENSION);
+                                 $_FILES['userFile']['name'] = $img_blog_name.'_0'.$img_blog_cat.'_'.time().'.'.$extension;
+                                 $_FILES['userFile']['type'] = $_FILES['edit_blog_image']['type'];
+                                 $_FILES['userFile']['tmp_name'] = $_FILES['edit_blog_image']['tmp_name'];
+                                 $_FILES['userFile']['error'] = $_FILES['edit_blog_image']['error'];
+                                 $_FILES['userFile']['size'] = $_FILES['edit_blog_image']['size'];
 
-        $uploadPath = 'assets/images/portfolio/';  //upload images in images/desktop/ folder
+        $uploadPath = 'assets/images/blogs/';  //upload images in images/desktop/ folder
 
         $config['upload_path'] = $uploadPath;
         $config['overwrite'] = TRUE;
@@ -196,7 +218,7 @@ class Manage_blogs extends CI_Controller {
 
         if ($this->upload->do_upload('userFile')) {
             $fileData = $this->upload->data();
-            $filepath = 'assets/images/portfolio/'.$fileData['file_name'];
+            $filepath = 'assets/images/blogs/'.$fileData['file_name'];
         }
         else{
            echo  $this->upload->display_errors('<div class="alert alert-warning alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Warning-</strong>', '</div>');
@@ -205,66 +227,151 @@ class Manage_blogs extends CI_Controller {
    }
 
    $data['filepath'] = $filepath;
-   $result = $this->blog_model->uploadImagePortfolio($data,$img_portfolio_id);
+   $result = $this->blog_model->uploadImageBlog($data,$img_blog_id);
 
    if($result){
-    echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Image uploaded successfully.</div>';
-}
-else{
-    echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Image was not uploaded. </div>';
-} 
-}
+    echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Image uploaded successfully.</div>
+    <script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+         $(this).remove(); 
+         });
+         window.location.reload();
+         }, 1000);
+         </script>
+         ';
+     }
+     else{
+        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Image was not uploaded. </div>
+        <script>
+        window.setTimeout(function() {
+           $(".alert").fadeTo(500, 0).slideUp(500, function(){
+             $(this).remove(); 
+             });
+             }, 5000);
+             </script>
+             ';
+         } 
+     }
 
     // function to delete portfolio
-public function removeBlog(){
-    extract($_GET);
-    if(isset($blog_id) && $blog_id!=''){
-        $result = $this->blog_model->removeBlog($blog_id);
+     public function removeBlog(){
+        extract($_GET);
+        if(isset($blog_id) && $blog_id!=''){
+            $result = $this->blog_model->removeBlog($blog_id);
 
-        if($result){
-            echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Blog post was successfully deleted.</div>';
+            if($result){
+                echo '<div class="alert alert-success alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success-</strong> Blog post was successfully deleted.</div>';
+            }
+            else{
+                echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog post was not deleted.</div>';
+            } 
         }
         else{
-            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog post was not deleted.</div>';
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog post not found.</div>';
         } 
     }
-    else{
-        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog post not found.</div>';
-    } 
-}
 
     // function to delete portfolio image frim gallery
-public function removeImage(){
-    extract($_GET);
-    if(isset($blog_id) && $blog_id!=''){
-        $result = $this->blog_model->removeImage($key,$blog_id);
+    public function removeImage(){
+        extract($_GET);
+        if(isset($blog_id) && $blog_id!=''){
+            $result = $this->blog_model->removeImage($key,$blog_id);
 
-        if($result['status']=='warning'){
-            echo $result['message'];
-            die();
-        }
-        if($result['status']=='success'){
-            echo $result['message'];
+            if($result['status']=='warning'){
+                echo $result['message'];
+                die();
+            }
+            if($result['status']=='success'){
+                echo $result['message'];
+            }
+            else{
+                echo $result['message'];
+            } 
         }
         else{
-            echo $result['message'];
-        } 
-    }
-    else{
-        echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog Image not found.</div>';
-    } 
-}
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog Image not found.</div>
+            <script>
+            window.setTimeout(function() {
+               $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                 $(this).remove(); 
+                 });
+                 }, 5000);
+                 </script>
+                 ';
+             } 
+         }
+
+    // function to add more tag in blog
+         public function addTag(){
+            extract($_POST);
+            // print_r($_POST);die();
+            if(isset($tagblog_id) && $tagblog_id!=''){
+                $result = $this->blog_model->addTag($tag_name,$tagblog_id);
+                if($result['status']=='warning'){
+                    echo $result['message'];
+                    die();
+                }
+                if($result['status']=='success'){
+                    echo $result['message'];
+                }
+                else{
+                    echo $result['message'];
+                } 
+            }
+            else{
+                echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog not found.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     }, 5000);
+                     </script>
+                     ';
+                 } 
+             }
+
+    // function to delete more tag in blog
+         public function removeTag(){
+            extract($_GET);
+            if(isset($blog_id) && $blog_id!=''){
+                $result = $this->blog_model->removeTag($key,$blog_id);
+
+                if($result['status']=='warning'){
+                    echo $result['message'];
+                    die();
+                }
+                if($result['status']=='success'){
+                    echo $result['message'];
+                }
+                else{
+                    echo $result['message'];
+                } 
+            }
+            else{
+                echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error-</strong> Blog not found.</div>
+                <script>
+                window.setTimeout(function() {
+                   $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                     $(this).remove(); 
+                     });
+                     }, 5000);
+                     </script>
+                     ';
+                 } 
+             }
 
 
     // function to redirect page to selected blog
-public function blog($url=''){
-    $blog_id=base64_decode($url);
-    $data['all_categories']=$this->blog_model->getAllCategories();
-    $data['category_count']=$this->blog_model->getCategoriesCount();
-    $data['allTags']=$this->blog_model->getAllTags();
-    $data['blogDetail']=$this->blog_model->getBlogDetail($blog_id);
-    $this->load->view('includes/header');
-    $this->load->view('pages/admin/blog',$data); 
-    $this->load->view('includes/footer');
-}
-}
+             public function blog($url=''){
+                $blog_id=base64_decode($url);
+                $data['all_categories']=$this->blog_model->getAllCategories();
+                $data['category_count']=$this->blog_model->getCategoriesCount();
+                $data['allTags']=$this->blog_model->getAllTags();
+                $data['blogDetail']=$this->blog_model->getBlogDetail($blog_id);
+                $this->load->view('includes/header');
+                $this->load->view('pages/admin/blog',$data); 
+                $this->load->view('includes/footer');
+            }
+        }
