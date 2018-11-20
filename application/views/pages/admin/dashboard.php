@@ -46,7 +46,7 @@
         <!-- add Technology div start -->
         <div class="w3-col l9">
             <div class="w3-col l12 w3-white w3-round w3-padding theme_text">
-                <h4 class="theme_text"><i class="fa fa-first-order"></i> All Technology:</h4>
+                <h4 class="theme_text"><i class="fa fa-first-order"></i> Our Offerings:</h4>
 
                 <div class="w3-col l6 w3-margin-top">
                     <form id="addtechnologyForm" action="" method="POST" enctype="multipart/form-data">
@@ -54,19 +54,24 @@
                         <div class="w3-col l12">
                             <div class="w3-col l12">
                                 <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
-                                    <label>Technology Name:
+                                    <label>Name:
                                         <font color ="red"><span id ="pdescription_star">*</span></font></label>
-                                    <input type="text" name="technology_name" class="w3-input" placeholder="Enter Technology name" required>
+                                    <input type="text" name="technology_name" class="w3-input" placeholder="Enter name" required>
                                 </div>
 
-                                <div class="col-lg-6 w3-margin-bottom">
-                                    <label>Technology Logo: <font color ="red"><span id ="pdescription_star">*</span></font></label>
-                                    <input type="file" name="logo_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px" required>
+                                <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
+                                    <label>Logo: <font color ="red"><span id ="pdescription_star">*</span></font></label>
+                                    <input type="file" name="logo_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px">
                                     <div id="image_error" class="w3-text-red"></div>
+                                </div>
+
+                                <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
+                                    <label>Short Description: <font color ="red"><span id ="pdescription_star">*</span></font></label>
+                                    <textarea class="w3-input" name="description" placeholder="Enter Short Description Here..." rows="4" required style=" resize: none;" required></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12 w3-center" id="btnsubmit">
-                                <button class="btn w3-button theme_bg" id="addtechnologybtn" type="submit"><i class="fa fa-plus"></i> Add Technology</button>
+                                <button class="btn w3-button theme_bg" id="addtechnologybtn" type="submit"><i class="fa fa-plus"></i> Add Offerings</button>
                             </div>
                         </div>
                     </form>
@@ -81,13 +86,22 @@
                         if ($tech != '') {
                             foreach ($tech as $key) {
                                 ?>
-                                <div class="w3-col l4 col-sm-6 col-xs-6 w3-margin-bottom" style="background-image: url(<?php echo base_url() . $key['tech_logo']; ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
-                                    <div class="w3-col l3 theme_bg" style="z-index: 1;position: absolute;border-bottom-right-radius:100%;">
-                                        <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
-                                    </div>
+                                <?php if ($key['tech_logo'] != '') { ?>
+                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url() . $key['tech_logo']; ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                                        <div class="w3-col l3 theme_bg" style="z-index: 1;position: absolute;border-bottom-right-radius:100%;">
+                                            <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
+                                        </div>
 
-                                </div>
-                                <?php
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url().'assets/images/default.png'?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                                        <div class="w3-col l3 theme_bg" style="z-index: 1;position: absolute;border-bottom-right-radius:100%;">
+                                            <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
+                                        </div>
+
+                                    </div>
+                                    <?php
+                                }
                             }
                         } else {
                             echo' <center><span style="vertical-align: middle;"> No Technologies Found..!</span></center>';
@@ -128,7 +142,7 @@
                     </div>
                     <div class="col-lg-6 w3-margin-bottom">
                         <label>Comments:<font color ="red"><span id ="pdescription_star">*</span></font></label>
-                        <textarea class="w3-input" name="client_comment" placeholder="Enter Client Comments Here..." rows="4"></textarea>
+                        <textarea class="w3-input" name="client_comment" placeholder="Enter Client Comments Here..." rows="4" required></textarea>
                     </div>
                 </div>
                 <div class="col-lg-12 w3-center w3-margin-bottom" id="archSubmit">
@@ -203,7 +217,7 @@
         $("#addtechnologyForm").submit(function () {
             dataString = $("#addtechnologyForm").serialize();
             //alert(dataString);
-            $('#addtechnologybtn').html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-spinner fa-spin w3-large"></i> <b>Technology Add. Please wait...</b></span>');
+            $('#addtechnologybtn').html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-spinner fa-spin w3-large"></i> <b>Adding Offerings. Please wait...</b></span>');
             $.ajax({
                 type: "POST",
                 url: "<?php echo base_url(); ?>admin/admin_dashboard/addtechnology",
@@ -214,9 +228,9 @@
                 success: function (data)
                 {
                     //alert(data);
-                    // $.alert(data);
+                    $('#addtechnologybtn').html('<span> Add Offerings </span>');
                     $('#msgdiv').html(data);
-                    location.reload();
+                    //location.reload();
                 }
             });
             return false;  //stop the actual form post !important!
