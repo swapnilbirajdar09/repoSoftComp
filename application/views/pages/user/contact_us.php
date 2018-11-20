@@ -29,7 +29,7 @@
           <div class="row equalize sm-equalize-auto">
          <!----- company address section -------->
         
-           <div class="col-md-12 col-sm-12 no-inset col-2-nth wow fadeInRight">
+           <div class="col-md-12 col-sm-12 no-inset wow fadeInRight" >
            	 <?php 
 	          	 $office =''; 
 	              foreach ($contact_email as $value) {
@@ -41,7 +41,7 @@
 	             	$j = 1;
 	             for ($i=0;$i<count($office);$i++) {   
 	            ?>
-              <div class="col-md-6 col-sm-6 col-xs-12 display-table bg-extra-dark-gray height-350px last-paragraph-no-margin">
+              <div class="col-md-4 col-sm-6 col-xs-12 display-table bg-extra-dark-gray height-350px last-paragraph-no-margin">
                 <div class="display-table-cell vertical-align-middle text-center"><i class="linearicons-map2 text-secondary icon-medium offset-25px-bottom"></i>
                   <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom"><?php echo $office[$i]['office_type']; ?></div>
                   <p class="width-60 md-width-80 center-col text-medium" style="margin-bottom:0;"><?php echo $office[$i]['office_address']; ?></p>
@@ -52,18 +52,7 @@
              <?php $j++;
 	           }
 	        }
-	         else{
-	            ?>
-	            <tr>
-	              <td colspan="8" class="w3-center">
-	                <span> No Address Found </span>
-	              </td>              
-	            </tr>
-	            <?php
-	          }
-	        }
-	           
-	        
+	         }
 	          ?>
 	         
             </div>
@@ -80,7 +69,9 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
             </div>
           </div>
-          <form id="contact_us_form" class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" >
+          <div class="row">
+          	<div class="col-md-6 text-center social-style-4 border round">
+          		<form id="contact_us_form" class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" >
             <div class="row row-20">
               <div class="col-md-6">
               	  <div class="w3-col l12 w3-center" id="fpasswd_err"></div>
@@ -120,16 +111,15 @@
               <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" id="submitbtn" type="submit">send message</button>
             </div>
           </form>
+      </div>
+      <div class="col-md-6 text-center social-style-4 border round">
+      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.525124457551!2d73.83154621436857!3d18.505157274476428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf8d90261449%3A0xbbb511df2afe0c9c!2sBizmo+Technologies!5e0!3m2!1sen!2sin!4v1542367197142" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+          	</div>
+          
         </div>
       </section>
-      <section class="wow fadeIn bg-light-gray">
-     <div class="col-md-12 text-center social-style-4 border round"><span class="text-medium text-medium text-uppercase display-block text-font-sec text-extra-dark-gray offset-30px-bottom">Follow Us</span>
-              <div class="social-icon-style-4">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.525124457551!2d73.83154621436857!3d18.505157274476428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf8d90261449%3A0xbbb511df2afe0c9c!2sBizmo+Technologies!5e0!3m2!1sen!2sin!4v1542367197142" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-              </div>
-            
-        </div>
-      </section>
+   
 
       <script>
     $(function () {

@@ -5,7 +5,7 @@
             <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
                 <div class="position-relative overflow-hidden width-100">
                     <span class="text-small text-outside-line-full text-font-sec text-medium text-uppercase">
-                        <h4>Current Openings</h4>
+                        <h5 class="w3-black"><b>Open Positions</b></h5>
                     </span>
                 </div>
             </div>
@@ -160,8 +160,6 @@
                 $('#resume').css('border-color', '');
             }
             //alert(resume);
-
-
             dataString = $("#applyJobForm").serialize();
             $('#btnsubmit').html('<span class="w3-card w3-padding-small w3-margin-bottom w3-round"><i class="fa fa-spinner fa-spin w3-large"></i> <b>Appling Job. Hang on...</b></span>');
             $.ajax({
