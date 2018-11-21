@@ -18,7 +18,7 @@
         </div>
     </div>
 </section>
-<?php if (!$services) { ?>
+<?php if ($services) { ?>
 <section class="wow fadeIn" id="about">
     <div class="container">
         <div class="row">
