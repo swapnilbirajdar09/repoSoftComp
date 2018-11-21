@@ -25,6 +25,7 @@ class Homepage extends CI_Controller {
         $data['allCategories'] = $this->portfolio_model->getAllCategories();
         $data['allPortfolios'] = $this->portfolio_model->getAllPortfolios();
         $data['all_blogs'] = $this->blog_model->getAllBlogs();
+        $data['company_details'] = $this->Setting_model->getAllcompany_details();
 
         $this->load->view('includes/user/header', $data);
         $this->load->view('pages/user/home', $data);

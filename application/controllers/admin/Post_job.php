@@ -26,7 +26,6 @@ class Post_job extends CI_Controller {
 
 //--------------------------fun for save job------------------------------//
     public function saveJob() {
-        //print_r($_POST);
         extract($_POST);
         $data = $_POST;
         if ($experienceRequiredFrom < $experienceRequiredTo) {
@@ -43,6 +42,7 @@ class Post_job extends CI_Controller {
                         </script>';
             die();
         }
+        //print_r($_POST);die();
 
         $result = $this->Postjob_model->saveJob($data);
         //print_r($result);die();
