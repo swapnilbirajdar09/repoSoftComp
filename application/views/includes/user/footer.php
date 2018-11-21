@@ -42,7 +42,7 @@
     <div class="bg-dark-footer inset-50px-tb text-center xs-padding-30px-tb">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 text-left text-small xs-text-center">©  2018 MService.is Proudly Powered by<a class="text-dark-gray" href="#">MService</a></div>
+                <div class="col-md-6 col-sm-6 col-xs-12 text-left text-small xs-text-center">@ <?php echo $company_details[0]['company_name']; ?>. is Proudly Powered by<a class="text-dark-gray" href="https://bizmo-tech.com/"> Bizmo Technologies</a></div>
                 <div class="col-md-6 col-sm-6 col-xs-12 text-right text-small xs-text-center"><a class="text-dark-gray" href="#">Term and Condition</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="text-dark-gray" href="#">Privacy Policy</a></div>
             </div>
         </div>
