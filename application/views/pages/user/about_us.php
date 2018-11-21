@@ -102,7 +102,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 no-inset offset-eight-bottom sm-offset-30px-bottom">
-                            <div class="col-md-8 col-sm-8 col-xs-12 xs-offset-15px-bottom wow fadeInLeft" data-wow-delay="0.2s"><img class="border-radius-6" src="<?php echo base_url(); ?>assets/user/images/about-us-simple-2-1000x700.jpg" alt=""></div>
+                            <div class="col-md-8 col-sm-8 col-xs-12 xs-offset-15px-bottom wow fadeInLeft" data-wow-delay="0.2s"><img class="border-radius-6" src="<?php echo base_url(); ?>assets/images/about-us-modern-3-1920x1200.jpg" alt=""></div>
                             <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-delay="0.4s"><img class="border-radius-6 xs-width-100" src="<?php echo base_url(); ?>assets/user/images/about-us-simple-3-500x730.jpg" alt=""></div>
                         </div>
                     </div>
