@@ -12,7 +12,7 @@ class Postjob_model extends CI_Model {
         $experience = $experienceRequiredFrom . '-' . $experienceRequiredTo . ' years';
         $sql = "INSERT INTO job_tab(job_name,job_description,vacancies,req_exp, req_list,added_date,status)"
                 . "VALUES ('" . addslashes($job_title) . "','" . addslashes($job_description) . "','$noOfVacancies','$experience',"
-                . "'$skillAdded_field',now(),'1')";
+                . "'".addslashes($skillAdded_field)."',now(),'1')";
         //print_r($sql);die();
         $result = $this->db->query($sql);
         if ($result) {

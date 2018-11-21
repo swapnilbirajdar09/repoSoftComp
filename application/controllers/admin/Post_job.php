@@ -23,10 +23,27 @@ class Post_job extends CI_Controller {
         $this->load->view('pages/admin/postJob'); //------loading the admin Add Service view
         $this->load->view('includes/footer');
     }
+
 //--------------------------fun for save job------------------------------//
     public function saveJob() {
         //print_r($_POST);
+        extract($_POST);
         $data = $_POST;
+        if ($experienceRequiredFrom < $experienceRequiredTo) {
+            echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Warning! </strong> Required Experience From Is Less Than Experience To.
+                </div>
+                 <script>
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                        });
+                        }, 5000);
+                        </script>';
+            die();
+        }
+
         $result = $this->Postjob_model->saveJob($data);
         //print_r($result);die();
         if ($result == '200') {

@@ -24,7 +24,7 @@
                     <div class="col-lg-12 col-xs-12 col-sm-12 w3-margin-bottom">
                         <div class="col-lg-4 col-xs-12 col-sm-12">
                             <label>No Of Vacancies <b class="w3-text-red w3-medium">*</b></label>
-                            <input type="number" name="noOfVacancies" ng-model="noOfVacancies" id="noOfVacancies" class="form-control" placeholder="Enter No Of Vacancies here..." value="" required>
+                            <input type="number" name="noOfVacancies" ng-model="noOfVacancies" min="0" id="noOfVacancies" class="form-control" placeholder="Enter No Of Vacancies here..." value="" required>
                         </div>
                         <div class="col-lg-4 col-xs-12 col-sm-12">
                             <label>Experience From <b class="w3-text-red w3-medium">*</b></label>

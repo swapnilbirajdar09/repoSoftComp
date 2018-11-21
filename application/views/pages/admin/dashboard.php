@@ -58,7 +58,7 @@
                                     <input type="text" name="technology_name" class="w3-input" placeholder="Enter name" required>
                                 </div>
                                 <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
-                                    <label>Logo: <font color ="red"><span id ="pdescription_star">*</span></font></label>
+                                    <label>Logo: <font color ="red"><span id ="pdescription_star"></span></font></label>
                                     <input type="file" name="logo_image" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px">
                                     <div id="image_error" class="w3-text-red"></div>
                                 </div>
@@ -101,7 +101,7 @@
                                 }
                             }
                         } else {
-                            echo' <center><span style="vertical-align: middle;"> No Technologies Found..!</span></center>';
+                            echo' <center><span style="vertical-align: middle;"> No Offerings Found..!</span></center>';
                         }
                         ?>
                     </div>
