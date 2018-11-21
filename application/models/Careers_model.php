@@ -9,7 +9,7 @@ class Careers_model extends CI_Model {
     public function applyJob($data) {
 //print_r($data);die();
         extract($data);
-
+        // $dated=date('Y-m-d');
         $exist = Careers_model::checkEmailExist($candidate_email, $job_id);
        // print_r($exist);die();
         if ($exist == 0) {
@@ -17,8 +17,8 @@ class Careers_model extends CI_Model {
                     . "candidate_mobile,candidate_cv,applied_job, application_status,applied_date)"
                     . "VALUES ('" . addslashes($candidateName) . "','" . addslashes($message) . "',"
                     . "'$candidate_email','$candidate_phone','$imagePath',"
-                    . "'$job_id','1',now())";
-//print_r($sql);die();
+                    . "'$job_id','1',NOW())";
+// print_r($sql);die();
             $result = $this->db->query($sql);
             if ($result) {
                 return 200;

@@ -16,6 +16,7 @@ class Careers_details extends CI_Controller {
     public function index() {
         extract($_GET);
         $job_id = base64_decode($job_id);
+        $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
         $data['company_details'] = $this->Setting_model->getAllcompany_details();
         $data['jobs'] = $this->Postjob_model->getAllJobsById($job_id);
         $this->load->view('includes/user/header',$data);

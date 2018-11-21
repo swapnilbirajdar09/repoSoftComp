@@ -81,7 +81,7 @@ class Postjob_model extends CI_Model {
 
     //---------------fun for get all jobs details ---------------------//
     public function getAllJobsById($job_id) {
-        $sql = "SELECT * FROM job_tab where job_id= $job_id";
+        $sql = "SELECT * FROM job_tab where job_id= '$job_id'";
         $result = $this->db->query($sql);
         if ($result->num_rows() <= 0) {
             return 500;

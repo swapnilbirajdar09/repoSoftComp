@@ -24,7 +24,7 @@ class Careers extends CI_Controller {
 
     public function applyJob() {
         extract($_POST);
-        //print_r($_POST);
+        // print_r($_POST);die();
         extract($_FILES);
         $data = $_POST;
 
@@ -32,14 +32,7 @@ class Careers extends CI_Controller {
             echo '<div class="alert alert-danger">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Warning! </strong> Please Select The Valid Job.
-                </div>
-                 <script>
-                window.setTimeout(function() {
-                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                        $(this).remove(); 
-                        });
-                        }, 5000);
-                        </script>';
+                </div>';
             die();
         }
 
@@ -70,10 +63,10 @@ class Careers extends CI_Controller {
         }
 
         $data['imagePath'] = $imagePath;
-
+// print_r($data);die();
         $result = $this->Careers_model->applyJob($data);
         // print_r($imagePath);
-        //print_r($result);die();
+        // print_r($result);die();
 //        die();
         if ($result == '200') {
             echo '<div class="alert alert-success">
@@ -92,26 +85,12 @@ class Careers extends CI_Controller {
             echo '<div class="alert alert-danger">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Failure! </strong> You Have Already Applied For This Job..!
-        </div>
-        <script>
-        window.setTimeout(function() {
-            $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove();
-                });
-                }, 3000);                
-                </script>';
+        </div>';
         } else {
             echo '<div class="alert alert-danger">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Failure! </strong> Something Went Wrong.
-        </div>
-        <script>
-        window.setTimeout(function() {
-            $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove();
-                });
-                }, 3000);                
-                </script>';
+        <strong>Failure! </strong> Something went wrong. Reload the page and Try again!
+        </div>';
         }
     }
 
