@@ -18,7 +18,7 @@
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
+                <div class="col-md-3 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
                     <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Quick Links</div>
                     <ul class="list-unstyled">
                         <li><a class="text-small" href="<?php echo base_url(); ?>">Home</a></li>

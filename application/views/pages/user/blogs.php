@@ -1,11 +1,11 @@
 <title>All Blogs | SoftComp</title>
-<section class="section parallax-container wow fadeIn bg-extra-dark-gray" data-parallax-img="<?php echo base_url(); ?>assets/user/images/home-blog-masonry-slider-01.jpg">
+<section class="section parallax-container wow fadeIn bg-extra-dark-gray" data-parallax-img="<?php echo base_url(); ?>assets/images/blog-post-layout-04-header-01.jpg">
     <div class="parallax-content">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 extra-small-screen display-table page-title-large">
                     <div class="display-table-cell vertical-align-middle text-center">
-                        <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1 offset-10px-bottom">Silo Technologies Blogs</h1><span class="text-white opacity6 text-font-sec">Read the latest news from our admin</span>
+                        <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1 offset-10px-bottom">Blogs</h1><span class="text-white opacity6 text-font-sec">Read the latest news from our admin</span>
                     </div>
                 </div>
             </div>
