@@ -9,8 +9,8 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 display-table text-right xs-text-left xs-offset-10px-top">
                 <div class="display-table-cell vertical-align-middle breadcrumb text-small text-font-sec">
                     <ul class="xs-text-center">
-                        <li><a class="text-dark-gray" href="#">Elements</a></li>
-                        <li><a class="text-dark-gray" href="#">Interactive elements</a></li>
+<!--                        <li><a class="text-dark-gray" href="#">Elements</a></li>
+                        <li><a class="text-dark-gray" href="#">Interactive elements</a></li>-->
                         <li class="text-dark-gray">Services</li>
                     </ul>
                 </div>
@@ -18,6 +18,7 @@
         </div>
     </div>
 </section>
+<?php if (!$services) { ?>
 <section class="wow fadeIn" id="about">
     <div class="container">
         <div class="row">
@@ -51,3 +52,4 @@
         </div>    
     </div>
 </section>
+<?php } ?>
