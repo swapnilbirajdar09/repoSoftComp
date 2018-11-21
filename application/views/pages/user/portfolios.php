@@ -1,12 +1,12 @@
 <title>All Portfolio | SoftComp</title>
-<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo base_url();?>assets/images/portfolio-justify-18-975x650.jpg');">
+<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo base_url();?>assets/images/portfolio-justify-18-975x650.jpg'); padding:80px 0">
     <div class="opacity-medium bg-extra-dark-gray"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 extra-small-screen display-table page-title-large">
                 <div class="display-table-cell vertical-align-middle text-center">
                     <!-- start page title-->
-                    <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1 offset-10px-bottom">Our Portfolio</h1>
+                    <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1 ">Our Portfolio</h1>
                     <!-- end page title-->
                     <!-- start sub title--><span class="text-white opacity6 text-font-sec">We design solutions for businesses small and large across a variety of sectors and industries. In our portfolio, you can find the best creative projects we have created since our establishment. Take a look at our latest projects</span>
                     <!-- end sub title-->
