@@ -30,14 +30,12 @@
                         <li><a class="text-small" href="<?php echo base_url(); ?>contact_us">Contact Us</a></li>
                     </ul>
                 </div>
-                <!--        <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
-                          <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Contact Info</div>
-                          <p class="text-small display-block offset-15px-bottom width-80 xs-center-col">MService Design Agency<br>222 Stonybrook St.
-                            Los Angeles, CA 90044
-                          </p>
-                          <div class="text-small">Email:<a href="mailto:#">info@demolink.org</a></div>
-                          <div class="text-small">Phone: +1 (0) 213-283-3723</div><a class="text-small text-uppercase text-decoration-underline" href="contact-us-classic.html">VIEW DIRECTIONS</a>
-                        </div>-->
+                <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
+                    <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Contact Info</div>
+                    <p class="text-small display-block offset-15px-bottom width-80 xs-center-col"><?php echo $company_details[0]['hq_address']; ?></p>
+                    <div class="text-small">Email:<a href="mailto:#"> <?php echo $company_details[0]['company_email']; ?></a></div>
+<!--                    <div class="text-small">Phone: +1 (0) 213-283-3723</div><a class="text-small text-uppercase text-decoration-underline" href="contact-us-classic.html">VIEW DIRECTIONS</a>-->
+                </div>
             </div>
         </div>
     </div>
