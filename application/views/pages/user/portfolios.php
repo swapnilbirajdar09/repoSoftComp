@@ -1,5 +1,5 @@
 <title>All Portfolio | SoftComp</title>
-<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo base_url();?>assets/user/images/portfolio-full-screen-3-1920x982.jpg');">
+<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo base_url();?>assets/images/portfolio-justify-18-975x650.jpg');">
     <div class="opacity-medium bg-extra-dark-gray"></div>
     <div class="container">
         <div class="row">
