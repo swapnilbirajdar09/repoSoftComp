@@ -30,8 +30,11 @@
                     <div class="w3-col l12 w3-border" style="height: 325px;overflow-y: auto;">
                         <ul style="list-style: none;padding: 0">
                             <li class=" w3-padding">
-                                <div class="w3-row">
-                                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 w3-border-bottom w3-padding" ng-repeat='skill in skills'>
+                                <div class="w3-row">                                    
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 w3-border-bottom w3-padding" ng-if="skills == 500">
+                                        <center><span>No Categories Found.</span></center>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 w3-border-bottom w3-padding" ng-if="skills != 500" ng-repeat='skill in skills'>
                                         <span>{{skill.cat_name}} </span><a ng-click="delskill(skill.cat_id)" class="btn pull-right" style="padding: 0px;"><i class="fa fa-times w3-text-black"></i></a>
                                     </div>
                                 </div>
