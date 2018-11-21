@@ -247,6 +247,7 @@ class Admin_setting extends CI_Controller {
 
         $c_profile['company_name'] = $company_name;
         $c_profile['company_email'] = $company_email;
+        $c_profile['hqAddress'] = $hqAddress;
         $c_profile['company_logo'] = $imagePath;
 
 

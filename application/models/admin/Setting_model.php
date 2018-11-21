@@ -118,8 +118,9 @@ class Setting_model extends CI_Model {
         $company_name = $c_profile['company_name'];
         $company_logo = $c_profile['company_logo'];
         $company_email = $c_profile['company_email'];
-        //   $office_details = $c_profile['office_details'];       
-        $sql = " UPDATE company_tab SET company_name='$company_name',company_logo='$company_logo',company_email='$company_email' WHERE company_id='1'";
+        $hqAddress = $c_profile['hqAddress'];       
+        $sql = " UPDATE company_tab SET company_name='$company_name',"
+                . "company_logo='$company_logo',company_email='$company_email',hq_address='$hqAddress' WHERE company_id='1'";
         if ($this->db->query($sql)) {
             return true;
         } else {
