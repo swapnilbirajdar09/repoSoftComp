@@ -1751,7 +1751,7 @@
 		var swiperMultyRow = new Swiper('.swiper-multy-row-container', {
 			nextButton: '.swiper-portfolio-next',
 			prevButton: '.swiper-portfolio-prev',
-			slidesPerView: 4,
+			slidesPerView: 3,
 			spaceBetween: 15,
 			scrollbarSnapOnRelease: true,
 			autoplay: isNoviBuilder ? false  : 3000,
