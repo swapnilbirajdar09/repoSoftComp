@@ -13,12 +13,14 @@ class About_us extends CI_Controller {
 
     // main index function
     public function index() {
+        $data['company_details'] = $this->Setting_model->getAllcompany_details();
+
         $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
         $data['allTestimonials'] = $this->dashboard_model->getTestimonialDetails();
         $data['allTechnologies'] = $this->dashboard_model->getTechnologyDetails();
-        $this->load->view('includes/user/header',$data);
+        $this->load->view('includes/user/header', $data);
         $this->load->view('pages/user/about_us', $data);
-        $this->load->view('includes/user/footer',$data);
+        $this->load->view('includes/user/footer', $data);
     }
 
 }

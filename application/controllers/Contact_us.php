@@ -12,11 +12,12 @@ class Contact_us extends CI_Controller {
 
     // main index function
     public function index() {
+        $data['company_details'] = $this->Setting_model->getAllcompany_details();
         $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
         $data['contact_email'] = $this->Setting_model->getAllcompany_details();
-        $this->load->view('includes/user/header',$data);
+        $this->load->view('includes/user/header', $data);
         $this->load->view('pages/user/Contact_us', $data);
-        $this->load->view('includes/user/footer',$data);
+        $this->load->view('includes/user/footer', $data);
     }
 
     public function sendContactEmail() {

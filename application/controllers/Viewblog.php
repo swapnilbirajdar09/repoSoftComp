@@ -19,7 +19,7 @@ class Viewblog extends CI_Controller {
         $data['category_count'] = $this->blog_model->getCategoriesCount();
         $data['allTags'] = $this->blog_model->getAllTags();
         $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
-
+        $data['company_details'] = $this->Setting_model->getAllcompany_details();
 
         if (isset($_GET)) {
             if (isset($_GET['tokId']) && isset($_GET['category'])) {
@@ -34,7 +34,7 @@ class Viewblog extends CI_Controller {
         }
         $this->load->view('includes/user/header');
         $this->load->view('pages/user/blogs', $data);
-        $this->load->view('includes/user/footer',$data);
+        $this->load->view('includes/user/footer', $data);
     }
 
     // get blog detail on single page
@@ -42,6 +42,7 @@ class Viewblog extends CI_Controller {
         $str = base64_decode($url);
         $arr = explode('|', $str);
         $blog_id = $arr[1];
+        $data['company_details'] = $this->Setting_model->getAllcompany_details();
         $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
         $data['categories'] = $this->blog_model->getAllCategories();
         $data['category_count'] = $this->blog_model->getCategoriesCount();
@@ -50,7 +51,7 @@ class Viewblog extends CI_Controller {
         $data['all_blogs'] = $this->blog_model->getAllBlogs();
         $this->load->view('includes/user/header');
         $this->load->view('pages/user/blog_info', $data);
-        $this->load->view('includes/user/footer',$data);
+        $this->load->view('includes/user/footer', $data);
     }
 
 }
