@@ -31,7 +31,7 @@ class Contact_us extends CI_Controller {
             'protocol' => 'smtp',
             'smtp_host' => 'mx1.hostinger.in',
             'smtp_port' => '587',
-            'smtp_user' => 'support@jumlakuwait.com', // change it to yours
+            'smtp_user' => 'support@sailotechnosoft.com', // change it to yours
             'smtp_pass' => 'Descartes@1990', // change it to yours
             'mailtype' => 'html',
             'charset' => 'utf-8',
@@ -41,7 +41,7 @@ class Contact_us extends CI_Controller {
 
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
-        $this->email->from('support@jumlakuwait.com', "Admin Team");
+        $this->email->from('support@sailotechnosoft.com', "Admin Team");
         $this->email->to($adminEmail, 'Admin Team');
         $this->email->subject('Message from ' . $name . ' (via website)');
         $this->email->message("<html>"
@@ -71,7 +71,7 @@ class Contact_us extends CI_Controller {
 
             $this->load->library('email', $config);
             $this->email->set_newline("\r\n");
-            $this->email->from('support@jumlakuwait.com', "Admin Team");
+            $this->email->from('support@sailotechnosoft.com', "Admin Team");
             $this->email->to($email, $name);
             $this->email->subject("Acknowlegdement from " . $companyName);
             $this->email->message('<html>

@@ -20,21 +20,28 @@
                 </div>
                 <div class="col-md-3 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
                     <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Quick Links</div>
-                    <ul class="list-unstyled">
-                        <li><a class="text-small" href="<?php echo base_url(); ?>">Home</a></li>
-                        <li><a class="text-small" href="<?php echo base_url(); ?>about_us">About Us</a></li>
-                        <li><a class="text-small" href="<?php echo base_url(); ?>services">Services</a></li>
-                        <li><a class="text-small" href="<?php echo base_url(); ?>viewportfolio">Portfolio</a></li>
-                        <li><a class="text-small" href="<?php echo base_url(); ?>careers">Careers</a></li>
-                        <li><a class="text-small" href="<?php echo base_url(); ?>viewblog">Blogs</a></li>
-                        <li><a class="text-small" href="<?php echo base_url(); ?>contact_us">Contact Us</a></li>
-                    </ul>
+                    <div class="col-md-6" style=" padding-left:0; ">
+                        <ul class="list-unstyled">
+                            <li><a class="text-small" href="<?php echo base_url(); ?>">Home</a></li>
+                            <li><a class="text-small" href="<?php echo base_url(); ?>about_us">About Us</a></li>
+                            <li><a class="text-small" href="<?php echo base_url(); ?>services">Services</a></li>
+                            <li><a class="text-small" href="<?php echo base_url(); ?>viewportfolio">Portfolio</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md-6" style=" padding-left:0; ">
+                        <ul class="list-unstyled">
+                            <li><a class="text-small" href="<?php echo base_url(); ?>careers">Careers</a></li>
+                            <li><a class="text-small" href="<?php echo base_url(); ?>viewblog">Blogs</a></li>
+                            <li><a class="text-small" href="<?php echo base_url(); ?>contact_us">Contact Us</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
+                <div class="col-md-5 col-sm-12 col-xs-12 widget border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
                     <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Contact Info</div>
                     <p class="text-small display-block offset-15px-bottom width-80 xs-center-col"><?php echo $company_details[0]['hq_address']; ?></p>
-                    <div class="text-small">Email:<a href="mailto:#"> <?php echo $company_details[0]['company_email']; ?></a></div>
-<!--                    <div class="text-small">Phone: +1 (0) 213-283-3723</div><a class="text-small text-uppercase text-decoration-underline" href="contact-us-classic.html">VIEW DIRECTIONS</a>-->
+                    <div class="text-small"><b>Email:</b><a href="mailto:#"> <?php echo $company_details[0]['company_email']; ?></a></div>
+                    <!--                    <div class="text-small">Phone: +1 (0) 213-283-3723</div><a class="text-small text-uppercase text-decoration-underline" href="contact-us-classic.html">VIEW DIRECTIONS</a>-->
                 </div>
             </div>
         </div>
@@ -43,7 +50,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 text-left text-small xs-text-center">@ <?php echo $company_details[0]['company_name']; ?>. is Proudly Powered by<a class="text-dark-gray" href="https://bizmo-tech.com/"> Bizmo Technologies</a></div>
-                <div class="col-md-6 col-sm-6 col-xs-12 text-right text-small xs-text-center"><a class="text-dark-gray" href="#">Term and Condition</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="text-dark-gray" href="#">Privacy Policy</a></div>
+                <!--                <div class="col-md-6 col-sm-6 col-xs-12 text-right text-small xs-text-center"><a class="text-dark-gray" href="#">Term and Condition</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="text-dark-gray" href="#">Privacy Policy</a></div>-->
             </div>
         </div>
     </div>
