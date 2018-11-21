@@ -94,7 +94,7 @@
 
                                     </div>
                                 <?php } else { ?>
-                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url().'assets/images/default.png'?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url() . 'assets/images/default.png' ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
                                         <div class="w3-col l3 theme_bg" style="z-index: 1;position: absolute;border-bottom-right-radius:100%;">
                                             <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
                                         </div>
@@ -363,15 +363,24 @@
         $scope.getUsers();
         // //---del skill
         $scope.delskill = function (catid) {
-
-            $http({
-                method: 'get',
-                url: BASE_URL + 'admin/admin_dashboard/delCategory?catid=' + catid
-            }).then(function successCallback(response) {
-
-                // Assign response to skills object
-                console.log(response);
-                $scope.getUsers();
+            $.confirm({
+                title: '<h4 class="w3-text-red"><i class="fa fa-warning"></i> Are You Sure You Want To Remove This Category?</h4>',
+                content: '<span class="w3-text-red">This will remove all the "Portfolios" & "Blog Posts" related to this category !</span>',
+                type: 'red',
+                buttons: {
+                    confirm: function () {
+                        $http({
+                            method: 'get',
+                            url: BASE_URL + 'admin/admin_dashboard/delCategory?catid=' + catid
+                        }).then(function successCallback(response) {
+                            // Assign response to skills object
+                            console.log(response);
+                            $scope.getUsers();
+                        });
+                    },
+                    cancel: function () {
+                    }
+                }
             });
         };
     });

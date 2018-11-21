@@ -1,3 +1,5 @@
+<title>Contact Us | <?php echo $company_details[0]['company_name']; ?></title>
+
 <section class="wow fadeIn bg-light-gray inset-35px-tb page-title-small top-space">
         <div class="container">
           <div class="row equalize xs-equalize-auto">

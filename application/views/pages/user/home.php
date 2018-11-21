@@ -1,5 +1,5 @@
 <!-- Site Title-->
-<title>Software Company name</title>
+<title><?php echo $company_details[0]['company_name']; ?></title>
 <section class="swiper-wrap-custom fadeIn position-relative wow fadeIn section">
     <div class="swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="4200" data-simulate-touch="false">
         <div class="swiper-wrapper text-center">

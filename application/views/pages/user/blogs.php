@@ -1,4 +1,4 @@
-<title>All Blogs | SoftComp</title>
+<title>All Blogs | <?php echo $company_details[0]['company_name']; ?></title>
 <section class="section parallax-container wow fadeIn bg-extra-dark-gray" data-parallax-img="<?php echo base_url(); ?>assets/images/blog-post-layout-04-header-01.jpg">
     <div class="parallax-content">
         <div class="container">

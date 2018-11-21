@@ -1,3 +1,4 @@
+<title>Services | <?php echo $company_details[0]['company_name']; ?></title>
 <section class="wow fadeIn bg-extra-dark-gray inset-35px-tb page-title-small top-space">
     <div class="container">
         <div class="row equalize">

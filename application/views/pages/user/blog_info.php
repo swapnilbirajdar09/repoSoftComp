@@ -1,8 +1,9 @@
-<title>All Blogs | SoftComp</title>
 <style type="text/css">
     @media (min-width:993px){.w3-hide-large{display:none!important}}
     @media (max-width:600px){.w3-hide-small{display:none!important}}
 </style>
+<title>All Blogs | <?php echo $company_details[0]['company_name']; ?></title>
+
 <section class="wow fadeIn bg-light-gray inset-35px-tb page-title-small top-space">
     <div class="container">
         <div class="row equalize xs-equalize-auto">
