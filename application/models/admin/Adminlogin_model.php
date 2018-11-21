@@ -155,22 +155,25 @@ class Adminlogin_model extends CI_Model {
 
     // -----------------------PASSWORD EMAIL MODEL----------------------//
     public function sendPasswordByMail($email_id, $password) {
+        $this->load->model('admin/Setting_model');
+        $company_details=$this->Setting_model->getAllcompany_details();
+// print_r($company_details[0]['company_name']);die();
         $config = Array(
             'protocol' => 'smtp',
             'smtp_host' => 'mx1.hostinger.in',
             'smtp_port' => '587',
-            'smtp_user' => 'support@jumlakuwait.com', // change it to yours
+            'smtp_user' => 'support@sailotechnosoft.com', // change it to yours
             'smtp_pass' => 'Descartes@1990', // change it to yours
             'mailtype' => 'html',
             'charset' => 'utf-8',
             'wordwrap' => TRUE
         );
-        $config['smtp_crypto'] = 'tls';
+        // $config['smtp_crypto'] = 'tls';
         //return ($config);die();
 
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
-        $this->email->from('support@jumlakuwait.com', "Admin Team");
+        $this->email->from('support@sailotechnosoft.com', "Admin Team");
         $this->email->to($email_id);
         $this->email->subject("Password Request");
         $this->email->message('<html>
@@ -179,9 +182,9 @@ class Adminlogin_model extends CI_Model {
         </head>
         <body>
         <div class="container col-lg-8" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;margin:10px; font-family:Candara;">
-        <h2 style="color:blue; font-size:25px">Password for Software Company!</h2>
+        <h2 style="color:blue; font-size:25px">Password Request for '.$company_details[0]['company_name'].'</h2>
         <h3 style="font-size:15px;">Hello User,<br></h3>
-        <h3 style="font-size:15px;">We have recieved a request to have your password for Software Company Admin Login.</h3>
+        <h3 style="font-size:15px;">We have recieved a request to have your password for '.$company_details[0]['company_name'].' Admin Login.</h3>
         <h3 style="font-size:15px;">Following is the requested password for ' . $email_id . '</h3>
         <h3>Password: ' . $password . '</h3>
         <br><br>
@@ -198,7 +201,7 @@ class Adminlogin_model extends CI_Model {
                 'status_message' => 'Email Sent Successfully.',
             );
         } else {
-            //print_r($this->email->print_debugger());die();
+            // echo($this->email->print_debugger());die();
             $response = array(
                 'status' => 500, //---------email send failed
                 'status_message' => 'Email Sending Failed.'

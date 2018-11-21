@@ -1,5 +1,5 @@
 <?php
-
+error_reporting('E_ALL');
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin_login extends CI_Controller {
@@ -70,18 +70,18 @@ class Admin_login extends CI_Controller {
         //print_r($request['email_id']);die();
 
         $result = $this->Adminlogin_model->getAdminInfo($request['email_id']);
-        //print_r($result);die();
+        // print_r($result);die();
         if ($result['status'] == 200) {
             echo '<div class="alert alert-success">
-            <strong>' . $result['status_message'] . '</strong> 
+            ' . $result['status_message'] . ' 
             </div>';
         } elseif ($result['status'] == 412) {
             echo '<div class="alert alert-danger">
-            <strong>' . $result['status_message'] . '</strong> 
+            ' . $result['status_message'] . ' 
             </div>';
         } else {
             echo '<div class="alert alert-danger">
-            <strong>' . $result['status_message'] . '</strong> 
+            ' . $result['status_message'] . ' 
             </div>';
         }
     }

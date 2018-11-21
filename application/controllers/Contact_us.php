@@ -37,7 +37,7 @@ class Contact_us extends CI_Controller {
             'charset' => 'utf-8',
             'wordwrap' => TRUE
         );
-        $config['smtp_crypto'] = 'tls';
+        // $config['smtp_crypto'] = 'tls';
 
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
@@ -56,17 +56,7 @@ class Contact_us extends CI_Controller {
                 . "</body>"
                 . "</html>");
         if (!$this->email->send()) {
-            echo '<div class="alert alert-danger" style="margin-bottom:5px">
-            <strong>Message Sending Failed.</strong> 
-            </div>
-            <script>
-            window.setTimeout(function() {
-              $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
-                 $(this).remove(); 
-                 location.reload();
-             });
-            }, 100);
-            </script>';
+            echo '<p class="text-extra-dark-gray text-left text-medium" style="color: red"><i class="fa fa-warning"></i> Message sending failed !</p>';
         } else {
 
             $this->load->library('email', $config);
@@ -94,15 +84,9 @@ class Contact_us extends CI_Controller {
             </body></html>');
 
             if ($this->email->send()) {
-                echo '<div class="alert alert-success alert-dismissible" role="alert" style="margin-bottom:5px">
-                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Message Sent Successfully..!</strong> 
-            </div>';
+                echo '<p class="text-extra-dark-gray text-left text-medium" style="color: green"><i class="fa fa-check-circle"></i> Message was sent successfully. We will reach you soon</p>';
             } else {
-                echo '<div class="alert alert-danger alert-dismissible" style="margin-bottom:5px">
-                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Message Sending Failed..!</strong> 
-            </div>';
+                echo '<p class="text-extra-dark-gray text-left text-medium" style="color: red"><i class="fa fa-warning"></i> Message sending failed !</p>';
             }
         }
     }

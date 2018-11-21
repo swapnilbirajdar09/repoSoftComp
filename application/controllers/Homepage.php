@@ -36,7 +36,7 @@ class Homepage extends CI_Controller {
     public function sendContactEmail() {
         extract($_POST);
 
-        if ($service == 0) {
+        if ($service == '0') {
             echo '<p style="background-color: red;margin: 10px;padding: 5px 10px;color: white"><b>Error:</b> Please choose appropriate service!</p>';
             die();
         }
@@ -49,17 +49,17 @@ class Homepage extends CI_Controller {
             'protocol' => 'smtp',
             'smtp_host' => 'mx1.hostinger.in',
             'smtp_port' => '587',
-            'smtp_user' => 'support@jumlakuwait.com', // change it to yours
+            'smtp_user' => 'support@sailotechnosoft.com', // change it to yours
             'smtp_pass' => 'Descartes@1990', // change it to yours
             'mailtype' => 'html',
             'charset' => 'utf-8',
             'wordwrap' => TRUE
         );
-        $config['smtp_crypto'] = 'tls';
+        // $config['smtp_crypto'] = 'tls';
 
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
-        $this->email->from('support@jumlakuwait.com', "Admin Team");
+        $this->email->from('support@sailotechnosoft.com', "Admin Team");
         $this->email->to($adminEmail, 'Admin Team');
         $this->email->subject('Contact Form message');
         $this->email->message('<html>
@@ -88,7 +88,7 @@ class Homepage extends CI_Controller {
 
             $this->load->library('email', $config);
             $this->email->set_newline("\r\n");
-            $this->email->from('support@jumlakuwait.com', "Admin Team");
+            $this->email->from('support@sailotechnosoft.com', "Admin Team");
             $this->email->to($email, $name);
             $this->email->subject("Acknowlegdement from " . $companyName);
             $this->email->message('<html>

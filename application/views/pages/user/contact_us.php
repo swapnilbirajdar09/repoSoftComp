@@ -32,9 +32,9 @@
             <div class="col-md-12 col-sm-12 no-inset wow fadeInRight" >
                 <div class="col-md-4 col-sm-6 col-xs-12 display-table bg-extra-dark-gray height-350px last-paragraph-no-margin">
                     <div class="display-table-cell vertical-align-middle text-center"><i class="linearicons-map2 text-secondary icon-medium offset-25px-bottom"></i>
-                        <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom">Headquarter</div>
-                        <p class="width-60 md-width-80 center-col text-medium" style="margin-bottom:0;"><?php echo $contact_email[0]['hq_address']; ?></p>
-                        <p class="center-col text-medium no-margin"><?php echo $contact_email[0]['company_email']; ?></p>
+                        <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom">Main Office</div>
+                        <p class="width-60 md-width-80 center-col text-small" style="margin-bottom:10px;"><?php echo $contact_email[0]['hq_address']; ?></p>
+                        <p class="center-col text-small no-margin"><b>Email: </b><?php echo $contact_email[0]['company_email']; ?></p>
 
                     </div>
                 </div>
@@ -51,9 +51,9 @@
                             <div class="col-md-4 col-sm-6 col-xs-12 display-table bg-extra-dark-gray height-350px last-paragraph-no-margin">
                                 <div class="display-table-cell vertical-align-middle text-center"><i class="linearicons-map2 text-secondary icon-medium offset-25px-bottom"></i>
                                     <div class="text-white text-uppercase text-font-sec text-medium offset-5px-bottom"><?php echo $office[$i]['office_type']; ?></div>
-                                    <p class="width-60 md-width-80 center-col text-medium" style="margin-bottom:0;"><?php echo $office[$i]['office_address']; ?></p>
-                                    <p class="center-col text-medium no-margin"><?php echo $office[$i]['office_email']; ?></p>
-                                    <p class="center-col text-medium no-margin"><?php echo $office[$i]['office_number']; ?></p>
+                                    <p class="width-60 md-width-80 center-col text-small" style="margin-bottom:10px;"><?php echo $office[$i]['office_address']; ?></p>
+                                    <p class="center-col text-small no-margin" style="margin-bottom:10px;"><b>Email: </b><?php echo $office[$i]['office_email']; ?></p>
+                                    <p class="center-col text-small no-margin"><b>Contact No.: </b><?php echo $office[$i]['office_number']; ?></p>
                                 </div>
                             </div>
                             <?php
@@ -81,8 +81,7 @@
             <div class="col-md-6 text-center social-style-4 border round">
                 <form id="contact_us_form" class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" >
                     <div class="row row-20">
-                        <div class="col-md-6">
-                            <div class="w3-col l12 w3-center" id="fpasswd_err"></div>
+                        <div class="col-md-6">                            
                             <div class="form-wrap">
                                 <label class="form-label" for="contact-name">Name</label>
                                 <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required" required>
@@ -114,6 +113,7 @@
                                 <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required" required></textarea>
                             </div>
                         </div>
+                            <div class="w3-col l12" id="fpasswd_err" style="padding: 10px"></div>
                     </div>
                     <div class="form-button group-sm text-center text-lg-left">
                         <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" id="submitbtn" type="submit">send message</button>
