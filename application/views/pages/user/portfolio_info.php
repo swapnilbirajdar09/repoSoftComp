@@ -105,7 +105,7 @@
         <?php
         if (!$featuredPortfolio) {
           ?>
-          <div class="col-md-12 col-sm-12 col-xs-12 xs-offset-30px-bottom xs-text-center">yguiguhuh
+          <div class="col-md-12 col-sm-12 col-xs-12 xs-offset-30px-bottom xs-text-center" style="display:none;">
             <center><h6 class="text-light text-dark-gray"> No Portfolio Available !</h6></center>
           </div>
           <?php
