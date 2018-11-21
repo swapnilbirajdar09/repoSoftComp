@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="page">
-            <section class="wow fadeIn cover-background background-position-top top-space" style="background-image:url(<?php echo base_url(); ?>assets/user/images/page-title-bg-1-1920x450.jpg);">
+            <section class="wow fadeIn cover-background background-position-top top-space" style="background-image:url(<?php echo base_url(); ?>assets/images/intro-01-1920x955.jpg);">
                 <div class="opacity-medium bg-extra-dark-gray opacity4"></div>
                 <div class="container">
                     <div class="row">
