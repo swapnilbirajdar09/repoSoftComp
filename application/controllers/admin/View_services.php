@@ -84,11 +84,7 @@ class View_services extends CI_Controller {
         $result = $this->Manageservice_model->updateServiceDetails($data);
         //print_r($result);die();
         if ($result == '200') {
-            echo '<div class="alert alert-success">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Success! </strong> Service Updated SuccessFully.
-        </div>
-        <script>
+            echo '<center><label class="w3-large w3-label w3-text-green"><i class="fa fa-check w3-large"></i>Service Updated SuccessFully.</label></center><script>
         window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove();
@@ -96,18 +92,38 @@ class View_services extends CI_Controller {
                 window.location.reload();
                 }, 1500);                
                 </script>';
+
+//            echo '<div class="alert alert-success">
+//        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+//        <strong>Success! </strong> Service Updated SuccessFully.
+//        </div>
+//        <script>
+//        window.setTimeout(function() {
+//            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+//                $(this).remove();
+//                });
+//                window.location.reload();
+//                }, 1500);                
+//                </script>';
         } else {
-            echo '<div class="alert alert-danger">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Warning! </strong> Service Not Updated SuccessFully.
-                </div>
-                 <script>
-                window.setTimeout(function() {
-                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                        $(this).remove(); 
-                        });
-                        }, 5000);
-                        </script>';
+            echo '<center><label class="w3-large w3-label w3-text-red"><i class="fa fa-warning w3-large"></i>Service Not Updated SuccessFully.</label></center><script>
+//                window.setTimeout(function() {
+//                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+//                        $(this).remove(); 
+//                        });
+//                        }, 5000);
+//                        </script>';
+//            echo '<div class="alert alert-danger">
+//                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+//                <strong>Warning! </strong> Service Not Updated SuccessFully.
+//                </div>
+//                 <script>
+//                window.setTimeout(function() {
+//                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+//                        $(this).remove(); 
+//                        });
+//                        }, 5000);
+//                        </script>';
         }
     }
 
@@ -161,7 +177,7 @@ class View_services extends CI_Controller {
                 window.location.reload();
                 }, 1500);                
                 </script>';
-            } elseif ($result == '700') {
+        } elseif ($result == '700') {
             echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Warning! </strong> You Can Featured Only 6 Services..

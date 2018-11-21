@@ -75,48 +75,48 @@
                                         <!----------------------------------- Modal Body------------------------------------>                                        
                                         <div class="modal-body">
                                             <div class="container page_title" style="margin-top: 0px;margin-bottom: 0px;">
-                                                <fieldset>
-                                                    <div class="w3-col l12" id="service_err"></div>
-                                                    <div class="row" style=" margin-top: 5px;">
-                                                        <div class="col-lg-1"></div>
-                                                        <div class="col-lg-10">
-                                                            <div class="">
-                                                                <div class="w3-col l12" id="service_err"></div>
-                                                                <div class="w3-col l12 w3-margin-bottom">
-                                                                    <div class="col-lg-6 col-xs-12 col-sm-12" id="materialGrade">
-                                                                        <label>Service Name <b class="w3-text-red w3-medium">*</b></label>
-                                                                        <input type="text" name="service_name" id="service_name" value="<?php echo $key['service_name']; ?>" class="form-control" placeholder="Service Name" value="" required>
-                                                                    </div>
-                                                                    <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
-                                                                        <label>Service Image <b class="w3-text-red w3-medium">*</b></label>
-                                                                        <input type="file" name="serviceImage" id="serviceImage_<?php echo $key['service_id']; ?>" onchange="readURL(this, '<?php echo $key['service_id']; ?>')" value="" class="form-control">
-                                                                        <input type="hidden" class="form-control w3-small" name="serviceImageEdit" id="serviceImageEdit" value="<?php echo $key['service_image']; ?>">
-                                                                        <input type="hidden" class="form-control w3-small" name="service_id" id="service_id" value="<?php echo $key['service_id']; ?>">
-                                                                    </div>
+                                                <!--                                                <fieldset>-->
+                                                <div class="row" style=" margin-top: 5px;">
+                                                    <div class="col-lg-1"></div>
+                                                    <div class="col-lg-10">
+                                                        <div class="">
+<!--                                                            <div class="w3-col l12" id="service_err"></div>-->
+                                                            <div class="w3-col l12 w3-margin-bottom">
+                                                                <div class="col-lg-6 col-xs-12 col-sm-12" id="materialGrade">
+                                                                    <label>Service Name <b class="w3-text-red w3-medium">*</b></label>
+                                                                    <input type="text" name="service_name" id="service_name" value="<?php echo $key['service_name']; ?>" class="form-control" placeholder="Service Name" value="" required>
                                                                 </div>
-
-                                                                <div class="w3-col l12 w3-margin-bottom">
-                                                                    <div class="col-lg-6 col-xs-12 col-sm-12">
-                                                                        <label>Service Description <b class="w3-text-red w3-medium">*</b></label>
-                                                                        <textarea class="form-control" name="serviceDescription" id="serviceDescription" placeholder="Service Description" rows="6" cols="50" style="resize: none;" required><?php echo $key['service_description']; ?></textarea>
-                                                                    </div>
-                                                                    <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
-                                                                        <label>
-
-                                                                            <img class="img img-thumbnail w3-margin-bottom" alt="Service Image not found" style="height: 100%; width: 100%; object-fit:contain; " align="right" id="serviceImagePreview_<?php echo $key['service_id']; ?>" onerror="this.src='<?php echo base_url() ?>assets/images/default.png'" src="<?php echo base_url() . $key['service_image'] ?>">
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="w3-center" style="">
-                                                                    <button type="submit" title="Update Service" id="btnsubmit" class="w3-medium w3-button theme_bg">Update Service</button>
+                                                                <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
+                                                                    <label>Service Image <b class="w3-text-red w3-medium">*</b></label>
+                                                                    <input type="file" name="serviceImage" id="serviceImage_<?php echo $key['service_id']; ?>" onchange="readURL(this, '<?php echo $key['service_id']; ?>')" value="" class="form-control">
+                                                                    <input type="hidden" class="form-control w3-small" name="serviceImageEdit" id="serviceImageEdit" value="<?php echo $key['service_image']; ?>">
+                                                                    <input type="hidden" class="form-control w3-small" name="service_id" id="service_id" value="<?php echo $key['service_id']; ?>">
                                                                 </div>
                                                             </div>
-                                                            <!-- REGISTER DIV ENDS -->   
+
+                                                            <div class="w3-col l12 w3-margin-bottom">
+                                                                <div class="col-lg-6 col-xs-12 col-sm-12">
+                                                                    <label>Service Description <b class="w3-text-red w3-medium">*</b></label>
+                                                                    <textarea class="form-control" name="serviceDescription" id="serviceDescription" placeholder="Service Description" rows="6" cols="50" style="resize: none;" required><?php echo $key['service_description']; ?></textarea>
+                                                                </div>
+                                                                <div class="col-lg-6 col-xs-12 col-sm-12 w3-margin-bottom">
+                                                                    <label>
+
+                                                                        <img class="img img-thumbnail w3-margin-bottom" alt="Service Image not found" style="height: 100%; width: 100%; object-fit:contain; " align="right" id="serviceImagePreview_<?php echo $key['service_id']; ?>" onerror="this.src='<?php echo base_url() ?>assets/images/default.png'" src="<?php echo base_url() . $key['service_image'] ?>">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="w3-center w3-margin-bottom" style="">
+                                                                <button type="submit" title="Update Service" id="btnsubmit" class="w3-medium w3-button theme_bg">Update Service</button>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-lg-1" id="message"></div>
+                                                        <!-- REGISTER DIV ENDS -->
+                                                        <div class="w3-col l12" id="service_err"></div>
                                                     </div>
-                                                </fieldset>
+                                                    <div class="col-lg-1" id="message"></div>
+                                                </div>
+                                                <!--                                                </fieldset>-->
                                             </div>
                                         </div>
                                         <!----------------------------------- Modal Body------------------------------------>                                                                               
