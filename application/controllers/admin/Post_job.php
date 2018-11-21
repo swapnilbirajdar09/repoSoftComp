@@ -28,7 +28,7 @@ class Post_job extends CI_Controller {
     public function saveJob() {
         extract($_POST);
         $data = $_POST;
-        if ($experienceRequiredFrom < $experienceRequiredTo) {
+        if ($experienceRequiredFrom > $experienceRequiredTo) {
             echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Warning! </strong> Required Experience From Is Less Than Experience To.
