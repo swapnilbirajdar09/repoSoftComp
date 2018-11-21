@@ -42,8 +42,7 @@ class Post_job extends CI_Controller {
                         </script>';
             die();
         }
-        //print_r($_POST);die();
-
+      
         $result = $this->Postjob_model->saveJob($data);
         //print_r($result);die();
         if ($result == '200') {
