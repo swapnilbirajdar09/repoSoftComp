@@ -11,24 +11,25 @@
                                 <?php
                                 foreach ($social_logos as $row) {
                                     ?>  
-                                <li><a class="text-white" target="_blank" href="<?php echo $row['social_url']; ?>" title="<?php echo $row['social_link_name']; ?>"><i class="fa <?php echo $row['social_symbole'] ?>" aria-hidden="true"></i></a></li>
+                                    <li><a class="text-white" target="_blank" href="<?php echo $row['social_url']; ?>" title="<?php echo $row['social_link_name']; ?>"><i class="fa <?php echo $row['social_symbole'] ?>" aria-hidden="true"></i></a></li>
                                 <?php }
                                 ?>
                             </ul>
                         <?php } ?>
                     </div>
                 </div>
-                <!--        <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
-                          <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Additional Links</div>
-                          <ul class="list-unstyled">
-                            <li><a class="text-small" href="home-classic-corporate.html">Classic corporate</a></li>
-                            <li><a class="text-small" href="home-classic-web-agency.html">Classic web agency</a></li>
-                            <li><a class="text-small" href="home-classic-one-page.html">Classic one page</a></li>
-                            <li><a class="text-small" href="home-classic-start-up.html">Classic start-up</a></li>
-                            <li><a class="text-small" href="home-classic-interactive-agency.html">Classic interactive agency</a></li>
-                            <li><a class="text-small" href="home-creative-branding-agency.html">Creative branding agency</a></li>
-                          </ul>
-                        </div>-->
+                <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
+                    <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Quick Links</div>
+                    <ul class="list-unstyled">
+                        <li><a class="text-small" href="<?php echo base_url(); ?>">Home</a></li>
+                        <li><a class="text-small" href="<?php echo base_url(); ?>about_us">About Us</a></li>
+                        <li><a class="text-small" href="<?php echo base_url(); ?>services">Services</a></li>
+                        <li><a class="text-small" href="<?php echo base_url(); ?>viewportfolio">Portfolio</a></li>
+                        <li><a class="text-small" href="<?php echo base_url(); ?>careers">Careers</a></li>
+                        <li><a class="text-small" href="<?php echo base_url(); ?>viewblog">Blogs</a></li>
+                        <li><a class="text-small" href="<?php echo base_url(); ?>contact_us">Contact Us</a></li>
+                    </ul>
+                </div>
                 <!--        <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
                           <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Contact Info</div>
                           <p class="text-small display-block offset-15px-bottom width-80 xs-center-col">MService Design Agency<br>222 Stonybrook St.
