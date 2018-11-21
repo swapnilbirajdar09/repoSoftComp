@@ -99,7 +99,8 @@
                         <?php } else { ?>
                             <?php foreach ($social_links as $key) { ?>                        
                                 <span class="w3-padding w3-small w3-margin-top w3-border" style="padding: 2px 6px; display: inline-block;"><i class="fa <?php echo $key['social_symbole']; ?> w3-text-blue w3-large"></i>&nbsp;&nbsp;&nbsp;<?php echo strtoupper($key['social_link_name']); ?>&nbsp;&nbsp;<a onclick="deleteSocialLink(<?php echo $key['social_id']; ?>)" class="pull-right w3-text-red btn" style="padding:0px;" title="Delete Link"><i class="fa fa-times"></i></a></span>
-                            <?php }
+                                <?php
+                            }
                         }
                         ?>
                     </div>
@@ -132,7 +133,7 @@
                             </div>
                             <div class="col-lg-6 w3-margin-bottom">
                                 <label>Head Quarter Address <b class="w3-text-red w3-medium">*</b></label>
-                                <textarea class="w3-input" name="hqAddress" id="hqAddress" placeholder="Enter Office Address Here..." rows="5" required style=" resize: none;"><?php echo $company_details[0]['hq_address'];?></textarea>
+                                <textarea class="w3-input" name="hqAddress" id="hqAddress" placeholder="Enter Office Address Here..." rows="5" required style=" resize: none;"><?php echo $company_details[0]['hq_address']; ?></textarea>
                             </div>
                         </div>
 
@@ -151,13 +152,13 @@
                                 <label>Office Type <b class="w3-text-red w3-medium">*</b></label>
                                 <select class="w3-input w3-border control w3-text-grey" name="office_type" id="mc-caste" required>
                                     <option value="0" class="w3-light-grey" selected>Select Office Type</option>
-                                    <option value="Head Office">Head Office</option>                      
+<!--                                    <option value="Head Office">Head Office</option>                      -->
                                     <option value="Branch">Branch</option>  
                                 </select>
                             </div>
                             <div class="col-md-3 ">
                                 <label>Phone Number <b class="w3-text-red w3-medium">*</b></label>
-                                <input type="number" name="office_number" class="w3-input" placeholder="Enter office number here" required>
+                                <input type="number" name="office_number" class="w3-input" min="0" maxlength="10" placeholder="Enter office number here" required>
                             </div>
                             <div class="col-md-3">
                                 <label>Office Email <b class="w3-text-red w3-medium">*</b></label>
@@ -203,19 +204,19 @@
                                         for ($i = 0; $i < count($office); $i++) {
                                             ?>
                                             <tr><td class="text-center"> 
-            <?php echo $j; ?>
+                                                    <?php echo $j; ?>
                                                 </td>
                                                 <td class="text-center"> 
-            <?php echo $office[$i]['office_type']; ?>
+                                                    <?php echo $office[$i]['office_type']; ?>
                                                 </td>
                                                 <td class="text-center"> 
-            <?php echo $office[$i]['office_number']; ?>
+                                                    <?php echo $office[$i]['office_number']; ?>
                                                 </td>
                                                 <td class="text-center"> 
-            <?php echo $office[$i]['office_email']; ?>
+                                                    <?php echo $office[$i]['office_email']; ?>
                                                 </td>
                                                 <td class="text-center"> 
-            <?php echo $office[$i]['office_address']; ?>
+                                                    <?php echo $office[$i]['office_address']; ?>
                                                 </td>
                                                 <td class="text-center">
                                                     <a onclick="deleteofficeDetails(<?php echo $i; ?>)" id="deltest" class=" w3-large w3-text-red btn" style="padding: 5px;" title="Delete Post"><i class="fa fa-trash"></i></a>

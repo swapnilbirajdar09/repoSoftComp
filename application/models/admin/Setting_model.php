@@ -118,7 +118,7 @@ class Setting_model extends CI_Model {
         $company_name = $c_profile['company_name'];
         $company_logo = $c_profile['company_logo'];
         $company_email = $c_profile['company_email'];
-        $hqAddress = $c_profile['hqAddress'];       
+        $hqAddress = $c_profile['hqAddress'];
         $sql = " UPDATE company_tab SET company_name='$company_name',"
                 . "company_logo='$company_logo',company_email='$company_email',hq_address='$hqAddress' WHERE company_id='1'";
         if ($this->db->query($sql)) {
@@ -179,12 +179,10 @@ class Setting_model extends CI_Model {
             $office_newdetails = '';
             foreach ($resultnew->result_array() as $row) {
 
-                $office_newdetails = json_decode($row['office_details'], true);
+                $office_newdetails = json_decode($row['office_details']);
             }
-            //print_r($office_newdetails[1]);die();
-
             unset($office_newdetails[$key]);
-
+            $office_newdetails = array_values($office_newdetails);
             $json = json_encode($office_newdetails);
             $sql = " UPDATE company_tab SET office_details='$json' WHERE company_id='1'";
             if ($this->db->query($sql)) {
