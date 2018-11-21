@@ -12,19 +12,7 @@
         </div>
     </div>
 </section>
-<section class="wow fadeIn bg-light-gray inset-35px-tb page-title-small top-space">
-    <div class="container">
-        <div class="row equalize xs-equalize-auto">
-            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12 display-table">
-                <div class="display-table-cell vertical-align-middle text-left xs-text-center">
-                    <h1 class="text-font-sec text-extra-dark-gray text-medium no-offset-bottom text-uppercase">Contact us</h1>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 display-table text-right xs-offset-15px-top">
-            </div>
-        </div>
-    </div>
-</section>
+
 <section class="wow fadeIn big-section">
     <div class="container">
         <div class="row">
