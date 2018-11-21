@@ -28,22 +28,21 @@
             </div>
         </div>
         <div class="page">
-            <section class="wow fadeIn cover-background background-position-top top-space" style="background-image:url(<?php echo base_url(); ?>assets/images/intro-01-1920x955.jpg);">
-                <div class="opacity-medium bg-extra-dark-gray opacity4"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12 display-table page-title-large">
-                            <div class="display-table-cell vertical-align-middle text-center inset-30px-tb">
-                                <!-- start sub title--><span class="display-block text-white opacity6 text-font-sec offset-5px-bottom"></span>
-                                <!-- end sub title-->
-                                <!-- start page title-->
-                                <h1 class="text-font-sec text-white text-medium no-offset-bottom">About Us </h1>
-                                <!-- end page title-->
-                            </div>
-                        </div>
-                    </div>
+        	<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo base_url();?>assets/images/intro-01-1920x955.jpg');padding:80px 0">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 extra-small-screen display-table page-title-large">
+                <div class="display-table-cell vertical-align-middle text-center">
+                    <!-- start page title-->
+                    <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1">About Us</h1>
+                 
                 </div>
-            </section>
+            </div>
+        </div>
+    </div>
+</section>
+            
             <section class="wow fadeIn" id="about">
                 <div class="container">
                     <div class="row equalize sm-equalize-auto">

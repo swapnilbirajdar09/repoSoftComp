@@ -1,19 +1,20 @@
 <title>All Blogs | <?php echo $company_details[0]['company_name']; ?></title>
-<section class="section parallax-container wow fadeIn bg-extra-dark-gray" data-parallax-img="<?php echo base_url(); ?>assets/images/blog-post-layout-04-header-01.jpg">
-    <div class="parallax-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 extra-small-screen display-table page-title-large">
-                    <div class="display-table-cell vertical-align-middle text-center">
-                        <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1 offset-10px-bottom">Blogs</h1><span class="text-white opacity6 text-font-sec">Read the latest news from our admin</span>
-                    </div>
+<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo base_url(); ?>assets/images/blog-post-layout-04-header-01.jpg');padding:80px 0">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 extra-small-screen display-table page-title-large">
+                <div class="display-table-cell vertical-align-middle text-center">
+                    <!-- start page title-->
+                    <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1">Blogs</h1>
+                    <span class="text-white opacity6 text-font-sec">Read the latest news from our admin</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section>
 
+<section>
     <div class="container" id="megaDiv">
         <div class="row">
             <div class="col-md-9 col-sm-12 col-xs-12 right-sidebar sm-offset-60px-bottom xs-offset-40px-bottom no-inset-left sm-no-padding-right">

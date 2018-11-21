@@ -1,32 +1,24 @@
 <title>Services | <?php echo $company_details[0]['company_name']; ?></title>
-<section class="wow fadeIn bg-extra-dark-gray inset-35px-tb page-title-small top-space">
+
+<section class="wow fadeIn parallax" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo base_url();?>assets/images/service-simple-1-1600x639.jpg');padding:80px 0">
+    <div class="opacity-medium bg-extra-dark-gray"></div>
     <div class="container">
-        <div class="row equalize">
-            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12 display-table">
-                <div class="display-table-cell vertical-align-middle text-left xs-text-center">
-                    <h1 class="text-font-sec text-white text-medium no-offset-bottom text-uppercase">Services</h1>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 display-table text-right xs-text-left xs-offset-10px-top">
-                <div class="display-table-cell vertical-align-middle breadcrumb text-small text-font-sec">
-                    <ul class="xs-text-center">
-<!--                        <li><a class="text-dark-gray" href="#">Elements</a></li>
-                        <li><a class="text-dark-gray" href="#">Interactive elements</a></li>-->
-                        <li class="text-dark-gray">Services</li>
-                    </ul>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 extra-small-screen display-table page-title-large">
+                <div class="display-table-cell vertical-align-middle text-center">
+                    <!-- start page title-->
+                    <h1 class="text-white text-font-sec text-medium letter-spacing-minus-1">Services</h1>
+                 
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <?php if ($services) { ?>
 <section class="wow fadeIn" id="about">
     <div class="container">
-        <div class="row">
-            <div class="col-md-7 col-sm-12 col-xs-12 center-col text-center offset-100px-bottom xs-offset-40px-bottom">
-                <div class="position-relative overflow-hidden width-100"><span class="text-small text-outside-line-full text-font-sec text-medium text-uppercase">Services</span></div>
-            </div>
-        </div>        
+               
         <div class="row">
             <?php
             if (!$services) {
