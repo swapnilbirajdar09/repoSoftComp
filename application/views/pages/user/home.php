@@ -255,7 +255,7 @@
     <section class="wow fadeIn">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 center-col offset-eight-bottom sm-offset-40px-bottom xs-offset-30px-bottom text-center">
+                <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 center-col sm-offset-40px-bottom xs-offset-30px-bottom text-center">
                     <div class="text-font-sec text-medium-gray offset-5px-bottom text-uppercase text-small">Our Blog</div>
                     <h5 class="text-font-sec text-extra-dark-gray">Here are the latest posts by our admin</h5>
                 </div>
@@ -267,15 +267,16 @@
                     if($limit==0){break;}
                     $imgArr=json_decode($key['blog_images'],TRUE);
                     ?>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 offset-80px-bottom sm-offset-50px-bottom xs-offset-30px-bottom wow fadeInUp">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 offset-40px-bottom sm-offset-50px-bottom xs-offset-30px-bottom wow fadeInUp">
                         <article class="blog-post blog-post-style2">
-                            <div class="blog-post-images overflow-hidden offset-25px-bottom xs-offset-15px-bottom"><a href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>" style="background-color: black">
-                                <center><img src="<?php echo base_url(); ?><?php echo $imgArr[0]; ?>" alt=""/ style="height: 200px"></center>
+                            <div class="blog-post-images overflow-hidden xs-offset-15px-bottom"><a href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>" style="background-color: black">
+                                <center><img src="<?php echo base_url(); ?><?php echo $imgArr[0]; ?>" alt="" style="height: 200px"></center>
                             </a>
                         </div>
-                        <div class="post-details"><a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>"><?php echo $key['blog_title']; ?></a>
-                            <div class="separator-line-horrizontal-full bg-medium-light-gray offset-20px-tb xs-offset-15px-tb"></div>
-                            <div class="author"><span class="text-medium-gray text-uppercase text-extra-small inset-15px-left display-inline-block"> by <a class="text-medium-gray" href="blog-posts.html"><?php echo date('d M Y',strtotime($key['posted_date'])); ?></a></span></div>
+                        <div class="post-details">
+                            <a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>"><?php echo $key['blog_title']; ?></a>                            
+                            <div class="author"><span  style="padding: 0" class="text-medium-gray text-uppercase text-extra-small display-inline-block"> on <a class="text-medium-gray"><?php echo date('d M Y',strtotime($key['posted_date'])); ?></a></span></div>
+                            <div class="separator-line-horrizontal-full bg-medium-light-gray xs-offset-15px-tb"></div>
                         </div>
                     </article>
                 </div>
@@ -284,7 +285,7 @@
             }
             ?>
             <div class="col-md-12">
-                <a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="<?php echo base_url(); ?>viewblog" style="margin: 16px 0 0 0">View more posts<i class="fa fa-chevron-right"></i></a>
+                <a class="btn btn-dark-gray wow fadeInUp btn-medium text-small pull-right" href="<?php echo base_url(); ?>viewblog">View more posts<i class="fa fa-chevron-right"></i></a>
             </div>
         </div>
     </div>
@@ -323,7 +324,7 @@
                                     <div class="col-md-5">
                                         <img class="icon-extra-medium text-secondary" src="<?php echo base_url() . $key['tech_logo']; ?>" alt="">
                                     </div>
-            <!--                                    <i class="linearicons-diamond4 icon-extra-medium text-secondary"></i>-->
+                                    <!--                                    <i class="linearicons-diamond4 icon-extra-medium text-secondary"></i>-->
                                     <div class="col-md-7">
                                         <div class="text-font-sec text-extra-dark-gray text-medium text-line-height-20" style=" vertical-align: middle;"><?php echo $key['tech_name']; ?></div>
                                         <p class="text-line-height-20"><?php echo $key['description']; ?></p>
@@ -341,8 +342,8 @@
                                                                     <p class="clearfix">//<?php echo $key['description']; ?></p>
                                                                 </div>
                                                                             <img src="//<?php echo base_url(); ?><?php echo $key['tech_logo']; ?>" title="<?php echo $key['tech_name']; ?>" alt="<?php echo $key['tech_name']; ?> logo" style="height: 120px;width: auto">
-                                                            </div>-->
-                            <?php //} else {  ?>
+                                                                        </div>-->
+                                                                        <?php //} else {  ?>
                             <!--                                <div class="swiper-slide text-center latest-post position-relative top-3" style="padding-right: 3px;">
                                                                 <figure>
                                                                     <a href="">
@@ -354,102 +355,102 @@
                                                                     <p class="clearfix">//<?php echo $key['description']; ?></p>
                                                                 </div>
                                                                             <img src="//<?php echo base_url(); ?><?php echo $key['tech_logo']; ?>" title="<?php echo $key['tech_name']; ?>" alt="<?php echo $key['tech_name']; ?> logo" style="height: 120px;width: auto">
-                                                            </div>-->
-                            <?php
+                                                                        </div>-->
+                                                                        <?php
 //                            }
-                        }
-                        ?>
-                    </div>
-                </div>
-                <?php
-            }
-            ?>
-        </div>
-    </section>
-<?php } ?>
-<section class="section parallax-container wow fadeIn bg-black" data-parallax-img="images/home-classic-start-up-slider-04.jpg" id="contact">
-    <div class="parallax-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sm-12 col-xs-12 center-col text-center offset-40x-bottom">
-                    <div class="position-relative overflow-hidden width-100">
-                        <div class="text-white text-font-sec text-small text-uppercase offset-5px-bottom xs-offset-three-bottom">Complete the form below to find out more about our services </div>
-                        <h5 class="offset-55px-bottom text-white text-font-sec text-medium text-uppercase">Request a quote</h5>
-                    </div>
-                </div>
-            </div>
-            <form class="rd-mailform text-left" id="contact_us_form" >
-                <div class="row row-20">
-                    <div class="col-md-6">
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-name-3">Name</label>
-                            <input class="form-input" id="contact-name-3" type="text" name="name" >
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-phone-3">Phone</label>
-                            <input class="form-input" id="contact-phone-3" type="text" name="phone">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-email-3">E-Mail</label>
-                            <input class="form-input" id="contact-email-3" type="email" name="email" >
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-wrap">
-                            <select class="form-input select select-inline" name="service" data-placeholder="Choose service" data-dropdown-class="select-inline-dropdown">
-                                <option value="0" label="placeholder">Choose service</option>
-                                <?php
-                                if ($allServices) {
-                                    foreach ($allServices as $key) {
-                                        echo '<option value="' . $key['service_name'] . '">' . ucwords($key['service_name']) . '</option>';
-                                    }
-                                }
-                                ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-message-3">Message</label>
-                            <textarea class="form-input" id="contact-message-3" name="message" ></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-button group-sm text-center text-lg-left" id="submitContact">
-                    <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>
-                </div>
-            </form>
-            <div id="errMsgContact">
-            </div>
-        </div>
-    </div>
-</section>
-<script>
-    $(function () {
-        $("#contact_us_form").submit(function () {
-            dataString = $("#contact_us_form").serialize();
-            $.ajax({
-                type: "POST",
-                url: BASE_URL + "homepage/sendContactEmail",
-                data: dataString,
-                return: false,
-                beforeSend: function () {
-                    $('#submitContact').html('<span><i class="fa fa-circle-o-notch fa-spin w3-large"></i> Sending message...</span>');
-                },
-                success: function (data) {
-                    $('#errMsgContact').html(data);
-                    $('#submitContact').html('<button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>');
-                },
-                error: function (data) {
-                    $('#errMsgContact').html('<p style="background-color: red;margin: 10px;padding: 5px 10px;color: white"><b>Server Error:</b> Something went wrong. Please refresh the page and try again!</p>');
-                    $('#submitContact').html('<button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>');
-                }
-            });
-            return false;
-        });
-    });
-</script>
+                                                                    }
+                                                                    ?>
+                                                                </div>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </div>
+                                                </section>
+                                            <?php } ?>
+                                            <section class="section parallax-container wow fadeIn bg-black" data-parallax-img="images/home-classic-start-up-slider-04.jpg" id="contact">
+                                                <div class="parallax-content">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-7 col-sm-12 col-xs-12 center-col text-center offset-40x-bottom">
+                                                                <div class="position-relative overflow-hidden width-100">
+                                                                    <div class="text-white text-font-sec text-small text-uppercase offset-5px-bottom xs-offset-three-bottom">Complete the form below to find out more about our services </div>
+                                                                    <h5 class="offset-55px-bottom text-white text-font-sec text-medium text-uppercase">Request a quote</h5>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <form class="rd-mailform text-left" id="contact_us_form" >
+                                                            <div class="row row-20">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-wrap">
+                                                                        <label class="form-label" for="contact-name-3">Name</label>
+                                                                        <input class="form-input" id="contact-name-3" type="text" name="name" >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-wrap">
+                                                                        <label class="form-label" for="contact-phone-3">Phone</label>
+                                                                        <input class="form-input" id="contact-phone-3" type="text" name="phone">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-wrap">
+                                                                        <label class="form-label" for="contact-email-3">E-Mail</label>
+                                                                        <input class="form-input" id="contact-email-3" type="email" name="email" >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-wrap">
+                                                                        <select class="form-input select select-inline" name="service" data-placeholder="Choose service" data-dropdown-class="select-inline-dropdown">
+                                                                            <option value="0" label="placeholder">Choose service</option>
+                                                                            <?php
+                                                                            if ($allServices) {
+                                                                                foreach ($allServices as $key) {
+                                                                                    echo '<option value="' . $key['service_name'] . '">' . ucwords($key['service_name']) . '</option>';
+                                                                                }
+                                                                            }
+                                                                            ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-wrap">
+                                                                        <label class="form-label" for="contact-message-3">Message</label>
+                                                                        <textarea class="form-input" id="contact-message-3" name="message" ></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-button group-sm text-center text-lg-left" id="submitContact">
+                                                                <button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>
+                                                            </div>
+                                                        </form>
+                                                        <div id="errMsgContact">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <script>
+                                                $(function () {
+                                                    $("#contact_us_form").submit(function () {
+                                                        dataString = $("#contact_us_form").serialize();
+                                                        $.ajax({
+                                                            type: "POST",
+                                                            url: BASE_URL + "homepage/sendContactEmail",
+                                                            data: dataString,
+                                                            return: false,
+                                                            beforeSend: function () {
+                                                                $('#submitContact').html('<span><i class="fa fa-circle-o-notch fa-spin w3-large"></i> Sending message...</span>');
+                                                            },
+                                                            success: function (data) {
+                                                                $('#errMsgContact').html(data);
+                                                                $('#submitContact').html('<button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>');
+                                                            },
+                                                            error: function (data) {
+                                                                $('#errMsgContact').html('<p style="background-color: red;margin: 10px;padding: 5px 10px;color: white"><b>Server Error:</b> Something went wrong. Please refresh the page and try again!</p>');
+                                                                $('#submitContact').html('<button class="btn btn-secondary btn-rounded btn-large offset-20px-top" type="submit">send message</button>');
+                                                            }
+                                                        });
+                                                        return false;
+                                                    });
+                                                });
+                                            </script>
