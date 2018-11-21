@@ -325,9 +325,8 @@
                                     </div>
                                     <div class="col-md-8 col-sm-8 col-xs-8 text-font-sec text-medium text-extra-dark-gray inset-5px-all">
                                         <p class="text-secondary offset-5px-right"><?php echo ucfirst($key['tech_name']); ?></p>
-                                        
+                                        <span class="text-small"><?php echo ucfirst($key['description']); ?></span>
                                     </div>
-                                    <span class="text-small text-font-sec text-extra-dark-gray inset-5px-all"><?php echo ucfirst($key['description']); ?></span>
                                 <?php } ?>
                             </div>
                         </div>

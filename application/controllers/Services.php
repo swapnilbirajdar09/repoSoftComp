@@ -9,10 +9,12 @@ class Services extends CI_Controller {
 // load common model
         $this->load->model('admin/Manageservice_model');
         $this->load->model('admin/Setting_model');
+        $this->load->model('admin/dashboard_model');
     }
 
 // main index function
     public function index() {
+        $data['allTechnologies'] = $this->dashboard_model->getTechnologyDetails();
         $data['social_logos'] = $this->Setting_model->getAllSocialLinks();
         $data['company_details'] = $this->Setting_model->getAllcompany_details();
         $data['services'] = $this->Manageservice_model->allServices();
