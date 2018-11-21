@@ -84,7 +84,7 @@
           if($category_count){
             foreach ($category_count as $key) {
               ?>
-              <li><a href="<?php base_url(); ?>viewblog?category=<?php echo $key['category']; ?>&tokId=<?php echo base64_encode($key['cat_id']); ?>#megaDiv"><?php echo $key['category']; ?></a><span><?php echo $key['count']; ?></span></li>
+              <li><a href="<?php echo base_url(); ?>viewblog?category=<?php echo $key['category']; ?>&tokId=<?php echo base64_encode($key['cat_id']); ?>#megaDiv"><?php echo $key['category']; ?></a><span><?php echo $key['count']; ?></span></li>
               <?php
             }
           }
@@ -95,7 +95,7 @@
       <div class="offset-45px-bottom xs-offset-25px-bottom">
         <div class="text-extra-dark-gray offset-25px-bottom text-font-sec text-uppercase text-medium text-small aside-title"><span>Tag cloud</span></div>
         <div class="tag-cloud">
-          <a href="<?php base_url(); ?>viewblog#megaDiv">All</a>
+          <a href="<?php echo base_url(); ?>viewblog#megaDiv">All</a>
           <?php 
           if($allTags){
             foreach ($allTags as $key) {
