@@ -274,7 +274,7 @@
                             </a>
                         </div>
                         <div class="post-details">
-                            <a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>"><?php echo $key['blog_title']; ?></a>                            
+                            <a class="post-title text-medium text-extra-dark-gray width-90 display-block md-width-100" href="<?php echo base_url(); ?>viewblog/info/<?php echo base64_encode('BLOGDETAIL|'.$key['blog_id']); ?>"  style="padding: 10px 0 0 0"><?php echo $key['blog_title']; ?></a>                            
                             <div class="author"><span  style="padding: 0" class="text-medium-gray text-uppercase text-extra-small display-inline-block"> on <a class="text-medium-gray"><?php echo date('d M Y',strtotime($key['posted_date'])); ?></a></span></div>
                             <div class="separator-line-horrizontal-full bg-medium-light-gray xs-offset-15px-tb"></div>
                         </div>
