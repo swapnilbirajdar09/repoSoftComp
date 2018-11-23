@@ -62,8 +62,8 @@ class Admin_setting extends CI_Controller {
     public function addSocialLinks() {
         extract($_POST);
         $data = $_POST;
-        
-        if($social_link_type =='0'){
+
+        if ($social_link_type == '0') {
             echo'<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Warning! </strong> Please Select Valid Social Link First.
@@ -222,7 +222,9 @@ class Admin_setting extends CI_Controller {
 
         $allowed_types = ['gif', 'jpg', 'png', 'jpeg', 'JPG', 'GIF', 'JPEG', 'PNG'];
         $imagePath = '';
-        $image_name = $_FILES['company_logo']['name'];
+
+
+        //$image_name = $_FILES['company_logo']['name'];
         if (!empty(($_FILES['company_logo']['name']))) {
             $extension = pathinfo($_FILES['company_logo']['name'], PATHINFO_EXTENSION);
 
@@ -243,6 +245,14 @@ class Admin_setting extends CI_Controller {
                 $fileData = $this->upload->data();
                 $imagePath = $uploadPath . $fileData['file_name'];
             }
+        } else {
+            if ($logo_imageEdit == '') {
+                echo '<div class="alert alert-danger alert-dismissible fade in alert-fixed w3-round">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> Select Image First.
+        </div>';
+            }
+            $imagePath = $logo_imageEdit;
         }
 
         $c_profile['company_name'] = $company_name;

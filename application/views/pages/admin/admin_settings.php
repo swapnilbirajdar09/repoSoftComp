@@ -124,7 +124,8 @@
                         <div class="w3-col l12">
                             <div class="col-lg-3 w3-margin-bottom">
                                 <label>Company Logo <b class="w3-text-red w3-medium">*</b></label>
-                                <input type="file" name="company_logo" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px" required>
+                                <input type="file" name="company_logo" onchange="" id="logo_image" class="w3-input" style="padding: 5px 2px 5px 5px">
+                                <input type="hidden" class="form-control w3-small" name="logo_imageEdit" id="logo_imageEdit" value="<?php echo $company_details[0]['company_logo']; ?>">
                                 <div id="image_error" class="w3-text-red"></div>
                             </div>
                             <div class="col-lg-3 col-sm-6 col-xs-6 w3-margin-bottom" style="background-image: url(<?php echo base_url() . $company_details[0]['company_logo']; ?>); height: 80px;background-position:left;background-size: contain;background-repeat: no-repeat;">
@@ -152,7 +153,7 @@
                                 <label>Office Type <b class="w3-text-red w3-medium">*</b></label>
                                 <select class="w3-input w3-border control w3-text-grey" name="office_type" id="mc-caste" required>
                                     <option value="0" class="w3-light-grey" selected>Select Office Type</option>
-<!--                                    <option value="Head Office">Head Office</option>                      -->
+                                    <!--                                    <option value="Head Office">Head Office</option>                      -->
                                     <option value="Branch">Branch</option>  
                                 </select>
                             </div>
