@@ -18,7 +18,7 @@
                         <?php } ?>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
+                <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-no-border-right sm-offset-30px-bottom xs-text-center">
                     <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Quick Links</div>
                     <div class="col-md-6" style=" padding-left:0; ">
                         <ul class="list-unstyled">
@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-12 col-xs-12 widget border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
+                <div class="col-md-4 col-sm-12 col-xs-12 widget border-color-medium-dark-gray inset-45px-left sm-padding-15px-left sm-clear-both sm-no-border-right xs-offset-30px-bottom xs-text-center">
                     <div class="widget-title text-font-sec text-small text-medium-gray text-uppercase offset-10px-bottom text-medium">Contact Info</div>
                     <p class="text-small display-block offset-15px-bottom width-80 xs-center-col"><?php echo $company_details[0]['hq_address']; ?></p>
                     <div class="text-small"><b>Email:</b><a href="mailto:#"> <?php echo $company_details[0]['company_email']; ?></a></div>

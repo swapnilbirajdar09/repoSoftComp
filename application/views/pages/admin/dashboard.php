@@ -87,16 +87,16 @@
                             foreach ($tech as $key) {
                                 ?>
                                 <?php if ($key['tech_logo'] != '') { ?>
-                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url() . $key['tech_logo']; ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url() . $key['tech_logo']; ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;" title="<?php echo $key['description']; ?>">
                                         <div class="w3-col l3 theme_bg" style="z-index: 1;position: absolute;border-bottom-right-radius:100%;">
-                                            <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
+                                            <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete"><i class="fa fa-times"></i></a>
                                         </div>
 
                                     </div>
                                 <?php } else { ?>
-                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url() . 'assets/images/default.png' ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                                    <div class="w3-col l4 col-sm-12 col-xs-12 w3-margin-bottom" style="background-image: url(<?php echo base_url() . 'assets/images/default.png' ?>); height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;" title="<?php echo $key['description']; ?>">
                                         <div class="w3-col l3 theme_bg" style="z-index: 1;position: absolute;border-bottom-right-radius:100%;">
-                                            <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete Post"><i class="fa fa-times"></i></a>
+                                            <a id="deltech" onclick="Removetech(<?php echo $key['tech_id']; ?>);" class="pull-left w3-large w3-text-red btn" style="padding:2px 5px;" title="Delete"><i class="fa fa-times"></i></a>
                                         </div>
 
                                     </div>

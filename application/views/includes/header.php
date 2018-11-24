@@ -49,8 +49,8 @@ $userName = $this->session->userdata('userName'); //----session variable
                 <div class="col-md-3 left_col">
                     <div class="left_col scroll-view">
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="<?php echo base_url(); ?>admin/dashboard" class="site_title" style="padding-left: 15px">
-                                Company Logo
+                            <a href="<?php echo base_url(); ?>admin/admin_dashboard" class="site_title" style="padding-left: 15px">
+                                Sailo Technosoft
                             </a>
                         </div>
 
