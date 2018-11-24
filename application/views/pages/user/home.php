@@ -73,7 +73,7 @@
                     <h4 class="text-font-sec text-light-gray">The leading provider of worthy digital experiences since 1999</h4>
                     <p class="text-extra-large width-85 md-width-100">Our team delivers top-notch digital solutions for our clients to maintain their competitive advantage online.</p>
                     <p class="width-85 md-width-100">
-                    All kinds of companies worldwide have been gaining the advantage of collaborating with us since our establishment. We work with owners and entrepreneurs to help them build a sustainable business through data-driven creative marketing, branding, web design, and development that are all aimed at moving the revenue needle. We’re a true business partner and our dedicated industry practice can help you define and meet specific business goals.</p><a class="btn btn-small offset-35px-top btn-white" href="about-us-modern.html">Read more</a>
+                        All kinds of companies worldwide have been gaining the advantage of collaborating with us since our establishment. We work with owners and entrepreneurs to help them build a sustainable business through data-driven creative marketing, branding, web design, and development that are all aimed at moving the revenue needle. We’re a true business partner and our dedicated industry practice can help you define and meet specific business goals.</p><a class="btn btn-small offset-35px-top btn-white" href="<?php echo base_url(); ?>about_us">Read more</a>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 position-relative sm-height-500px xs-height-350px cover-background wow fadeInRight" style="background-image: url('<?php echo base_url(); ?>assets/user/images/home-classic-one-page-bg-03.jpg');"></div>
@@ -121,7 +121,7 @@
                     <div class="display-table-cell vertical-align-middle">
                         <div class="width-75 md-width-100 inset-three-lr xs-no-padding-lr xs-no-padding-bottom" style="margin-left: auto; margin-right: auto">
                             <h4 class="text-font-sec text-white">We create websites that improve your business</h4>
-                            <p class="text-white">Our team regularly works on designing responsive websites for our clients to present their products the best way. From responsive landing pages to complex eCommerce solutions, we can handle anything and we guarantee that you will be satisfied with the result.</p><a class="btn btn-white btn-small text-extra-small border-radius-4 offset-20px-tb sm-no-offset-bottom" href="about-us-modern.html">Learn more</a>
+                            <p class="text-white">Our team regularly works on designing responsive websites for our clients to present their products the best way. From responsive landing pages to complex eCommerce solutions, we can handle anything and we guarantee that you will be satisfied with the result.</p><a class="btn btn-white btn-small text-extra-small border-radius-4 offset-20px-tb sm-no-offset-bottom" href="<?php echo base_url(); ?>about_us">Learn more</a>
                         </div>
                     </div>
                 </div>
