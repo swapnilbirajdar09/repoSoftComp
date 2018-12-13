@@ -52,7 +52,7 @@
                 <div class="display-table width-100 height-100">
                     <div class="display-table-cell vertical-align-middle"><i class="fa fa-quote-left text-secondary icon-medium offset-15px-bottom"></i>
                         <h5 class="text-extra-dark-gray text-font-sec text-uppercase text-semi-bold">OUR TEAM IS DEDICATED TO THE FINAL RESULT AND SUCCESS OF OUR CLIENTS.</h5>
-                        <p class="width-90 sm-width-100">The approach of MService assumes that a perfect design can only be delivered by people with a deep social and cultural understanding of the communities they designing for. As a Co-Founder, I make sure all our clients receive the designs their need for their corporate needs.</p><img class="offset-15px-top" src="images/signature-dark.png" alt=""><span class="text-extra-dark-gray text-large display-block offset-30px-top text-font-sec text-medium">Colin Smith</span><span class="display-block">Co-Founder, Lead Designer</span>
+                        <p class="width-90 sm-width-100">The approach of MService assumes that a perfect design can only be delivered by people with a deep social and cultural understanding of the communities they designing for. As a Co-Founder, I make sure all our clients receive the designs their need for their corporate needs.</p><img class="offset-15px-top" src="images/signature-dark.png" alt=""><span class="text-extra-dark-gray text-large display-block offset-30px-top text-font-sec text-medium">Siddhi Lohokare<br>Yogiraj Lohokare</span>Director </span>
                     </div>
                 </div>
             </div>
