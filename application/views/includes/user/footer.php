@@ -2,7 +2,7 @@
     <div class="footer-widget-area inset-five-tb xs-padding-30px-tb">
         <div class="container">
             <div class="row equalize xs-equalize-auto">
-                <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray sm-no-border-right sm-offset-30px-bottom xs-text-center"><a class="offset-20px-bottom display-inline-block" href="index.html"><img class="footer-logo" src="<?php echo base_url(); ?>assets/user/images/logo-white.png" alt=""></a>
+                <div class="col-md-4 col-sm-12 col-xs-12 widget border-right border-color-medium-dark-gray sm-no-border-right sm-offset-30px-bottom xs-text-center"><a class="offset-20px-bottom display-inline-block" href="index.html"><img class="footer-logo" src="<?php echo base_url(); ?>assets/user/images/sailo_logo.jpg" alt=""></a>
                     <p class="text-small width-95 xs-width-100">We are a team of creative specialists offering businesses and individuals high-quality services of web design, development, brand identity and more.</p>
                     <div class="social-icon-style-8 display-inline-block vertical-align-middle">
                         <?php if ($social_logos != '500') {
