@@ -9,7 +9,7 @@
                         <div class="row"> 
                             <div class="col-lg-8 col-lg-offset-2">
                                 <p class="lead text-white" data-caption-animate="fadeInUp" data-caption-delay="200">Provider of high-quality business services</p>
-                                <h1 class="text-white offset-30px-top" data-caption-animate="fadeInUp" data-caption-delay="800">Welcome to MService</h1><a class="btn btn-rounded btn-small offset-20px-lr xs-offset-5px-top btn-transparent-white offset-15px-top" href="#" data-caption-animate="fadeInUp" data-caption-delay="1400">Read more</a>
+                                <h1 class="text-white offset-30px-top" data-caption-animate="fadeInUp" data-caption-delay="800">Welcome to Sailo Technosoft</h1><a class="btn btn-rounded btn-small offset-20px-lr xs-offset-5px-top btn-transparent-white offset-15px-top" href="#" data-caption-animate="fadeInUp" data-caption-delay="1400">Read more</a>
                             </div>
                         </div>
                     </div>
